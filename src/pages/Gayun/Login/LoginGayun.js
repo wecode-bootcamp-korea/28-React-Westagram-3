@@ -1,1 +1,3 @@
-export default function LoginGayun() {}
+export default function LoginGayun() {
+  const x = 'd';
+}
