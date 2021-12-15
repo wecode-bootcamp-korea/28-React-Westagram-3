@@ -1,16 +1,19 @@
+// mixin
+// flex center 맞출 때 사용
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-$plain-bgColor: #fafafa;
-$border-color: #dbdbdb;
-$main-text-color: #262626;
-$sub-text-color: #8e8e8e;
-$facebook-link-color: #385185;
-$find-password-color: #00376b;
-$asideFooter-text-color: #c7c7c7;
-$button-deactive: rgba(0, 149, 246, 0.3);
-$button-active: rgba(0, 149, 246, 1);
-$button-link: #0095f6;
+// variables
+$plain-bgColor: #fafafa; // 페이지 배경색
+$border-color: #dbdbdb; // border 색
+$main-text-color: #262626; // 기본 텍스트 검정색
+$sub-text-color: #8e8e8e; // main페이지 스토리 등 텍스트 색
+$facebook-link-color: #385185; // 페이스북 링크 텍스트 색
+$find-password-color: #00376b; // 비밀번호 찾기 링크 텍스트 색
+$asideFooter-text-color: #c7c7c7; // aside footer 텍스트 색
+$button-deactive: rgba(0, 149, 246, 0.3); // 로그인 버튼 비활성화 배경색
+$button-active: rgba(0, 149, 246, 1); // 로그인 버튼 활성화 배경색
+$button-link: #0095f6; // 일반 링크 텍스트 색
