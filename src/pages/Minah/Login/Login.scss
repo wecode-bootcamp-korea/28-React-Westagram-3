@@ -1,0 +1,233 @@
+@use '../../styles/common.scss';
+
+/* 전체 */
+.login {
+    @include common.wrapper-style;
+
+    main {
+        width: 100%;
+        height: 800px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* 로그인 박스 */
+.login_box {
+    width: 350px;
+    height: 382px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    background-color: #fff;
+
+    h1 {
+        font-family: 'Rochester';
+        font-size: 3rem;
+        text-align: center;
+        margin: 20px auto 34px;
+    }
+
+    form {
+        .login_input {
+            position: relative;
+            width: 268px;
+            height: 38px;
+            margin: 0 auto;
+
+            &:first-child {
+                margin-bottom: 8px;
+            }
+    
+            input {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #dbdbdb;
+                border-radius: 3px;
+                vertical-align: bottom;
+                padding: 5px 8px;
+
+                &::placeholder {
+                    color: transparent;
+                }
+
+                &:not(:placeholder-shown) {
+                    padding: 15px 8px 5px;
+                }
+
+                &:placeholder-shown + label {
+                    font-size: 0.75rem;
+                    color: #8e8e8e;
+                    top: 10px;
+                    left: 8px;
+                }
+            }
+    
+            &:not(:empty) + label, label{
+                color:#8e8e8e;
+                font-size: 0.47rem;
+                pointer-events: none;
+                position: absolute;
+                top: 4px;
+                left: 8px;
+                transition: all 0.2s ease;
+                -webkit-transition: all 0.2s ease;
+                -moz-transition: all 0.2s ease;
+                -o-transition: all 0.2s ease;
+            }
+        }
+
+        button {
+            width: 268px;
+            height: 30px;
+            margin: 15px auto;
+            border: 0;
+            border-radius: 3px;
+            background-color: rgba(0, 149, 246, 0.3);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.875rem;
+
+            &:hover {
+                cursor: default;
+            }
+
+            &:not([disabled]){
+                background-color: rgba(0, 149, 246, 1);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    /* 로그인 버튼 하단 */
+    .line {
+        position: relative;
+        font-size: 0.8rem;
+        font-weight: 600;
+        height: 30px;
+        line-height: 30px;
+
+        &::before, &::after {
+            position: absolute;
+            content: '';
+            border-top: 1px solid rgba(219, 219, 219, 1);
+            inset: 0 35%;
+        }
+    
+        &::before {
+            transform: translateX(-78%) translateY(50%);
+        }
+    
+        &::after {
+            transform: translateX(78%) translateY(50%);
+        }
+
+        span {
+            color: #8e8e8e;
+        }
+    }
+
+    .facebook {
+        height: 55px;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 55px;
+
+        a {
+            img {
+                width: 1rem;
+                vertical-align: middle;
+                margin-right: 8px;
+            }
+
+            span {
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: #385185;
+            }
+        }
+    }
+
+    .find_pw {
+        a {
+            color: #00376b;
+            font-size: 0.78rem;
+        }
+    }
+}
+
+/* 가입하기 */
+.go_to_join {
+    width: 350px;
+    height: 63px;
+    margin: 0 auto;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    background-color: #fff;
+
+    p {
+        line-height: 63px;
+        font-size: 0.875rem;
+        color: #262626;
+
+        a {
+            font-weight: 600;
+            color: #0095f6;
+        }
+    }
+}
+
+/* footer */
+footer {
+    font-size: 0.75rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-top: 18px;
+    height: 134px;
+
+    .footer_tags_wrap {
+        max-width: 750px;
+        margin: 0 auto;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            line-height: 30px;
+
+            li {
+                max-width: 120px;
+                vertical-align: middle;
+
+                &:not(:first-child)::before {
+                    content: ' ';
+                    padding: 0 8px;
+                    color: #8e8e8e;
+                }
+
+                a {
+                    color: #8e8e8e;
+                }
+            }
+        } 
+    }
+    
+    .copyright p {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: #8e8e8e;
+    }
+}
