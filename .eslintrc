@@ -19,7 +19,9 @@
       "error",
       {
         "endOfLine": "auto"
+        
       }
-    ]
+    ],
+    "linebreak-style": ["error", "windows"]
   }
 }

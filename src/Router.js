@@ -1,8 +1,14 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import Login from "./pages/Login/Login";
-import Main from './pages/Main/Main';
+import LoginGayun from './pages/Gayun/Login/LoginGayun';
+import MainGayun from './pages/Gayun/Main/MainGayun' ;
+import LoginJongho from './pages/Jongho/Login/LoginJongho' ;
+import MainJongho from './pages/Jongho/Main/MainJongho' ;
+import LoginHojin from './pages/Hojin/Login/LoginHojin' ;
+import MainHojin from './pages/Hojin/Main/MainHojin' ;
+import LoginMinah from './pages/Minah/Login/LoginMinah' ;
+import MainMinah from './pages/Minah/Main/MainMinah' ;
 
 function Router() {
   return(
