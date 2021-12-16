@@ -1,4 +1,6 @@
-.feed__end {
-  width: 100%;
-  height: 20vh;
+@import '../../../../styles/common.scss';
+@import '../../../../styles/variables.scss';
+@import '../MainGayun.scss';
+.feeds {
+  margin: $doubleSpace;
 }

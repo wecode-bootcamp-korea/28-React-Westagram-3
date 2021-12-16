@@ -5,13 +5,11 @@ import { BsSuitHeart } from 'react-icons/bs';
 import { BsBookmark } from 'react-icons/bs';
 import { FiShare2 } from 'react-icons/fi';
 import { FaRegCommentDots } from 'react-icons/fa';
-import { Profiler, useRef } from 'react/cjs/react.development';
+import { useRef } from 'react/cjs/react.development';
 import { TiDelete } from 'react-icons/ti';
-import '../../../../styles/reset.scss';
-import '../../../../styles/common.scss';
+import Comments from '../Comments/Comments';
 
 function Feed({ feed }) {
-  console.log(feed);
   const feedData = feed;
   const commentData = feed.comment;
 
@@ -84,7 +82,7 @@ function Feed({ feed }) {
         </div>
         <div class="people-who-like">
           <img
-            src="images/profile-img2.jpg"
+            src="images/Gayun/profile-img2.jpg"
             alt=""
             // class={styles.people_who_like_img}
           />
@@ -95,17 +93,7 @@ function Feed({ feed }) {
         <div class={styles.textContent}>
           {handleTextContent(feed.textContent)}
         </div>
-        <li class="comments">
-          <ul class="comment-container">
-            <span class="comment">
-              <p class="id">dd</p>
-              <span>sdf</span>
-            </span>
-            <button class="delete">
-              <TiDelete />
-            </button>
-          </ul>
-        </li>
+        <Comments comments={feed.comment} />
       </section>
       <form class="comment-input">
         <input

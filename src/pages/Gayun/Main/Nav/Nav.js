@@ -20,19 +20,19 @@ function Nav() {
         </div>
       </span>
       <span className="buttons">
-        <button>
+        <button className="button">
           <img
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
             alt="explore"
           />
         </button>
-        <button>
+        <button className="button">
           <img
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
             alt="like"
           />
         </button>
-        <button>
+        <button className="button">
           <img
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
             id="my__img"

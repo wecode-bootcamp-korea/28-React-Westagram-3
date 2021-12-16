@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 $doubleSpace: 1rem;
 $space: 0.5rem;
 
@@ -7,10 +9,21 @@ $imgContainerXL: 4rem;
 $imgContainerL: 3rem;
 $imgContainerM: 2rem;
 $imgContainerS: 1rem;
+$imgBorderRadius: 3rem;
 
 @mixin profileImg {
   width: 90%;
   height: 90%;
+
+  border: 0.2rem solid $plain-bgColor;
+  border-radius: 3rem;
+}
+
+@mixin profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: $space;
   background: linear-gradient(
     39deg,
     rgba(254, 218, 117, 1) 0%,
@@ -19,6 +32,5 @@ $imgContainerS: 1rem;
     rgba(150, 47, 191, 1) 72%,
     rgba(79, 91, 213, 1) 100%
   );
-  border: 0.2rem solid $white;
   border-radius: 3rem;
 }

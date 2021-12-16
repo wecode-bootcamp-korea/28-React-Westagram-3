@@ -1,14 +1,22 @@
 import React from 'react';
+import storiesData from '../../data/story.json';
+import './Story.scss';
 
 function Story() {
   return (
     <div className="story">
-      <span class="container">
-        <div class="img-container profile-container">
-          <img class="profile-img" src={story.profileImg} alt="story-img" />
-        </div>
-        <div class="top-story__id">{story.profileId}</div>
-      </span>
+      {storiesData.map(story => (
+        <span class="container">
+          <div class="img-container">
+            <img
+              class="profile-img"
+              src={`images/Gayun/${story.profileImg}`}
+              alt="story-img"
+            />
+          </div>
+          <div class="top-story__id">{story.profileId}</div>
+        </span>
+      ))}
     </div>
   );
 }

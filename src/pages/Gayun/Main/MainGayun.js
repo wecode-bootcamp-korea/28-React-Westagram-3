@@ -1,12 +1,13 @@
 import React from 'react';
 import Nav from './Nav/Nav';
 import Feeds from './Feeds/Feeds';
-import '../../../styles/common.scss';
+import Story from './Story/Story';
 
 function MainGayun() {
   return (
     <>
       <Nav />
+      <Story />
       <Feeds />
     </>
   );

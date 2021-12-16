@@ -1,11 +1,11 @@
 import React from 'react';
 import Feed from '../Feed/Feed';
 import feedsData from '../../data/feed.json';
-import styles from './Feeds.scss';
+import './Feeds.scss';
 
 function Feeds() {
   return (
-    <div className={styles.container}>
+    <div className="feeds">
       {feedsData.map(feed => (
         <Feed feed={feed} />
       ))}
