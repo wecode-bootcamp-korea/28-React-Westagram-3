@@ -1,0 +1,350 @@
+@use 'styles/common';
+@use 'styles/reset';
+@use 'styles/variables';
+
+html,
+body {
+  height: 100%;
+}
+
+// Main
+$navbar-height: 35px;
+/* color */
+
+@mixin side-wraper-layout {
+  width: 20vw;
+  margin-left: 2vw;
+  margin-bottom: 10px;
+}
+
+.Main {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    border-bottom: 1.5px solid $border-color;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 15px 0px;
+    background-color: white;
+
+    img {
+      height: $navbar-height;
+    }
+    #searchBlock {
+      @include common.flex-center;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      width: 20%;
+
+      img {
+        height: 1rem;
+        opacity: 0.5;
+      }
+      input {
+        height: $navbar-height;
+        width: 40px;
+
+        &:placeholder {
+          color: variables.$sub-text-color;
+        }
+        &:focus {
+          width: 60%;
+        }
+      }
+    }
+    #symbolBlock {
+      @include common.flex-center;
+      width: 20%;
+
+      .instagramLogo {
+        font-size: 35px;
+        font-family: 'Lobster', cursive;
+
+        &:before {
+          padding: 0 40px;
+          content: '|';
+        }
+      }
+    }
+    #otherContents {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 20%;
+      padding: 0 80px;
+    }
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-top: 75.5px;
+    background-color: #fafafa;
+
+    section:nth-child(1) {
+      height: 100%;
+      background-color: #fafafa;
+    }
+    section:nth-child(2) {
+      height: 100%;
+      background-color: #fafafa;
+    }
+  }
+  span {
+    vertical-align: middle;
+  }
+  input {
+    border: 0;
+  }
+  li {
+    list-style: none;
+  }
+  .accId {
+    font-weight: bold;
+  }
+  .subAccId {
+    color: variables.$sub-text-color;
+  }
+
+  .feedContainer {
+    max-width: 1000px;
+    display: inline-block;
+    margin-top: 5vh;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background-color: white;
+
+    .myFeedImage {
+      display: block;
+      width: 100%;
+    }
+    .profileBlock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: white;
+
+      .profileAccount {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        background-color: white;
+
+        .profileImage {
+          height: 50px;
+          margin-right: 10px;
+          border: 0.5px solid $border-color;
+          border-radius: 50%;
+        }
+      }
+      .fa-ellipsis-h {
+        color: #262626;
+      }
+    }
+  }
+
+  .toolBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    background-color: white;
+
+    i {
+      font-size: 32px;
+    }
+    .fa-bookmark {
+      margin-right: 20px;
+    }
+    .toolBoxThree {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: 150px;
+      padding-left: 20px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .likeMessageBlock {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-left: 20px;
+    margin: 15px 0;
+    background-color: white;
+    text-align: left;
+
+    img {
+      height: 75%;
+      border: 0.5px solid $border-color;
+      border-radius: 50%;
+    }
+    span {
+      padding-left: 5px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  .commentsAndButton {
+    display: flex;
+    padding-left: 20px;
+
+    .commentList {
+      line-height: 1.5;
+
+      .comments {
+        display: flex;
+        justify-content: flex-start;
+
+        span:nth-child(2) {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .postComment {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $border-color;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    button {
+      border: 0;
+      color: $button-deactive;
+      font-size: 20px;
+      background-color: white;
+    }
+    input {
+      height: 50px;
+      font-size: 20px;
+
+      &:placeholder {
+        color: variables.$sub-text-color;
+      }
+    }
+  }
+
+  .myAccount {
+    @include common.side-wraper-layout;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 450px;
+    margin-top: 5vh;
+    padding: 5px;
+    background-color: none;
+
+    .recommName {
+      padding-left: 10px;
+    }
+  }
+  .accountRecomm {
+    height: 50px;
+    border-radius: 50%;
+  }
+  .recommStory {
+    @include common.side-wraper-layout;
+    max-width: 450px;
+    padding: 20px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background-color: white;
+
+    .storyList {
+      display: flex;
+      padding-bottom: 10px;
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+    .storyHead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .seeAllBtn {
+        border: 0;
+        font-size: 1rem;
+        font-weight: bold;
+        background-color: white;
+        cursor: pointer;
+      }
+      span {
+        font-size: 1rem;
+        font-weight: bold;
+        color: variables.$sub-text-color;
+      }
+    }
+  }
+  .recommWraper {
+    @include common.side-wraper-layout;
+    max-width: 450px;
+    padding: 20px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background-color: white;
+
+    .recommList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+
+      &:last-child {
+        padding: 0;
+      }
+      .recommCont {
+        display: flex;
+      }
+      .followBtn {
+        font-size: 1rem;
+        color: $button-active;
+        border: 0;
+        background-color: white;
+      }
+    }
+  }
+
+  .recommHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+      color: variables.$sub-text-color;
+    }
+    .seeAllBtn {
+      border: 0;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+  .accountBlock span {
+    display: block;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+}
