@@ -7,11 +7,11 @@ export default function LoginMinah() {
     const [userId, setUserId] = useState('');
     const [userPw, setUserPw] = useState('');
 
-    const onChangeUserId = (e) => {
+    const handleIdInput = (e) => {
         setUserId(e.target.value);
     }
 
-    const onChangeUserPw = (e) => {
+    const handlePwInput = (e) => {
         setUserPw(e.target.value);
     }
 
@@ -33,11 +33,11 @@ export default function LoginMinah() {
                     <h1>Westagram</h1>
                     <form>
                         <div className="login_input">
-                            <input type="text" id="user_id" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={onChangeUserId} value={userId} />
+                            <input type="text" id="user_id" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={handleIdInput} value={userId} />
                             <label htmlFor="user_id">전화번호, 사용자 이름 또는 이메일</label>
                         </div>
                         <div className="login_input">
-                            <input type="password" id="user_pw" placeholder="비밀번호" onChange={onChangeUserPw} value={userPw} />
+                            <input type="password" id="user_pw" placeholder="비밀번호" onChange={handlePwInput} value={userPw} />
                             <label htmlFor="user_pw">비밀번호</label>
                         </div>
                         <button type="button" onClick={onReset} disabled={(userId.includes('@') && userPw.length > 5) ? false : true
@@ -48,7 +48,7 @@ export default function LoginMinah() {
                     </div>
                     <div className="facebook">
                         <a href="https://www.facebook.com/">
-                            <img alt="페이스북 아이콘" src="images/facebook.png" />
+                            <img alt="페이스북 아이콘" src="images/Minah/Login/facebook.png" />
                             <span>Facebook으로 로그인</span>
                         </a>
                     </div>
