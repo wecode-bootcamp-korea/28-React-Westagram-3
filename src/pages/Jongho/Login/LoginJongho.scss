@@ -8,11 +8,11 @@ body {
 }
 
 .Login {
-  @include common.flex-center;
+  @include variables.flex-center;
   height: 100vh;
 
   .outerBox {
-    @include common.flex-center;
+    @include variables.flex-center;
     width: 480px;
     height: 500px;
     background-color: #fafafa;

@@ -35,7 +35,7 @@ $navbar-height: 35px;
       height: $navbar-height;
     }
     #searchBlock {
-      @include common.flex-center;
+      @include variables.flex-center;
       border: 1px solid variables.$border-color;
       border-radius: 5px;
       width: 20%;
@@ -57,7 +57,7 @@ $navbar-height: 35px;
       }
     }
     #symbolBlock {
-      @include common.flex-center;
+      @include variables.flex-center;
       width: 20%;
 
       .instagramLogo {
@@ -225,7 +225,7 @@ $navbar-height: 35px;
 
     button {
       border: 0;
-      color: $button-deactive;
+      color: variables.$button-deactive;
       font-size: 20px;
       background-color: white;
     }
@@ -240,7 +240,7 @@ $navbar-height: 35px;
   }
 
   .myAccount {
-    @include common.side-wraper-layout;
+    @include side-wraper-layout;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -258,7 +258,7 @@ $navbar-height: 35px;
     border-radius: 50%;
   }
   .recommStory {
-    @include common.side-wraper-layout;
+    @include side-wraper-layout;
     max-width: 450px;
     padding: 20px;
     border: 1px solid variables.$border-color;
@@ -294,7 +294,7 @@ $navbar-height: 35px;
     }
   }
   .recommWraper {
-    @include common.side-wraper-layout;
+    @include side-wraper-layout;
     max-width: 450px;
     padding: 20px;
     border: 1px solid variables.$border-color;
@@ -315,7 +315,7 @@ $navbar-height: 35px;
       }
       .followBtn {
         font-size: 1rem;
-        color: $button-active;
+        color: variables.$button-active;
         border: 0;
         background-color: white;
       }
