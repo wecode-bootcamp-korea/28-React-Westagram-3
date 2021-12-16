@@ -6,7 +6,6 @@ function LoginGayun() {
   const idRef = useRef();
   const pwRef = useRef();
   const noticeRef = useRef();
-
   const [validState, setValidState] = useState();
 
   function handleInput() {
