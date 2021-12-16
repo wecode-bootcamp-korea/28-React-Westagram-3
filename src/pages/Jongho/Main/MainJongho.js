@@ -1,9 +1,11 @@
 import React from 'react';
 import './MainJongho.scss';
+import Footer from '../../../components/Footer/Footer';
+import '../../../components/Footer/Footer.scss';
 
 function Main() {
   return (
-    <div class="Main">
+    <div class="mainJongho">
       <header>
         <nav>
           <div id="symbolBlock">
@@ -235,6 +237,7 @@ function Main() {
           </article>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
