@@ -5,23 +5,22 @@
 
 .story {
   display: flex;
-  margin-bottom: var(--container-padding);
-  padding: var(--container-padding);
+  padding: $space $doubleSpace $space $doubleSpace;
   overflow-x: scroll;
 
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: var(--item-padding);
+    margin-right: $space;
     font-size: 0.8rem;
 
     .img-container {
       @include profileContainer;
-      margin-left: var(--item-padding);
+      margin-left: $space;
       width: $imgContainerL;
       height: $imgContainerL;
-      margin-bottom: var(--item-padding);
+      margin-bottom: $space;
 
       img {
         @include profileImg;

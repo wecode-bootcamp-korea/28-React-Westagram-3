@@ -6,15 +6,15 @@
 .feed {
   width: 30rem;
   margin-bottom: 3rem;
-  border: 1px solid var(--border-grey);
-  background-color: var(--white);
+  border: 1px solid $border-color;
+  background-color: white;
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--item-padding) 0.8rem var(--item-padding) 0.8rem;
-    border-bottom: 1px solid var(--border-grey);
+    padding: $space 0.8rem $space 0.8rem;
+    border-bottom: 1px solid $border-color;
 
     .uploader {
       display: flex;
@@ -44,13 +44,12 @@
   }
 
   .contents-wrap {
-    padding: var(--item-padding) var(--container-padding) var(--item-padding)
-      var(--container-padding);
+    padding: $space $doubleSpace $space $doubleSpace;
 
     .button-container {
       display: flex;
       justify-content: space-between;
-      margin-bottom: $space;
+      margin: $space 0 $space 0;
 
       .button {
         margin-right: $space;
@@ -125,8 +124,8 @@
     justify-content: space-between;
     align-items: center;
     height: 3rem;
-    padding-left: $doubleSpace;
-    border-top: 1px solid var(--border-grey);
+    padding: 0 $doubleSpace 0 $doubleSpace;
+    border-top: 1px solid $border-color;
 
     .text {
       flex-basis: 80%;

@@ -1,118 +1,120 @@
-.story {
-  padding: var(--container-padding);
-  width: 100%;
-  border: 1px solid var(--border-grey);
-  background-color: var(--white);
+@import '../../../../styles/common.scss';
+@import './../../../../styles/reset.scss';
+@import '../../../../styles/variables.scss';
+@import '../MainGayun.scss';
 
-  .header {
+.side-bar {
+  width: 15rem;
+  .story {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--border-grey-darker);
-    font-weight: 600;
-  }
+    flex-direction: column;
+    padding: $doubleSpace;
+    background-color: var(--white);
 
-  .spread {
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .collapse {
-    height: 12rem;
-    overflow: hidden;
-  }
-
-  .list {
-    list-style: none;
-
-    .item {
-      display: flex;
-      align-items: center;
-      margin-top: var(--container-padding);
-
-      .img-container {
-        width: var(--profile-img-container-L);
-        height: var(--profile-img-container-L);
-      }
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        margin-left: 1rem;
-      }
-
-      .time {
-        font-size: 0.8rem;
-        color: gray;
-      }
-    }
-  }
-}
-
-.profile_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: var(--profile-img-border-radius);
-  background: var(--profile-img-gradient);
-}
-
-.profile_img {
-  width: var(--profile-img-size);
-  height: var(--profile-img-size);
-
-  border: var(--profile-border) solid var(--white);
-  border-radius: var(--profile-img-border-radius);
-}
-
-.recommend {
-  margin-top: 1em;
-  padding: var(--container-padding);
-  width: 100%;
-  border: 1px solid var(--border-grey);
-  background-color: var(--white);
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--border-grey-darker);
-  }
-
-  .spread {
-    font-weight: 700;
-  }
-
-  .list {
-    padding-top: 0.5rem;
-    list-style: none;
-
-    .item {
+    .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color: $sub-text-color;
+      font-weight: 600;
+    }
 
-      .profile {
+    .spread {
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .collapse {
+      height: 12rem;
+      overflow: hidden;
+    }
+
+    .list {
+      list-style: none;
+
+      .item {
         display: flex;
         align-items: center;
+        margin-top: $doubleSpace;
 
-        .id,
-        .follower {
-          margin-left: var(--container-padding);
+        .img-container {
+          width: $imgContainerM;
+          height: $imgContainerM;
+          @include profileContainer;
+
+          img {
+            @include profileImg;
+          }
         }
 
-        .follower {
-          color: var(--border-grey-darker);
+        .text {
+          display: flex;
+          flex-direction: column;
+          margin-left: 1rem;
+        }
+
+        .time {
           font-size: 0.8rem;
+          color: gray;
         }
       }
+    }
+  }
 
-      .follow {
-        font-weight: 700;
-        color: var(--blue);
+  .recommend {
+    margin-top: 1em;
+    padding: $doubleSpace;
+    width: 100%;
+    border: 1px solid var(--border-grey);
+    background-color: var(--white);
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      color: $sub-text-color;
+      font-weight: 600;
+    }
+
+    .spread {
+      color: $main-text-color;
+      font-weight: 700;
+    }
+
+    .list {
+      padding-top: 0.5rem;
+      list-style: none;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .profile {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: $imgContainerM;
+            height: $imgContainerM;
+            border-radius: $imgBorderRadius;
+          }
+
+          .id,
+          .follower {
+            margin-left: $doubleSpace;
+          }
+
+          .follower {
+            color: var(--border-grey-darker);
+            font-size: 0.8rem;
+          }
+        }
+
+        .follow {
+          font-weight: 700;
+          color: $button-active;
+        }
       }
     }
   }
