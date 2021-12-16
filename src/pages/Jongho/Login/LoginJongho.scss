@@ -6,10 +6,16 @@ html,
 body {
   height: 100%;
 }
+
+footer {
+  position: relative;
+  height: 10vh;
+}
+
 .loginJongho {
   .mainContainer {
     @include variables.flex-center;
-    height: 100vh;
+    height: 90vh;
 
     .outerBox {
       @include variables.flex-center;
