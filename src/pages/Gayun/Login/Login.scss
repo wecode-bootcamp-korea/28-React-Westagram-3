@@ -1,0 +1,68 @@
+@import '../../../styles/variables.scss';
+
+body {
+  height: 100vh;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem;
+  height: 100%;
+
+  .logo {
+    margin: 2rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 60%;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .id,
+  .password {
+    margin: 0.5rem;
+    height: 3rem;
+    border: 1px solid $border-color;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  .button {
+    margin: 0.5rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    background-color: $button-deactive;
+    color: $plain-bgColor;
+    font-weight: 800;
+  }
+
+  .notice {
+    font-size: 0.5px;
+    color: rgb(167, 68, 68);
+  }
+
+  .active {
+    background-color: $button-active;
+    color: $plain-bgColor;
+    font-weight: 800;
+    cursor: pointer;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}

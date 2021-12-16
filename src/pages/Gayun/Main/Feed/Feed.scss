@@ -1,0 +1,119 @@
+main {
+  display: flex;
+  width: 100%;
+}
+
+.feed {
+  margin-bottom: 3rem;
+  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--item-padding) 0.8rem var(--item-padding) 0.8rem;
+    border-bottom: 1px solid var(--border-grey);
+
+    .uploader {
+      display: flex;
+      align-items: center;
+    }
+
+    .img-container {
+      width: var(--profile-img-container-L);
+      height: var(--profile-img-container-L);
+    }
+
+    .id {
+      margin-left: 1rem;
+    }
+
+    .img-container {
+      height: 10rem;
+      overflow: hidden;
+    }
+
+    .img-content {
+      width: 100%;
+    }
+  }
+
+  .contents-wrap {
+    padding: var(--item-padding) var(--container-padding) var(--item-padding)
+      var(--container-padding);
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--item-padding);
+
+      .button > i {
+        margin-right: var(--item-padding);
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .people-who-like {
+    display: flex;
+    align-items: center;
+    margin: var(--item-padding) 0 var(--container-padding) 0;
+
+    img {
+      width: var(--profile-img-container-S);
+      height: var(--profile-img-container-S);
+      border-radius: var(--profile-img-border-radius);
+    }
+
+    .comment {
+      margin-left: var(--item-padding);
+      font-size: 0.9rem;
+    }
+  }
+
+  .feed_more_text {
+    color: var(--border-grey-darker);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .comments {
+    margin-top: var(--container-padding);
+    list-style: none;
+  }
+
+  .comment-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    padding-left: var(--container-padding);
+    border-top: 1px solid var(--border-grey);
+
+    .text {
+      flex-basis: 80%;
+      height: 100%;
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.profile_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--profile-img-border-radius);
+  background: var(--profile-img-gradient);
+}
+
+.profile_img {
+  width: var(--profile-img-size);
+  height: var(--profile-img-size);
+  border: var(--profile-border) solid var(--white);
+  border-radius: var(--profile-img-border-radius);
+}
