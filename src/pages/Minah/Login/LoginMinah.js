@@ -17,7 +17,7 @@ export default function LoginMinah() {
 
     const navigate = useNavigate();
     const goToMain = () => {
-        navigate('/main');
+        navigate('/mainminah');
     }
 
     const onReset = () => {
