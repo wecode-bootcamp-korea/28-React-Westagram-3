@@ -19,6 +19,7 @@ function LoginGayun() {
       setValidState(false);
     }
   }
+
   return (
     <div className="login">
       <h1 className="logo">Westagram</h1>
