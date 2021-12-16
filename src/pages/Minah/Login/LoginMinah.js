@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../../components/Footer/Footer";
-import './Login.scss';
+import './LoginMinah.scss';
 
 export default function LoginMinah() {
     const [userId, setUserId] = useState('');
