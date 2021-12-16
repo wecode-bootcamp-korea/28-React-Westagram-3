@@ -1,3 +1,1 @@
-export default function LoginHojin() {
-  
-}
+export default function LoginHojin() {}

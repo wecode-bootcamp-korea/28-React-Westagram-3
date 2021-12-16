@@ -1,9 +1,5 @@
-main {
-  display: flex;
-  width: 100%;
-}
-
 .feed {
+  width: 30rem;
   margin-bottom: 3rem;
   border: 1px solid var(--border-grey);
   background-color: var(--white);
@@ -21,20 +17,21 @@ main {
     }
 
     .img-container {
-      width: var(--profile-img-container-L);
-      height: var(--profile-img-container-L);
+      img {
+        width: 3rem;
+      }
     }
 
     .id {
       margin-left: 1rem;
     }
+  }
 
-    .img-container {
-      height: 10rem;
-      overflow: hidden;
-    }
+  .img-content {
+    height: 30rem;
+    overflow: hidden;
 
-    .img-content {
+    img {
       width: 100%;
     }
   }
@@ -67,13 +64,13 @@ main {
       border-radius: var(--profile-img-border-radius);
     }
 
-    .comment {
+    .text {
       margin-left: var(--item-padding);
       font-size: 0.9rem;
     }
   }
 
-  .feed_more_text {
+  .more-text {
     color: var(--border-grey-darker);
     font-weight: 700;
     cursor: pointer;
@@ -82,6 +79,38 @@ main {
   .comments {
     margin-top: var(--container-padding);
     list-style: none;
+
+    .comment-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+
+      .comment {
+        display: flex;
+        flex-basis: 90%;
+        margin-right: var(--item-padding);
+
+        .id {
+          margin-right: var(--item-padding);
+          margin-right: 1rem;
+          font-weight: 800;
+        }
+      }
+
+      .delete {
+        display: flex;
+        flex-basis: 10%;
+        justify-content: flex-end;
+        color: var(--light-blue);
+        cursor: pointer;
+      }
+
+      .delete:hover {
+        color: var(--blue);
+      }
+    }
   }
 
   .comment-input {

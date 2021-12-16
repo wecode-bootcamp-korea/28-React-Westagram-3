@@ -1,12 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
+import styles from './Feed.scss';
+import { BsSuitHeart } from 'react-icons/bs';
+import { BsBookmark } from 'react-icons/bs';
+import { FiShare2 } from 'react-icons/fi';
+import { FaRegCommentDots } from 'react-icons/fa';
+import { Profiler, useRef } from 'react/cjs/react.development';
+import { TiDelete } from 'react-icons/ti';
+import '../../../../styles/reset.scss';
+import '../../../../styles/common.scss';
 
-function Feed() {
+function Feed({ feed }) {
+  console.log(feed);
+  const feedData = feed;
+  const commentData = feed.comment;
+
+  const [feedState, setFeedState] = useState({ feed });
+  const [comments, setComments] = useState(commentData);
+
+  const commentRef = useRef();
+
+  function deleteComment(comment) {
+    setComments(comments => {
+      const updated = { ...comments };
+      delete updated[comment.id];
+      console.log(updated);
+      return updated;
+    });
+  }
+
+  function handleTextContent(text) {
+    if (text.length > 30) {
+      text = text.slice(0, 30);
+      return (
+        <>
+          <p>{text}</p>
+          <button dclass="more-text">...더보기</button>
+        </>
+      );
+    } else {
+      return text;
+    }
+  }
+
   return (
     <article class="feed">
       <section class="header">
         <span class="uploader">
           <span class="img-container profile-container">
-            <img class="img profile-img" src={feed.profileImg} alt="" />
+            <img
+              class="img profile-img"
+              src="images/gayun/default_profile-img.png"
+              alt=""
+            />
           </span>
           <span class="id">{feed.feedId}</span>
         </span>
@@ -14,8 +60,8 @@ function Feed() {
           <i class="fas fa-ellipsis-h" />
         </button>
       </section>
-      <section class="img-container">
-        <img src={feed.imgContent} alt="" class="img-content" />
+      <section class="img-content">
+        <img src={`images/Gayun/${feed.profileImg}`} alt="" />
       </section>
       <section class="contents-wrap">
         <div class="button-container">
@@ -42,7 +88,7 @@ function Feed() {
             alt=""
             // class={styles.people_who_like_img}
           />
-          <p class="comment">
+          <p class="text">
             {feed.likesCount[0]}님 외 {feed.likesCount.length}명이 좋아합니다.
           </p>
         </div>
@@ -50,11 +96,15 @@ function Feed() {
           {handleTextContent(feed.textContent)}
         </div>
         <li class="comments">
-          <Comments
-            comments={feed.comment}
-            addComment={addComment}
-            deleteComment={deleteComment}
-          />
+          <ul class="comment-container">
+            <span class="comment">
+              <p class="id">dd</p>
+              <span>sdf</span>
+            </span>
+            <button class="delete">
+              <TiDelete />
+            </button>
+          </ul>
         </li>
       </section>
       <form class="comment-input">
@@ -64,7 +114,7 @@ function Feed() {
           class="text"
           ref={commentRef}
         />
-        <button onClick={addComment}>게시</button>
+        <button>게시</button>
       </form>
     </article>
   );

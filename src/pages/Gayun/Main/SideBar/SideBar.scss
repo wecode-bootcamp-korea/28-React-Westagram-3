@@ -1,0 +1,119 @@
+.story {
+  padding: var(--container-padding);
+  width: 100%;
+  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--border-grey-darker);
+    font-weight: 600;
+  }
+
+  .spread {
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .collapse {
+    height: 12rem;
+    overflow: hidden;
+  }
+
+  .list {
+    list-style: none;
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-top: var(--container-padding);
+
+      .img-container {
+        width: var(--profile-img-container-L);
+        height: var(--profile-img-container-L);
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+      }
+
+      .time {
+        font-size: 0.8rem;
+        color: gray;
+      }
+    }
+  }
+}
+
+.profile_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--profile-img-border-radius);
+  background: var(--profile-img-gradient);
+}
+
+.profile_img {
+  width: var(--profile-img-size);
+  height: var(--profile-img-size);
+
+  border: var(--profile-border) solid var(--white);
+  border-radius: var(--profile-img-border-radius);
+}
+
+.recommend {
+  margin-top: 1em;
+  padding: var(--container-padding);
+  width: 100%;
+  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--border-grey-darker);
+  }
+
+  .spread {
+    font-weight: 700;
+  }
+
+  .list {
+    padding-top: 0.5rem;
+    list-style: none;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .profile {
+        display: flex;
+        align-items: center;
+
+        .id,
+        .follower {
+          margin-left: var(--container-padding);
+        }
+
+        .follower {
+          color: var(--border-grey-darker);
+          font-size: 0.8rem;
+        }
+      }
+
+      .follow {
+        font-weight: 700;
+        color: var(--blue);
+      }
+    }
+  }
+}
