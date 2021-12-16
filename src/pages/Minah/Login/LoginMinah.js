@@ -26,18 +26,24 @@ export default function LoginMinah() {
         goToMain();
     }
 
+    const enterKeyEvent = (e) => {
+        if (e.key === 'Enter') {
+            onReset();
+        };
+    }
+
     return (
         <div className="login">
             <main>
                 <div className="login_box">
                     <h1>Westagram</h1>
-                    <form>
+                    <form onKeyPress={(e) => enterKeyEvent(e)}>
                         <div className="login_input">
                             <input type="text" id="user_id" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={handleIdInput} value={userId} />
                             <label htmlFor="user_id">전화번호, 사용자 이름 또는 이메일</label>
                         </div>
                         <div className="login_input">
-                            <input type="password" id="user_pw" placeholder="비밀번호" onChange={handlePwInput} value={userPw} />
+                            <input type="password" id="user_pw" placeholder="비밀번호" onChange={handlePwInput} value={userPw} autoComplete="on" />
                             <label htmlFor="user_pw">비밀번호</label>
                         </div>
                         <button type="button" onClick={onReset} disabled={(userId.includes('@') && userPw.length > 5) ? false : true
