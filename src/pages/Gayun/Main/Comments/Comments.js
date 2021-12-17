@@ -2,12 +2,13 @@ import React from 'react';
 import Comment from '../Comment/Comment';
 
 function Comments(comments) {
-  console.log(comments);
+  const commentList = comments.comments;
+  console.log(commentList);
   return (
     <li class="comments">
-      {/* {comments.comments.map(com => (
+      {commentList.map(com => (
         <Comment comment={com} />
-      ))} */}
+      ))}
     </li>
   );
 }

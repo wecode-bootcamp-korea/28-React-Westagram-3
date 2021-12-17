@@ -5,13 +5,13 @@ function Comment({ comment }) {
   console.log(comment);
   return (
     <ul class="comment-container">
-      {/* <span class="comment">
-        <p class="id">dd</p>
+      <span class="comment">
+        <p class="id">{comment.commentId}</p>
         <span>{comment.commentText}</span>
       </span>
       <button class="delete">
         <TiDelete />
-      </button> */}
+      </button>
     </ul>
   );
 }

@@ -23,6 +23,7 @@
 
     .img-container {
       width: $imgContainerL;
+      height: $imgContainerL;
       @include profileContainer;
       img {
         @include profileImg;

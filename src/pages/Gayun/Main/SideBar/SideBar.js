@@ -3,7 +3,6 @@ import './SideBar.scss';
 import storyData from '../../data/story.json';
 
 function SideBar() {
-  console.log(storyData);
   return (
     <aside className="side-bar">
       <div className="account">

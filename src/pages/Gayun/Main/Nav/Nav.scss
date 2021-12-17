@@ -95,7 +95,7 @@ nav {
     .result-item {
       display: flex;
       align-items: center;
-      padding: var(--container-padding);
+      padding: $doubleSpace;
       border-bottom: 1px solid var(--border-grey);
 
       img {
@@ -119,7 +119,7 @@ nav {
     position: absolute;
     top: 4rem;
     width: 15rem;
-    padding: var(--container-padding);
+    padding: $doubleSpace;
     list-style: none;
     font-size: 0.8rem;
     background-color: var(--white);
@@ -128,7 +128,7 @@ nav {
     .item {
       display: flex;
       align-items: center;
-      margin-bottom: var(--item-padding);
+      margin-bottom: $space;
     }
 
     .title {

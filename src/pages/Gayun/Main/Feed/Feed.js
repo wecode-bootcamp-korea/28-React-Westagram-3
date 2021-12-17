@@ -17,6 +17,7 @@ function Feed({ feed }) {
   const [comments, setComments] = useState(commentData);
 
   const commentRef = useRef();
+  console.log(feed.comment);
 
   function deleteComment(comment) {
     setComments(comments => {
