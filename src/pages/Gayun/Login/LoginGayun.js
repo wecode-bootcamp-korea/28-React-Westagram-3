@@ -52,7 +52,9 @@ function LoginGayun() {
               placeholder="  비밀번호"
             />
           </div>
-          <button className="button">로그인</button>
+          <button className={validState ? 'button active' : 'button'}>
+            로그인
+          </button>
           {validState ? (
             ''
           ) : (
