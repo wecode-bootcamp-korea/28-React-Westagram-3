@@ -5,6 +5,46 @@
 
 .side-bar {
   width: 15rem;
+
+  .account {
+    display: flex;
+    align-items: center;
+    margin-top: $doubleSpace;
+    padding: $space;
+
+    .img-container {
+      margin-right: $space;
+
+      img {
+        width: $imgContainerL;
+        height: $imgContainerL;
+        border-radius: $imgBorderRadius;
+      }
+    }
+
+    .id {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .main {
+        font-weight: 700;
+      }
+
+      .sub {
+        display: flex;
+
+        .divider {
+          margin: 0 $space 0 $space;
+        }
+
+        .kor {
+          color: grey;
+        }
+      }
+    }
+  }
+
   .story {
     display: flex;
     flex-direction: column;

@@ -6,6 +6,19 @@ function SideBar() {
   console.log(storyData);
   return (
     <aside className="side-bar">
+      <div className="account">
+        <div className="img-container">
+          <img src="images/Gayun/profile-img.jpg" alt="" />
+        </div>
+        <div className="id">
+          <p className="main">Account</p>
+          <div className="sub">
+            <p className="eng">account</p>
+            <p className="divider">|</p>
+            <p className="kor">계정</p>
+          </div>
+        </div>
+      </div>
       <article class="story">
         <div class="header">
           <h4>스토리</h4>
