@@ -1,10 +1,8 @@
-@use '../../../styles/reset.scss';
-@use '../../../styles/common.scss' as c;
 @use '../../../styles/variables.scss' as v;
 @use '../../../components/Footer/Footer.scss';
 
 /* 전체 */
-.login {
+.login_minah {
   width: 100%;
   min-height: 100vh;
   height: 100%;

@@ -1,0 +1,196 @@
+@use '../MainMinah.scss';
+
+/* navigation */
+header {
+  height: 60px;
+
+  nav {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .nav_wrap {
+      width: 100%;
+      max-width: 975px;
+      height: 60px;
+      margin: 0 auto;
+      padding: 0 20px;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      position: relative;
+
+      .logo_box {
+        max-width: 360px;
+        width: 100%;
+
+        a {
+          h1 {
+            font-family: 'Rochester';
+            font-size: 1.6rem;
+            color: #000;
+          }
+        }
+      }
+
+      /* search box */
+      .search_box {
+        width: 100%;
+        max-width: 268px;
+        height: 36px;
+
+        input {
+          width: 100%;
+          height: 100%;
+          border: 1px solid #dbdbdb;
+          border-radius: 3px;
+          padding: 0 10px;
+          background-color: #fafafa;
+
+          &::placeholder {
+            color: #8e8e8e;
+            background-image: url('../../../../assets/images/magnifier.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0;
+            filter: opacity(0.5) drop-shadow(0 0 0 #8e8e8e);
+          }
+
+          &:focus {
+            outline: 0;
+          }
+        }
+      }
+
+      /* icons */
+      .icons_box {
+        width: 100%;
+        max-width: 360px;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+          width: 22px;
+          height: 22px;
+          margin-left: 22px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.rotateimg180 {
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+          }
+
+          &.profile {
+            margin: 0;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+        }
+
+        button {
+          width: 24px;
+          height: 24px;
+          margin: 0;
+          padding: 0;
+          outline: 0;
+          border-radius: 50%;
+          margin-left: 22px;
+
+          &:focus {
+            outline: 1px solid black;
+          }
+        }
+      }
+
+      /* account submenu */
+      .account_menu {
+        position: absolute;
+        max-width: 230px;
+        top: 60px;
+        right: 0px;
+        border-radius: 5px;
+        background-color: #fff;
+        font-size: 0.875rem;
+        box-shadow: 0 0 5px #dbdbdb;
+        z-index: 6;
+
+        &::before {
+          content: '';
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: -10px;
+          right: 22px;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+          background-color: #fff;
+          box-shadow: -3px -3px 7px 0 #dbdbdb;
+        }
+
+        .account_menu_wrap {
+          display: flex;
+          flex-direction: column;
+
+          .account_submenu {
+            width: 230px;
+            height: 37px;
+            padding: 8px 16px;
+            display: flex;
+            line-height: 16px;
+            align-items: center;
+
+            img {
+              width: 16px;
+              height: 16px;
+              vertical-align: middle;
+            }
+
+            span {
+              padding-left: 16px;
+            }
+          }
+        }
+
+        .logout {
+          padding: 10px 16px 15px 16px;
+          border-top: 1px solid #dbdbdb;
+        }
+
+        .account_submenu:hover,
+        .logout:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

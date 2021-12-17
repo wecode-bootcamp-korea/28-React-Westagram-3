@@ -1,3 +1,5 @@
+import './Story.scss';
+
 export default function Story() {
   return (
       <div className="story_box">

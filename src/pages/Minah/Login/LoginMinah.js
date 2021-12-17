@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../../components/Footer/Footer";
+import '../../../styles/reset.scss';
+import '../../../styles/common.scss';
 import './LoginMinah.scss';
 
 export default function LoginMinah() {
@@ -33,7 +35,7 @@ export default function LoginMinah() {
     }
 
     return (
-        <div className="login">
+        <div className="login_minah">
             <main>
                 <div className="login_box">
                     <h1>Westagram</h1>

@@ -1,3 +1,5 @@
+import './Feed.scss';
+
 export default function Feed() {
   return (
       <div className="post_box">

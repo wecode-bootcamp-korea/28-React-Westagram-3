@@ -1,6 +1,8 @@
+import './Aside.scss';
+
 export default function Aside() {
   return (
-      <div className="aside_wrap">
+      <div className="aside_wrap_minah">
           <div className="aside_account">
               <div className="aside_profile story_old_border">
                   <img src="images/Minah/Main/profile.jpg" className="account_photo" alt="내 프로필" />

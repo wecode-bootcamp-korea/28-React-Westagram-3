@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './NavigationBar.scss';
 
 export default function NavigationBar() {
 
