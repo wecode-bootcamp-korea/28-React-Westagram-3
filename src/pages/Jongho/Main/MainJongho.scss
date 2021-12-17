@@ -8,7 +8,7 @@ body {
 }
 
 // Main
-$navbar-height: 35px;
+// $navbar-height: 35px;
 
 @mixin side-wraper-layout {
   width: 20vw;
@@ -22,69 +22,6 @@ footer {
 
 .mainJongho {
   background-color: #fafafa;
-
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    border-bottom: 1.5px solid variables.$border-color;
-
-    nav {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      padding: 15px 0px;
-      background-color: white;
-
-      img {
-        height: $navbar-height;
-      }
-      #searchBlock {
-        @include variables.flex-center;
-        border: 1px solid variables.$border-color;
-        border-radius: 5px;
-        width: 20%;
-
-        img {
-          height: 1rem;
-          opacity: 0.5;
-        }
-        input {
-          height: $navbar-height;
-          width: 40px;
-
-          &:placeholder {
-            color: variables.$sub-text-color;
-          }
-          &:focus {
-            width: 60%;
-          }
-        }
-      }
-      #symbolBlock {
-        @include variables.flex-center;
-        width: 20%;
-
-        .instagramLogo {
-          font-size: 35px;
-          font-family: 'Lobster', cursive;
-
-          &:before {
-            padding: 0 40px;
-            content: '|';
-          }
-        }
-      }
-      #otherContents {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 20%;
-        padding: 0 80px;
-      }
-    }
-  }
 
   main {
     display: flex;
@@ -129,31 +66,31 @@ footer {
       display: block;
       width: 100%;
     }
-    .profileBlock {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 15px;
-      background-color: white;
+    // .profileBlock {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   padding: 10px 15px;
+    //   background-color: white;
 
-      .profileAccount {
-        display: flex;
-        align-items: center;
-        width: 50%;
-        // height: 100%;
-        background-color: white;
+    //   .profileAccount {
+    //     display: flex;
+    //     align-items: center;
+    //     width: 50%;
+    //     // height: 100%;
+    //     background-color: white;
 
-        .profileImage {
-          height: 50px;
-          margin-right: 10px;
-          border: 0.5px solid variables.$border-color;
-          border-radius: 50%;
-        }
-      }
-      .fa-ellipsis-h {
-        color: #262626;
-      }
-    }
+    //     .profileImage {
+    //       height: 50px;
+    //       margin-right: 10px;
+    //       border: 0.5px solid variables.$border-color;
+    //       border-radius: 50%;
+    //     }
+    //   }
+    //   .fa-ellipsis-h {
+    //     color: #262626;
+    //   }
+    // }
   }
 
   .toolBox {

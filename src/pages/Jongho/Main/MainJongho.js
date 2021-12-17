@@ -2,77 +2,24 @@ import React from 'react';
 import './MainJongho.scss';
 import Footer from '../../../components/Footer/Footer';
 import '../../../components/Footer/Footer.scss';
+import NavJongho from '../Nav/NavJongho';
+import ProfileBlock from '../Feed/Profile/ProfileBlock';
+import ToolBox from '../Feed/ToolBox/ToolBox';
 
 function Main() {
   return (
     <div class="mainJongho">
-      <header>
-        <nav>
-          <div id="symbolBlock">
-            <img
-              class="instaImg"
-              src="/images/Jongho/Main/instagram-logo.png"
-              alt="instagram logo"
-            />
-            <span class="instagramLogo">Instagram</span>
-          </div>
-          <div id="searchBlock">
-            <img
-              class="magnifier"
-              src="/images/Jongho/Main/magnifier.png"
-              alt="돋보기"
-            />
-            <input class="searchInput" type="text" placeholder="검색" />
-          </div>
-          <div id="otherContents">
-            <img
-              class="explore"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-              alt="Explore Button"
-            />
-            <img
-              id="heart"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-              alt="Heart symbol"
-            />
-            <img
-              class="user"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-              alt="Person symbol"
-            />
-          </div>
-        </nav>
-      </header>
+      <NavJongho />
       <main>
         <section>
           <article class="feedContainer">
-            <div class="profileBlock">
-              <div class="profileAccount">
-                <img
-                  class="profileImage"
-                  src="https://user-images.githubusercontent.com/93215875/145150249-bc2e2a6e-bdd0-4c02-9005-1b748cc1a428.jpg"
-                  alt="profile"
-                />
-                <span class="accId">Wecode-Jongho</span>
-              </div>
-              <i class="fas fa-ellipsis-h"></i>
-            </div>
+            <ProfileBlock />
             <img
               class="myFeedImage"
               src="https://user-images.githubusercontent.com/93215875/144997737-23918ede-3150-428b-a491-b8f816d7652b.jpg"
               alt="Mandalorian"
             />
-            <div class="toolBox">
-              <div class="toolBoxThree">
-                <i class="far fa-heart toolBoxElement"></i>
-                <i class="far fa-comment toolBoxElement" id="speechBubble"></i>
-                <i
-                  class="fas fa-external-link-alt toolBoxElement"
-                  id="share"
-                ></i>
-              </div>
-              <i class="far fa-bookmark toolBoxElement"></i>
-            </div>
+            <ToolBox />
             <div class="likeMessageBlock">
               <img
                 class="profileImageLikeMessage"
