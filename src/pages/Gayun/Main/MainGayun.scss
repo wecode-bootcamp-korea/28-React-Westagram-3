@@ -35,6 +35,16 @@ $imgBorderRadius: 3rem;
   border-radius: 3rem;
 }
 
+body {
+  background-color: $plain-bgColor;
+}
+
 .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content {
   display: flex;
 }

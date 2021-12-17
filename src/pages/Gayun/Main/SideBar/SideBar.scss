@@ -9,7 +9,8 @@
     display: flex;
     flex-direction: column;
     padding: $doubleSpace;
-    background-color: var(--white);
+    background-color: white;
+    border: 1px solid $border-color;
 
     .header {
       display: flex;
@@ -65,8 +66,8 @@
     margin-top: 1em;
     padding: $doubleSpace;
     width: 100%;
-    border: 1px solid var(--border-grey);
-    background-color: var(--white);
+    border: 1px solid $border-color;
+    background-color: white;
 
     .header {
       display: flex;

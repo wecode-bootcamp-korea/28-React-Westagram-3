@@ -6,14 +6,14 @@ import SideBar from './SideBar/SideBar';
 
 function MainGayun() {
   return (
-    <>
+    <div className="main">
       <Nav />
       <Story />
-      <div className="main">
+      <div className="main-content">
         <Feeds />
         <SideBar />
       </div>
-    </>
+    </div>
   );
 }
 
