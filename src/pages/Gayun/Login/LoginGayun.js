@@ -8,11 +8,22 @@ function LoginGayun() {
   const idRef = useRef();
   const pwRef = useRef();
   const noticeRef = useRef();
+  const [loginInfo, setLoginInfo] = useState({
+    id: null,
+    password: null,
+  });
   const [validState, setValidState] = useState(true);
 
   function handleInput() {
     const idInputVal = idRef.current.value;
     const pwInputVal = pwRef.current.value;
+
+    const updatedLoginInfo = {
+      id: idInputVal,
+      pw: pwInputVal,
+    };
+    setLoginInfo({ updatedLoginInfo });
+    console.log(updatedLoginInfo);
     const regex = new RegExp('@');
     const validId = regex.exec(idInputVal);
     if (validId && pwInputVal.length >= 5) {

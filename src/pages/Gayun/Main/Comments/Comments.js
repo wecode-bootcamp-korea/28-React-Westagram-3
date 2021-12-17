@@ -1,15 +1,15 @@
 import React from 'react';
 import Comment from '../Comment/Comment';
 
-function Comments(comments) {
+function Comments(comments, handleComment) {
   const commentList = comments.comments;
-  console.log(commentList);
+  handleComment(comments);
   return (
-    <li class="comments">
-      {commentList.map(com => (
-        <Comment comment={com} />
-      ))}
-    </li>
+    <ul class="comments">
+      {/* {commentList.map(com => (
+        <Comment comment={com} handleComment={com => handleComment(com)} />
+      ))} */}
+    </ul>
   );
 }
 

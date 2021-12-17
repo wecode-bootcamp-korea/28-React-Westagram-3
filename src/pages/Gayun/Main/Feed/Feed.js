@@ -17,16 +17,17 @@ function Feed({ feed }) {
   const [comments, setComments] = useState(commentData);
 
   const commentRef = useRef();
-  console.log(feed.comment);
 
-  function deleteComment(comment) {
-    setComments(comments => {
-      const updated = { ...comments };
-      delete updated[comment.id];
-      console.log(updated);
-      return updated;
-    });
-  }
+  // setComments(comments => {
+  //   const updated = { ...comments };
+  //   delete updated[comment.id];
+  //   console.log(updated);
+  //   return updated;
+  // });
+
+  const handleComment = comments => {
+    console.log(comments);
+  };
 
   function handleTextContent(text) {
     if (text.length > 30) {
@@ -94,7 +95,10 @@ function Feed({ feed }) {
         <div class={styles.textContent}>
           {handleTextContent(feed.textContent)}
         </div>
-        <Comments comments={feed.comment} />
+        {/* <Comments
+          comments={feed.comment}
+          // handleComment={() => handleComment(comments)}
+        /> */}
       </section>
       <form class="comment-input">
         <input
