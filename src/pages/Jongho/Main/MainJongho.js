@@ -1,10 +1,11 @@
 import React from 'react';
-import './MainJongho.scss';
 import Footer from '../../../components/Footer/Footer';
 import '../../../components/Footer/Footer.scss';
+import './MainJongho.scss';
 import NavJongho from '../Nav/NavJongho';
-import ProfileBlock from '../Feed/Profile/ProfileBlock';
-import ToolBox from '../Feed/ToolBox/ToolBox';
+import ProfileBlock from './Feed/Profile/ProfileBlock';
+import ToolBox from '../Main/Feed/ToolBox/ToolboxJongho';
+import CommentJongho from './Feed/Comment/CommentJongho';
 
 function Main() {
   return (
@@ -28,24 +29,7 @@ function Main() {
               />
               <span>10명이 좋아합니다</span>
             </div>
-            <div class="commentContainer">
-              <div class="commentsAndButton">
-                <ul class="commentList">
-                  <li class="comments">
-                    <span class="commentId accId">Jongho Yoon</span>
-                    <span class="commentSentence contText">
-                      위코드 프로젝트
-                    </span>
-                  </li>
-                  <li class="comments">
-                    <span class="commentId accId">Jongho Yoon</span>
-                    <span class="commentSentence contText">
-                      위코드 프로젝트
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <CommentJongho />
             <div class="postComment">
               <input
                 class="inputComment"

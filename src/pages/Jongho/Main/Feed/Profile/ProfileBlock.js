@@ -1,6 +1,5 @@
 import React from 'react';
-import '../Profile/ProfileBlock.scss';
-
+import '../../../Main/Feed/Profile/ProfileBlock.scss';
 const ProfileBlock = () => {
   return (
     <div class="profileBlock">

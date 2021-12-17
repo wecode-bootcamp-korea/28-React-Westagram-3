@@ -1,4 +1,6 @@
 import React from 'react';
+// import '../ToolBox/ToolboxJongho.scss';
+import '../../../Main/Feed/ToolBox/ToolboxJongho.scss';
 
 const ToolBox = () => {
   return (

@@ -1,0 +1,17 @@
+.commentsAndButton {
+  display: flex;
+  padding-left: 20px;
+
+  .commentList {
+    line-height: 1.5;
+
+    .comments {
+      display: flex;
+      justify-content: flex-start;
+
+      span:nth-child(2) {
+        padding-left: 10px;
+      }
+    }
+  }
+}
