@@ -3,12 +3,11 @@ import Comment from '../Comment/Comment';
 
 function Comments(comments, handleComment) {
   const commentList = comments.comments;
-  handleComment(comments);
   return (
     <ul class="comments">
-      {/* {commentList.map(com => (
-        <Comment comment={com} handleComment={com => handleComment(com)} />
-      ))} */}
+      {commentList.map(com => (
+        <Comment comment={com} handleComment={handleComment} />
+      ))}
     </ul>
   );
 }

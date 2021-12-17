@@ -10,24 +10,16 @@ import { TiDelete } from 'react-icons/ti';
 import Comments from '../Comments/Comments';
 
 function Feed({ feed }) {
-  const feedData = feed;
   const commentData = feed.comment;
-
-  const [feedState, setFeedState] = useState({ feed });
   const [comments, setComments] = useState(commentData);
 
   const commentRef = useRef();
 
-  // setComments(comments => {
-  //   const updated = { ...comments };
-  //   delete updated[comment.id];
-  //   console.log(updated);
-  //   return updated;
-  // });
-
-  const handleComment = comments => {
-    console.log(comments);
-  };
+  function handleComment(comment) {
+    const updated = { ...comments };
+    delete updated[comment.id];
+    return updated;
+  }
 
   function handleTextContent(text) {
     if (text.length > 30) {
@@ -95,10 +87,7 @@ function Feed({ feed }) {
         <div class={styles.textContent}>
           {handleTextContent(feed.textContent)}
         </div>
-        {/* <Comments
-          comments={feed.comment}
-          // handleComment={() => handleComment(comments)}
-        /> */}
+        <Comments comments={feed.comment} handleComment={handleComment} />
       </section>
       <form class="comment-input">
         <input

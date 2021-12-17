@@ -2,9 +2,7 @@ import React from 'react';
 import { TiDelete } from 'react-icons/ti';
 
 function Comment({ comment, handleComment }) {
-  const onDelete = comment => {
-    const id = comment.id;
-    console.log(id);
+  const onDelete = () => {
     handleComment(comment);
   };
 
