@@ -4,12 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 50rem;
   height: 3rem;
-  border-bottom: 1px solid var(--border-grey);
-  background-color: var(--white);
+  border-bottom: 1px solid lightgray;
+  background-color: $plain-bgColor;
 
   .logo {
     display: flex;

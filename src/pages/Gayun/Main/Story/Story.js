@@ -4,7 +4,7 @@ import './Story.scss';
 
 function Story() {
   return (
-    <div className="story">
+    <div className="story-top">
       {storiesData.map(story => (
         <span class="container">
           <div class="img-container">

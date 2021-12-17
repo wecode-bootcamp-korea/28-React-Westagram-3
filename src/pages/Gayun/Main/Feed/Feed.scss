@@ -133,5 +133,10 @@
       border: none;
       outline: none;
     }
+
+    button {
+      font-weight: 700;
+      color: $button-deactive;
+    }
   }
 }

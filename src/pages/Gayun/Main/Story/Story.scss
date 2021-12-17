@@ -3,9 +3,10 @@
 @import '../../../../styles/variables.scss';
 @import '../MainGayun.scss';
 
-.story {
+.story-top {
   display: flex;
-  padding: $space $doubleSpace $space $doubleSpace;
+  padding: $doubleSpace $doubleSpace $space $doubleSpace;
+  width: 50rem;
   overflow-x: scroll;
 
   .container {
@@ -27,4 +28,8 @@
       }
     }
   }
+}
+
+.story-top::-webkit-scrollbar {
+  display: none;
 }
