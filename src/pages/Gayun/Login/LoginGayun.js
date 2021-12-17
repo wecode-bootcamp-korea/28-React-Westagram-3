@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
-import './Login.scss';
+import './LoginGayun.scss';
+import '../../../components/Footer/Footer.scss';
 import '../../../styles/variables.scss';
+import Footer from '../../../components/Footer/Footer';
 
 function LoginGayun() {
   const idRef = useRef();
@@ -48,6 +50,7 @@ function LoginGayun() {
         )}
       </form>
       <div className="forgot-password">비밀번호를 잊으셨나요?</div>
+      <Footer />
     </div>
   );
 }
