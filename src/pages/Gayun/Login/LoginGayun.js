@@ -8,6 +8,7 @@ function LoginGayun() {
   const idRef = useRef();
   const pwRef = useRef();
   const noticeRef = useRef();
+  const buttonRef = useRef();
   const [loginInfo, setLoginInfo] = useState({
     id: null,
     password: null,
@@ -23,13 +24,14 @@ function LoginGayun() {
       pw: pwInputVal,
     };
     setLoginInfo({ updatedLoginInfo });
-    console.log(updatedLoginInfo);
     const regex = new RegExp('@');
     const validId = regex.exec(idInputVal);
     if (validId && pwInputVal.length >= 5) {
       setValidState(true);
+      buttonRef.current.diabled = false;
     } else {
       setValidState(false);
+      buttonRef.current.diabled = true;
     }
   }
 
@@ -52,7 +54,10 @@ function LoginGayun() {
               placeholder="  비밀번호"
             />
           </div>
-          <button className={validState ? 'button active' : 'button'}>
+          <button
+            ref={buttonRef}
+            className={validState ? 'button active' : 'button'}
+          >
             로그인
           </button>
           {validState ? (

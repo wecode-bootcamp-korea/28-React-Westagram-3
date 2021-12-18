@@ -3,13 +3,14 @@ import { v4 as uuid } from 'uuid';
 import styles from './Feed.scss';
 import { BsSuitHeart } from 'react-icons/bs';
 import { BsBookmark } from 'react-icons/bs';
-import { FiShare2 } from 'react-icons/fi';
+import { FiCornerDownLeft, FiShare2 } from 'react-icons/fi';
 import { FaRegCommentDots } from 'react-icons/fa';
 import { useRef } from 'react/cjs/react.development';
 import { TiDelete } from 'react-icons/ti';
 import Comments from '../Comments/Comments';
 
 function Feed({ feed }) {
+
   const myId = 'me_2032';
   const commentData = feed.comment;
   const [comments, setComments] = useState(commentData);
