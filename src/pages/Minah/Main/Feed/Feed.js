@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import Comment from '../Comment/Comment';
 import './Feed.scss';
 
 export default function Feed() {
@@ -10,7 +11,22 @@ export default function Feed() {
         e.target.style.height = '1px';
         e.target.style.height = `${e.target.scrollHeight}px`;
         setTaHeight(e.target.scrollHeight);
-        console.log(taHeight);
+        if (e.key === 'Enter') {
+            if (!e.shiftKey) {
+                e.preventDefault();
+                e.target.value.replaceAll('\t', '<br />');
+            }
+            if (e.shiftKey) {
+                e.target.value = `${e.target.value + '\t'}`;
+            }
+        }
+    }
+
+    const [commentContent, setCommentContent] = useState('');
+
+    const writeComment = (e) => {
+        let comment = e.target.value;
+        setCommentContent(comment);
     }
 
     return (
@@ -65,7 +81,9 @@ export default function Feed() {
                                     <p>달콤한 크리스마스 쿠키들이 준비되었습니다. 베이커리 각 지점 방문 시 구매할 수 있습니다.</p>
                                 </div>
                                 <div className="post_reply">
-                                    <ul className="reply_wrap"></ul>
+                                    <ul className="reply_wrap">
+                                        <Comment />
+                                    </ul>
                                 </div>
                                 <div className="post_created_at">
                                     <p>4시간 전</p>
@@ -75,8 +93,8 @@ export default function Feed() {
                                 <button className="emoticon_btn">
                                     <img alt="이모티콘" src="images/Minah/Main/smile.png" className="emoticon" />
                                 </button>
-                                <textarea placeholder="댓글 달기..." className="write_reply" ref={textAreaHeight} onKeyDown={resizeTextarea} onKeyUp={resizeTextarea}></textarea>
-                                <button className="submit_reply" disabled>게시</button>
+                                <textarea placeholder="댓글 달기..." className="write_reply" onChange={writeComment} ref={textAreaHeight} onKeyDown={resizeTextarea} onKeyUp={resizeTextarea}></textarea>
+                                <button className="submit_reply" disabled={commentContent.length > 0 ? false : true}>게시</button>
                             </div>
                         </div>
                     </div>
@@ -129,7 +147,11 @@ export default function Feed() {
                                     <a href="https://www.instagram.com/mina_0120/">my1nsta</a>
                                     <p>.<br />aurora night</p>
                                 </div>
-                                <div className="post_reply"></div>
+                                <div className="post_reply">
+                                    <ul className="reply_wrap">
+                                        <Comment />
+                                    </ul>
+                                </div>
                                 <div className="post_created_at">
                                     <p>6시간 전</p>
                                 </div>
@@ -138,13 +160,13 @@ export default function Feed() {
                                 <button className="emoticon_btn">
                                     <img alt="이모티콘" src="images/Minah/Main/smile.png" className="emoticon" />
                                 </button>
-                                <textarea placeholder="댓글 달기..." className="write_reply" ref={textAreaHeight} onKeyDown={resizeTextarea} onKeyUp={resizeTextarea}></textarea>
-                                <button className="submit_reply" disabled>게시</button>
+                                <textarea placeholder="댓글 달기..." className="write_reply" onChange={writeComment} ref={textAreaHeight} onKeyDown={resizeTextarea} onKeyUp={resizeTextarea}></textarea>
+                                <button className="submit_reply" disabled={commentContent.length > 0 ? false : true}>게시</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </article>
-        </div>
+            </article >
+        </div >
     );
 }

@@ -241,6 +241,10 @@
                 cursor: default;
               }
 
+              &:not([disabled]) {
+                color: rgba(0, 149, 246, 1);
+              }
+
               &:not([disabled]):hover {
                 cursor: pointer;
               }
