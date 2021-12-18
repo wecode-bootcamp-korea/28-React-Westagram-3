@@ -6,6 +6,7 @@ import NavJongho from '../Nav/NavJongho';
 import ProfileBlock from './Feed/Profile/ProfileBlock';
 import ToolBox from '../Main/Feed/ToolBox/ToolboxJongho';
 import CommentJongho from './Feed/Comment/CommentJongho';
+import AddCommentJongho from './Feed/Comment/AddCommentJongho';
 
 function Main() {
   return (
@@ -30,14 +31,7 @@ function Main() {
               <span>10명이 좋아합니다</span>
             </div>
             <CommentJongho />
-            <div class="postComment">
-              <input
-                class="inputComment"
-                type="text"
-                placeholder="댓글 달기..."
-              />
-              <button class="pushComment-Btn">게시</button>
-            </div>
+            <AddCommentJongho />
           </article>
         </section>
         <section>

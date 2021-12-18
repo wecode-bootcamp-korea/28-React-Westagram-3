@@ -107,29 +107,29 @@ footer {
   //   }
   // }
 
-  .postComment {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid variables.$border-color;
-    margin-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+  // .postComment {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   border-top: 1px solid variables.$border-color;
+  //   margin-top: 10px;
+  //   padding-left: 20px;
+  //   padding-right: 20px;
 
-    button {
-      border: 0;
-      color: variables.$button-deactive;
-      font-size: 20px;
-      background-color: white;
-    }
-    input {
-      height: 50px;
-      font-size: 20px;
+  //   button {
+  //     border: 0;
+  //     color: variables.$button-deactive;
+  //     font-size: 20px;
+  //     background-color: white;
+  //   }
+  //   input {
+  //     height: 50px;
+  //     font-size: 20px;
 
-      &:placeholder {
-        color: variables.$sub-text-color;
-      }
-    }
-  }
+  //     &:placeholder {
+  //       color: variables.$sub-text-color;
+  //     }
+  //   }
+  // }
 
   .myAccount {
     @include side-wraper-layout;
