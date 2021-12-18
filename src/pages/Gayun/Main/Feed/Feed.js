@@ -10,15 +10,29 @@ import { TiDelete } from 'react-icons/ti';
 import Comments from '../Comments/Comments';
 
 function Feed({ feed }) {
+  const myId = 'me_2032';
   const commentData = feed.comment;
   const [comments, setComments] = useState(commentData);
-
   const commentRef = useRef();
 
-  function handleComment(comment) {
-    const updated = { ...comments };
-    delete updated[comment.id];
-    return updated;
+  function deleteComment(comment) {
+    const updated = comments;
+    const filtered = updated.filter(com => {
+      return com.id !== comment.id;
+    });
+    setComments(filtered);
+  }
+
+  function addComment(e) {
+    e.preventDefault();
+    let updated = comments;
+    const newCommentVal = commentRef.current.value;
+    updated = [
+      ...updated,
+      { id: uuid(), commentId: myId, commentText: newCommentVal },
+    ];
+    setComments(updated);
+    commentRef.current.value = '';
   }
 
   function handleTextContent(text) {
@@ -87,7 +101,7 @@ function Feed({ feed }) {
         <div class={styles.textContent}>
           {handleTextContent(feed.textContent)}
         </div>
-        <Comments comments={feed.comment} handleComment={handleComment} />
+        <Comments comments={comments} deleteComment={deleteComment} />
       </section>
       <form class="comment-input">
         <input
@@ -96,7 +110,7 @@ function Feed({ feed }) {
           class="text"
           ref={commentRef}
         />
-        <button>게시</button>
+        <button onClick={addComment}>게시</button>
       </form>
     </article>
   );

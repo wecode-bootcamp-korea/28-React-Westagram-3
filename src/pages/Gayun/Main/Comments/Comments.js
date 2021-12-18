@@ -1,12 +1,13 @@
 import React from 'react';
 import Comment from '../Comment/Comment';
 
-function Comments(comments, handleComment) {
-  const commentList = comments.comments;
+function Comments({ comments, deleteComment }) {
+  console.log(comments);
+  const commentList = comments;
   return (
     <ul class="comments">
       {commentList.map(com => (
-        <Comment comment={com} handleComment={handleComment} />
+        <Comment comment={com} deleteComment={deleteComment} />
       ))}
     </ul>
   );

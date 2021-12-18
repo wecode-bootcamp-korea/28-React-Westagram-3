@@ -1,9 +1,9 @@
 import React from 'react';
 import { TiDelete } from 'react-icons/ti';
 
-function Comment({ comment, handleComment }) {
+function Comment({ comment, deleteComment }) {
   const onDelete = () => {
-    handleComment(comment);
+    deleteComment(comment);
   };
 
   return (
