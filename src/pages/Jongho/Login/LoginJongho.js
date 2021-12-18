@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './LoginJongho.scss';
 import Footer from '../../../components/Footer/Footer';
 import '../../../components/Footer/Footer.scss';
+import IdJongho from './Input/IdJongho';
+import PwJongho from './Input/PwJongho';
 
 function LoginJongho() {
   return (
@@ -13,19 +15,13 @@ function LoginJongho() {
             <div class="outerBox">
               <div class="innerBox">
                 <span class="logo">Westagram</span>
-                <input
-                  class="email"
-                  type="text"
-                  placeholder="전화번호, 사용자 이름 또는 이메일"
-                />
-                <input
-                  class="password"
-                  type="password"
-                  placeholder="Password"
-                />
-                <Link to="/mainjongho">
-                  <button class="loginBtn">로그인</button>
-                </Link>
+                <form>
+                  <IdJongho />
+                  <PwJongho />
+                  <Link to="/mainjongho">
+                    <button class="loginBtn">로그인</button>
+                  </Link>
+                </form>
               </div>
             </div>
           </article>
