@@ -1,3 +1,1 @@
-export default function MainHojin() {
-  
-}
+export default function MainHojin() {}

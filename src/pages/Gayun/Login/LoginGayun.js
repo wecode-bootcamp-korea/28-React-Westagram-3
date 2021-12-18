@@ -1,8 +1,11 @@
+// eslint-disable
+
 import React, { useRef, useState } from 'react';
 import './LoginGayun.scss';
 import '../../../components/Footer/Footer.scss';
 import '../../../styles/variables.scss';
 import Footer from '../../../components/Footer/Footer';
+import { useNavigate } from 'react-router';
 
 function LoginGayun() {
   const idRef = useRef();
@@ -13,7 +16,8 @@ function LoginGayun() {
     id: null,
     password: null,
   });
-  const [validState, setValidState] = useState(true);
+  const [validState, setValidState] = useState(false);
+  const navigate = useNavigate();
 
   function handleInput() {
     const idInputVal = idRef.current.value;
@@ -28,18 +32,30 @@ function LoginGayun() {
     const validId = regex.exec(idInputVal);
     if (validId && pwInputVal.length >= 5) {
       setValidState(true);
-      buttonRef.current.diabled = false;
+      buttonRef.current.disabled = false;
     } else {
       setValidState(false);
-      buttonRef.current.diabled = true;
+      buttonRef.current.disabled = true;
     }
+  }
+
+  function goToMain() {
+    // e.preventDefault();
+    navigate('/maingayun');
+    console.log('dd');
   }
 
   return (
     <div className="login">
       <div className="container">
         <h1 className="logo">Westagram</h1>
-        <form className="form" onChange={handleInput}>
+        <div
+          className="form"
+          onChange={handleInput}
+          onSubmit={() => {
+            return false;
+          }}
+        >
           <div className="input">
             <input
               type="text"
@@ -55,8 +71,10 @@ function LoginGayun() {
             />
           </div>
           <button
+            disabled={validState ? false : true}
             ref={buttonRef}
             className={validState ? 'button active' : 'button'}
+            onClick={goToMain}
           >
             로그인
           </button>
@@ -67,7 +85,7 @@ function LoginGayun() {
               아이디는 @를 포함하고, 비밀번호는 5글자 이상이어야 합니다.
             </p>
           )}
-        </form>
+        </div>
         <p className="forgot-password">비밀번호를 잊으셨나요?</p>
         <Footer />
       </div>

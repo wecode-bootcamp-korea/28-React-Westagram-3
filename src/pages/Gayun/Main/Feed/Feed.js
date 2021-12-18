@@ -10,7 +10,6 @@ import { TiDelete } from 'react-icons/ti';
 import Comments from '../Comments/Comments';
 
 function Feed({ feed }) {
-
   const myId = 'me_2032';
   const commentData = feed.comment;
   const [comments, setComments] = useState(commentData);
