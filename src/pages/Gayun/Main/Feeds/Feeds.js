@@ -21,6 +21,7 @@ function Feeds() {
   return (
     <div className="feeds">
       {feeds && feeds.map(feed => <Feed key={uuid()} feed={feed} />)}
+      <div className="feed-end">feedEnd</div>
     </div>
   );
 }
