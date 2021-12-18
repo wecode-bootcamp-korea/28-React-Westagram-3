@@ -1,10 +1,11 @@
 import React from 'react';
 import './SideBar.scss';
 import storyData from '../../data/story.json';
+import { v4 as uuid } from 'uuid';
 
 function SideBar() {
   return (
-    <aside className="side-bar">
+    <aside key={uuid()} className="side-bar">
       <div className="account">
         <div className="img-container">
           <img src="images/Gayun/profile-img.jpg" alt="" />
@@ -25,7 +26,7 @@ function SideBar() {
         </div>
         <ul class="list collapse">
           {storyData.map(story => (
-            <li class="item">
+            <li key={uuid()} class="item">
               <span class="img-container">
                 <img
                   src={`images/Gayun/${story.profileImg}`}

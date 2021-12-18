@@ -1,13 +1,13 @@
 import React from 'react';
 import Comment from '../Comment/Comment';
+import { v4 as uuid } from 'uuid';
 
 function Comments({ comments, deleteComment }) {
-  console.log(comments);
   const commentList = comments;
   return (
     <ul class="comments">
       {commentList.map(com => (
-        <Comment comment={com} deleteComment={deleteComment} />
+        <Comment key={uuid()} comment={com} deleteComment={deleteComment} />
       ))}
     </ul>
   );
