@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
 
-const PwJongho = () => {
-  const [pw, setPw] = useState('');
-
-  function handlePwInput(e) {
-    setPw(e.target.value);
-  }
-
+const PwJongho = props => {
   return (
     <div>
       <input
-        onChange={e => handlePwInput(e)}
-        id="getPassword"
+        onChange={event => props.userPw(event.target.value)}
+        id="pwInput"
         className="password"
         type="password"
         placeholder="Password"
       />
-      <div>{pw}</div>
     </div>
   );
 };
