@@ -6,7 +6,6 @@ import NavJongho from '../Nav/NavJongho';
 import ProfileBlock from './Feed/Profile/ProfileBlock';
 import ToolBox from '../Main/Feed/ToolBox/ToolboxJongho';
 import CommentJongho from './Feed/Comment/CommentJongho';
-import AddCommentJongho from './Feed/Comment/AddCommentJongho';
 
 function Main() {
   return (
@@ -31,7 +30,7 @@ function Main() {
               <span>10명이 좋아합니다</span>
             </div>
             <CommentJongho />
-            <AddCommentJongho />
+            {/* <AddCommentJongho /> */}
           </article>
         </section>
         <section>
