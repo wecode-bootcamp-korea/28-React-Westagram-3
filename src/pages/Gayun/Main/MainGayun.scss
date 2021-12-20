@@ -56,7 +56,19 @@ $loadingColor: rgba(219,219,219,1);
 
 @mixin feedContentsWrap {
   padding: $space $doubleSpace $space $doubleSpace;
+}
 
+@mixin loading {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba($color: $loadingColor, $alpha: 0.4);
+    border-radius: 50%;
+    border-top-color: $loadingColor;
+    animation: spin 1s ease-in-out infinite;
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
 }
 
 body {

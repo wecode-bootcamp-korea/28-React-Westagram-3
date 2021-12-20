@@ -39,17 +39,9 @@
     border: 1px solid $border-color;
 
     .loading {
-        width: 60px;
-        height: 60px;
-        border: 4px solid rgba($color: $loadingColor, $alpha: 0.4);
-        border-radius: 50%;
-        border-top-color: $loadingColor;
-        animation: spin 1s ease-in-out infinite;
-      }
+      @include loading;
+    }
 
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
 
   }
 

@@ -6,12 +6,19 @@ import Skeleton from '../Skeleton/Skeleton';
 
 function Feeds() {
   const [feeds, setFeeds] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoadedMore, setIsLoadedMore] = useState(false);
   const feedEndRef = useRef();
-  let loadNum = 0;
 
   async function loadFeedData(num) {
     const data = await (await fetch(`data/feed${num}.json`)).json();
-    await setFeeds(data);
+    await setTimeout(() => {
+      setFeeds(data);
+      setIsLoaded(() => {
+        return true;
+      });
+      console.log(isLoaded);
+    });
     await startObserve();
   }
 
@@ -21,33 +28,30 @@ function Feeds() {
 
   async function loadMoreFeed(num) {
     const data = await (await fetch(`data/feed${num}.json`)).json();
-    const updated = await feeds.concat(data);
-    console.log(updated);
-    await setFeeds(feeds => {
-      return feeds.concat(data);
+    await setTimeout(() => {
+      setFeeds(feeds => {
+        return feeds.concat(data);
+      });
     });
+    await setIsLoaded(() => {
+      return true;
+    });
+    console.log(isLoaded);
   }
 
   useEffect(() => {
     loadFeedData(0);
   }, []);
 
-  let loaded = false;
-
   const callback = (entry, observer) => {
     if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
-      console.log('dd');
-
-      // if (loaded === false) {
-      // loadNum++;
+      setIsLoadedMore(() => {
+        return false;
+      });
       setTimeout(() => {
         loadMoreFeed(1);
-      }, 1000);
-      // }
-      // loaded = true;
-      // observer.unobserve(feedEndRef.current);
+      }, 5000);
     } else {
-      // observer.unobserve(feedEndRef.current);
     }
   };
 
@@ -66,11 +70,13 @@ function Feeds() {
   return (
     <div className="feeds">
       <div className="feed-container">
-        {/* {feeds && feeds.map(feed => <Feed key={uuid()} feed={feed} />)} */}
-        {feeds && feeds.map(feed => <Skeleton key={uuid} />)}
+        {isLoaded ? console.log('loaded!') : console.log('not yet...')}
+        {isLoaded
+          ? feeds.map(feed => <Feed key={uuid()} feed={feed} />)
+          : feeds && feeds.map(feed => <Skeleton key={uuid()} />)}
       </div>
       <div className="feed-end" ref={feedEndRef}>
-        feedEnd
+        <div className="loading" />
       </div>
     </div>
   );
