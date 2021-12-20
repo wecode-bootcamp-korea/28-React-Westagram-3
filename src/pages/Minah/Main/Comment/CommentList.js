@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Comment from './Comment.js';
 
 export default function CommentList(props) {

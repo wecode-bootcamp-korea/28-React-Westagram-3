@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import CommentList from '../Comment/CommentList';
 import './Feed.scss';
 
@@ -15,6 +15,7 @@ export default function Feed(props) {
             if (!e.shiftKey) {
                 e.preventDefault();
                 e.target.value.replaceAll('\t', '<br />');
+                postNewComment(commentContent);
             }
             if (e.shiftKey) {
                 e.target.value = `${e.target.value + '\t'}`;
@@ -22,22 +23,27 @@ export default function Feed(props) {
         }
     }
 
-    const [newCommentList, setNewCommentList] = useState([]);
     const [commentContent, setCommentContent] = useState('');
 
     const writeComment = (e) => {
-        let content = e.target.value;
-        let comment = {
+        const content = e.target.value;
+        const comment = {
             "id": props.commentList.length + 1,
-            "userId": "my1nsta",
+            "userId": sessionStorage.getItem("userId"),
             "comment": content,
             "isLiked": false
         }
         setCommentContent(comment);
     }
 
-    const postComment = () => {
-        console.log(111);
+    const postNewComment = (commentContent) => {
+        props.postComment(commentContent);
+        setCommentContent({
+            "id": props.commentList.length + 1,
+            "userId": sessionStorage.getItem("userId"),
+            "comment": content,
+            "isLiked": false
+        });
     }
 
     return (
@@ -101,7 +107,7 @@ export default function Feed(props) {
                                     <img alt="이모티콘" src="images/Minah/Main/smile.png" className="emoticon" />
                                 </button>
                                 <textarea placeholder="댓글 달기..." className="write_reply" onChange={writeComment} ref={textAreaHeight} onKeyDown={resizeTextarea} onKeyUp={resizeTextarea}></textarea>
-                                <button className="submit_reply" disabled={commentContent["comment"] ? false : true}>게시</button>
+                                <button className="submit_reply" onClick={() => postNewComment(commentContent)} disabled={commentContent["comment"] ? false : true}>게시</button>
                             </div>
                         </div>
                     </div>

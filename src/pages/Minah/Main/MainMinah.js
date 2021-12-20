@@ -5,7 +5,7 @@ import Story from "./Story/Story";
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 import './MainMinah.scss';
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function MainMinah() {
 
@@ -20,6 +20,10 @@ export default function MainMinah() {
     fetchData();
   }, []);
 
+  const postComment = useCallback((commentContent) => {
+    setCommentList([...commentList, commentContent]);
+  }, [commentList]);
+
   return (
     commentList.length > 0 && (
       <div className="main_minah">
@@ -27,7 +31,7 @@ export default function MainMinah() {
         <main>
           <section>
             <Story />
-            <Feed commentList={commentList} />
+            <Feed commentList={commentList} postComment={(commentContent) => postComment(commentContent)} />
           </section>
           <aside>
             <Aside />

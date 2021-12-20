@@ -11,7 +11,10 @@ export default function LoginMinah() {
 
     const handleIdInput = (e) => {
         setUserId(e.target.value);
+        sessionStorage.setItem("userId", userId);
     }
+
+    console.log(sessionStorage.getItem("userId"));
 
     const handlePwInput = (e) => {
         setUserPw(e.target.value);
