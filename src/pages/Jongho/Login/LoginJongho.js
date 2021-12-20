@@ -22,19 +22,10 @@ function LoginJongho() {
   };
 
   const valid = () => {
-    console.log('valid', pw); // 2
     setActive(id.indexOf('@') !== -1 && pw.length >= 5 ? true : false);
-    console.log(active);
-    // return id.indexOf('@') !== -1 && pw.length >= 5
-    //   ? loginBtn.setAttribute('style', 'background-color: rgba(0, 149, 246, 1)')
-    //   : loginBtn.setAttribute(
-    //       'style',
-    //       'background-color: rgba(0, 149, 246, 0.3)'
-    //     );
   };
 
   useEffect(() => {
-    console.log('use effect');
     valid();
   }, [id, pw]);
 

@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
+import Function from '../../../../Main/Function';
 
 const AddCommentJongho = props => {
   const [newInfo, setInfo] = useState({});
+  const inputElement = document.getElementsByClassName('inputComment')[0];
 
-  function test1() {
-    console.log('jongho');
+  function confirmEnter(event) {
+    console.log(event.key);
+    if (event.key === 'Enter') {
+      inputElement.value = null;
+      return props.addUserInfo(newInfo);
+    }
   }
 
   return (
     <div class="postComment">
       <input
+        onKeyPress={event => confirmEnter(event)}
         onChange={event =>
           setInfo({
             id: null,
@@ -17,13 +24,16 @@ const AddCommentJongho = props => {
             comment: event.target.value,
           })
         }
-        class="inputComment"
+        className="inputComment"
         type="text"
         placeholder="댓글 달기..."
       />
       <button
-        onClick={() => props.addUserInfo(newInfo)}
-        class="pushComment-Btn"
+        onClick={() => {
+          inputElement.value = null;
+          return props.addUserInfo(newInfo);
+        }}
+        className="pushComment-Btn"
       >
         게시
       </button>

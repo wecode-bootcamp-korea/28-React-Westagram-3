@@ -23,12 +23,12 @@ const CommentJongho = () => {
     },
   ]);
 
-  const newComment = newUserComment => {
-    newUserComment.id = comments.length;
+  const addUserInfo = newUserComment => {
+    newUserComment.id = comments.length + 1;
+    console.log(newUserComment);
     comments.push(newUserComment);
 
-    setComment(state => [...state]); // 새 배열을 만들어 넣어준거
-    // setComment(state => state); // 기존의 거 그대로 돌려준거 -> KEY값이 안변했겠죠 = 리액트가 바뀐걸 모른다
+    setComment(state => [...state]);
   };
 
   return (
@@ -42,11 +42,9 @@ const CommentJongho = () => {
               comment={comt.comment}
             />
           ))}
-          {/* {refreshComment()} */}
         </ul>
       </div>
-      <AddCommentJongho addUserInfo={newComment} />
-      {/* <button onClick={() => func()}>확인버튼</button> */}
+      <AddCommentJongho addUserInfo={addUserInfo} />
     </>
   );
 };
