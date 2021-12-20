@@ -3,6 +3,7 @@ import Nav from './Nav/Nav';
 import Feeds from './Feeds/Feeds';
 import Story from './Story/Story';
 import SideBar from './SideBar/SideBar';
+import Skeleton from './Skeleton/Skeleton';
 
 function MainGayun() {
   return (

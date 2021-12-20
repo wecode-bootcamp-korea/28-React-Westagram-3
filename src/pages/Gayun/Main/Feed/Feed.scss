@@ -4,16 +4,12 @@
 @import '../MainGayun.scss';
 
 .feed {
-  width: 30rem;
-  margin-bottom: 3rem;
+  @include feed;
   border: 1px solid $border-color;
   background-color: white;
 
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: $space 0.8rem $space 0.8rem;
+    @include feedHeader;
     border-bottom: 1px solid $border-color;
 
     .uploader {
@@ -36,8 +32,7 @@
   }
 
   .img-content {
-    height: 20rem;
-    overflow: hidden;
+    @include feedImgContent;
 
     img {
       width: 100%;
@@ -45,8 +40,7 @@
   }
 
   .contents-wrap {
-    padding: $space $doubleSpace $space $doubleSpace;
-
+    @include feedContentsWrap;
     .button-container {
       display: flex;
       justify-content: space-between;

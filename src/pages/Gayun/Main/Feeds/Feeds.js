@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Feed from '../Feed/Feed';
 import { v4 as uuid } from 'uuid';
 import './Feeds.scss';
+import Skeleton from '../Skeleton/Skeleton';
 
 function Feeds() {
   const [feeds, setFeeds] = useState([]);
@@ -65,7 +66,8 @@ function Feeds() {
   return (
     <div className="feeds">
       <div className="feed-container">
-        {feeds && feeds.map(feed => <Feed key={uuid()} feed={feed} />)}
+        {/* {feeds && feeds.map(feed => <Feed key={uuid()} feed={feed} />)} */}
+        {feeds && feeds.map(feed => <Skeleton key={uuid} />)}
       </div>
       <div className="feed-end" ref={feedEndRef}>
         feedEnd

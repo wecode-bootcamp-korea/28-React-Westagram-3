@@ -7,6 +7,7 @@ import { FiCornerDownLeft, FiShare2 } from 'react-icons/fi';
 import { FaRegCommentDots } from 'react-icons/fa';
 import { useRef } from 'react/cjs/react.development';
 import { TiDelete } from 'react-icons/ti';
+import { BsThreeDots } from 'react-icons/bs';
 import Comments from '../Comments/Comments';
 
 function Feed({ feed }) {
@@ -63,7 +64,7 @@ function Feed({ feed }) {
           <span class="id">{feed.feedId}</span>
         </span>
         <button>
-          <i class="fas fa-ellipsis-h" />
+          <BsThreeDots />
         </button>
       </section>
       <section class="img-content">

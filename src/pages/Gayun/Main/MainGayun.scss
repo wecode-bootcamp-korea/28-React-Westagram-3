@@ -35,6 +35,28 @@ $imgBorderRadius: 3rem;
   border-radius: 3rem;
 }
 
+@mixin feed {
+  width: 30rem;
+  margin-bottom: 3rem;
+}
+
+@mixin feedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space 0.8rem $space 0.8rem;
+}
+
+@mixin feedImgContent {
+  height: 20rem;
+  overflow: hidden;
+}
+
+@mixin feedContentsWrap {
+  padding: $space $doubleSpace $space $doubleSpace;
+
+}
+
 body {
   background-color: $plain-bgColor;
 }
