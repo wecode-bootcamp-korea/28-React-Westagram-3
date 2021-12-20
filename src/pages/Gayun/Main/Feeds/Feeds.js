@@ -48,9 +48,9 @@ function Feeds() {
 
   const callback = (entry, observer) => {
     if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
-      // setIsLoadedMore(() => {
-      //   return false;
-      // });
+      setIsLoadedMore(() => {
+        return false;
+      });
       setTimeout(() => {
         loadMoreFeed(1);
       }, 5000);
@@ -72,7 +72,9 @@ function Feeds() {
   return (
     <div className="feeds">
       <div className="feed-container">
-        {createSkeletonFeed(SKELETON_FEED_COUNT)}
+        {isLoaded
+          ? feeds.map((feed, idx) => <Feed key={idx} feed={feed} />)
+          : createSkeletonFeed(SKELETON_FEED_COUNT)}
       </div>
       <div className="feed-end" ref={feedEndRef}>
         {isLoadedMore ? '' : <div className="loading" />}
