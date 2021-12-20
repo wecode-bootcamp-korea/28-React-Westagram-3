@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginJongho.scss';
 import Footer from '../../../components/Footer/Footer';
@@ -9,23 +9,34 @@ import PwJongho from './Input/PwJongho';
 function LoginJongho() {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
-  const loginBtn = document.getElementById('loginBtn');
+  const [active, setActive] = useState(false);
+
+  // const loginBtn = document.getElementById('loginBtn');
 
   const getUserId = userId => {
     setId(userId);
   };
+
   const getUserPw = userPw => {
     setPw(userPw);
   };
 
   const valid = () => {
-    return id.indexOf('@') !== -1 && pw.length >= 5
-      ? loginBtn.setAttribute('style', 'background-color: rgba(0, 149, 246, 1)')
-      : loginBtn.setAttribute(
-          'style',
-          'background-color: rgba(0, 149, 246, 0.3)'
-        );
+    console.log('valid', pw); // 2
+    setActive(id.indexOf('@') !== -1 && pw.length >= 5 ? true : false);
+    console.log(active);
+    // return id.indexOf('@') !== -1 && pw.length >= 5
+    //   ? loginBtn.setAttribute('style', 'background-color: rgba(0, 149, 246, 1)')
+    //   : loginBtn.setAttribute(
+    //       'style',
+    //       'background-color: rgba(0, 149, 246, 0.3)'
+    //     );
   };
+
+  useEffect(() => {
+    console.log('use effect');
+    valid();
+  }, [id, pw]);
 
   return (
     <div class="loginJongho">
@@ -35,11 +46,13 @@ function LoginJongho() {
             <div class="outerBox">
               <div class="innerBox">
                 <span class="logo">Westagram</span>
-                <form onChange={event => valid()}>
+                <form onChange={() => valid()}>
                   <IdJongho userId={getUserId} />
                   <PwJongho userPw={getUserPw} />
                   <Link to="/mainjongho">
-                    <button id="loginBtn">로그인</button>
+                    <button className={`${active ? 'active' : ''} loginButton`}>
+                      로그인
+                    </button>
                   </Link>
                   <div>{id}</div>
                   <div>{pw}</div>

@@ -50,7 +50,7 @@ footer {
       }
     }
 
-    #loginBtn {
+    .loginButton {
       width: 65%;
       height: 35px;
       border: 0;
@@ -59,6 +59,10 @@ footer {
       font-size: 18px;
       font-weight: bold;
       color: white;
+      &.active {
+        // .loginButton.active
+        background-color: rgba(0, 149, 246, 1);
+      }
     }
 
     .logo {

@@ -13,7 +13,7 @@ const CommentJongho = () => {
     },
     {
       id: 2,
-      user: '28기 김가윤',
+      user: '28기 이가윤',
       comment: '28기 김가윤입니다.',
     },
     {
@@ -24,12 +24,11 @@ const CommentJongho = () => {
   ]);
 
   const newComment = newUserComment => {
-    newUserComment.id = 4;
+    newUserComment.id = comments.length;
     comments.push(newUserComment);
 
-    setComment(state => {
-      return comments.map(comt => comt);
-    });
+    setComment(state => [...state]); // 새 배열을 만들어 넣어준거
+    // setComment(state => state); // 기존의 거 그대로 돌려준거 -> KEY값이 안변했겠죠 = 리액트가 바뀐걸 모른다
   };
 
   return (
