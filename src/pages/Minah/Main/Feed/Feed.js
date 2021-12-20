@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import Comment from '../Comment/Comment';
+import { useEffect, useRef, useState } from 'react';
+import CommentList from '../Comment/CommentList';
 import './Feed.scss';
 
 export default function Feed() {
@@ -28,6 +28,8 @@ export default function Feed() {
         let comment = e.target.value;
         setCommentContent(comment);
     }
+
+    console.log(commentContent);
 
     return (
         <div className="post_box">
@@ -80,11 +82,7 @@ export default function Feed() {
                                         href="https://www.instagram.com/lee_heung_yong_cake/">lee_heung_yong_cake</a>
                                     <p>달콤한 크리스마스 쿠키들이 준비되었습니다. 베이커리 각 지점 방문 시 구매할 수 있습니다.</p>
                                 </div>
-                                <div className="post_reply">
-                                    <ul className="reply_wrap">
-                                        <Comment />
-                                    </ul>
-                                </div>
+                                <CommentList />
                                 <div className="post_created_at">
                                     <p>4시간 전</p>
                                 </div>
@@ -147,11 +145,7 @@ export default function Feed() {
                                     <a href="https://www.instagram.com/mina_0120/">my1nsta</a>
                                     <p>.<br />aurora night</p>
                                 </div>
-                                <div className="post_reply">
-                                    <ul className="reply_wrap">
-                                        <Comment />
-                                    </ul>
-                                </div>
+                                <CommentList />
                                 <div className="post_created_at">
                                     <p>6시간 전</p>
                                 </div>
