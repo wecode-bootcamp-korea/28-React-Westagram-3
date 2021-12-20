@@ -10,6 +10,7 @@ function Skeleton() {
           <div className="img" />
           <p />
         </span>
+        <div className="num" />
         <BsThreeDots color="white" />
       </header>
       <section className="img-content">

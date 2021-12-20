@@ -3,12 +3,21 @@ import Feed from '../Feed/Feed';
 import { v4 as uuid } from 'uuid';
 import './Feeds.scss';
 import Skeleton from '../Skeleton/Skeleton';
+import { FaJoint } from 'react-icons/fa';
 
 function Feeds() {
   const [feeds, setFeeds] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoadedMore, setIsLoadedMore] = useState(false);
+  const [isLoadedMore, setIsLoadedMore] = useState(true);
   const feedEndRef = useRef();
+  const SKELETON_FEED_COUNT = 5;
+
+  function createSkeletonFeed(count) {
+    let skeletonFeedCount = Array.from({ length: count }, (v, i) => i);
+    return skeletonFeedCount.map(num => {
+      return <Skeleton key={num} />;
+    });
+  }
 
   async function loadFeedData(num) {
     const data = await (await fetch(`data/feed${num}.json`)).json();
@@ -17,14 +26,9 @@ function Feeds() {
       setIsLoaded(() => {
         return true;
       });
-      console.log(isLoaded);
-    });
+    }, 3000);
     await startObserve();
   }
-
-  useEffect(() => {
-    console.log(feeds);
-  }, [feeds]);
 
   async function loadMoreFeed(num) {
     const data = await (await fetch(`data/feed${num}.json`)).json();
@@ -33,10 +37,9 @@ function Feeds() {
         return feeds.concat(data);
       });
     });
-    await setIsLoaded(() => {
+    await setIsLoadedMore(() => {
       return true;
     });
-    console.log(isLoaded);
   }
 
   useEffect(() => {
@@ -45,9 +48,9 @@ function Feeds() {
 
   const callback = (entry, observer) => {
     if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
-      setIsLoadedMore(() => {
-        return false;
-      });
+      // setIsLoadedMore(() => {
+      //   return false;
+      // });
       setTimeout(() => {
         loadMoreFeed(1);
       }, 5000);
@@ -66,17 +69,13 @@ function Feeds() {
   function startObserve() {
     observer.observe(feedEndRef.current);
   }
-
   return (
     <div className="feeds">
       <div className="feed-container">
-        {isLoaded ? console.log('loaded!') : console.log('not yet...')}
-        {isLoaded
-          ? feeds.map(feed => <Feed key={uuid()} feed={feed} />)
-          : feeds && feeds.map(feed => <Skeleton key={uuid()} />)}
+        {createSkeletonFeed(SKELETON_FEED_COUNT)}
       </div>
       <div className="feed-end" ref={feedEndRef}>
-        <div className="loading" />
+        {isLoadedMore ? '' : <div className="loading" />}
       </div>
     </div>
   );
