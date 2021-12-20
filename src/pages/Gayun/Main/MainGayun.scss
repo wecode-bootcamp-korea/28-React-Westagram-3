@@ -11,6 +11,8 @@ $imgContainerM: 2rem;
 $imgContainerS: 1rem;
 $imgBorderRadius: 3rem;
 
+$loadingColor: rgba(219,219,219,1);
+
 @mixin profileImg {
   width: 90%;
   height: 90%;

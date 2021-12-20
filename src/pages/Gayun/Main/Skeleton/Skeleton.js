@@ -12,7 +12,9 @@ function Skeleton() {
         </span>
         <BsThreeDots color="white" />
       </header>
-      <section className="img-content" />
+      <section className="img-content">
+        <div className="loading" />
+      </section>
       <section className="comments">
         <div className="comment">
           <div className="profile" />
