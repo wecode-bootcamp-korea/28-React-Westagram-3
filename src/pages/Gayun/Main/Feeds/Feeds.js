@@ -1,27 +1,75 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Feed from '../Feed/Feed';
 import { v4 as uuid } from 'uuid';
 import './Feeds.scss';
 
 function Feeds() {
-  const [feeds, setFeeds] = useState();
-  let data;
+  const [feeds, setFeeds] = useState([]);
+  const feedEndRef = useRef();
+  let loadNum = 0;
 
-  async function loadFeedData() {
-    data = await await (
-      await fetch('http://localhost:3001/data/feed.json')
-    ).json();
+  async function loadFeedData(num) {
+    const data = await (await fetch(`data/feed${num}.json`)).json();
     await setFeeds(data);
+    await startObserve();
   }
 
   useEffect(() => {
-    loadFeedData();
-  });
+    console.log(feeds);
+  }, [feeds]);
+
+  async function loadMoreFeed(num) {
+    const data = await (await fetch(`data/feed${num}.json`)).json();
+    const updated = await feeds.concat(data);
+    console.log(updated);
+    await setFeeds(feeds => {
+      return feeds.concat(data);
+    });
+  }
+
+  useEffect(() => {
+    loadFeedData(0);
+  }, []);
+
+  let loaded = false;
+
+  const callback = (entry, observer) => {
+    if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
+      console.log('dd');
+
+      // if (loaded === false) {
+      // loadNum++;
+      setTimeout(() => {
+        loadMoreFeed(1);
+      }, 1000);
+      // }
+      // loaded = true;
+      // observer.unobserve(feedEndRef.current);
+    } else {
+      // observer.unobserve(feedEndRef.current);
+    }
+  };
+
+  let options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver(callback, options);
+
+  function startObserve() {
+    observer.observe(feedEndRef.current);
+  }
 
   return (
     <div className="feeds">
-      {feeds && feeds.map(feed => <Feed key={uuid()} feed={feed} />)}
-      <div className="feed-end">feedEnd</div>
+      <div className="feed-container">
+        {feeds && feeds.map(feed => <Feed key={uuid()} feed={feed} />)}
+      </div>
+      <div className="feed-end" ref={feedEndRef}>
+        feedEnd
+      </div>
     </div>
   );
 }

@@ -32,23 +32,19 @@ function LoginGayun() {
     const validId = regex.exec(idInputVal);
     if (validId && pwInputVal.length >= 5) {
       setValidState(true);
-      buttonRef.current.disabled = false;
     } else {
       setValidState(false);
-      buttonRef.current.disabled = true;
     }
   }
 
   function goToMain() {
-    // e.preventDefault();
     navigate('/maingayun');
-    console.log('dd');
   }
 
   return (
     <div className="login">
       <div className="container">
-        <h1 className="logo">Westagram</h1>
+        <h1 className="logo">Gestagram</h1>
         <div
           className="form"
           onChange={handleInput}
