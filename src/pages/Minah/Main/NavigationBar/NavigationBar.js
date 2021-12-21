@@ -29,19 +29,14 @@ export default function NavigationBar() {
 
           <div className="icons_box">
             <img alt="홈" src="images/Minah/Main/home.png" />
-
             <img alt="다이렉트 메시지" src="images/Minah/Main/dm.png" />
-
             <img alt="추가" src="images/Minah/Main/plus.png" />
-
             <img
               alt="탐색"
               src="images/Minah/Main/compass.png"
               className="rotateimg180"
             />
-
             <img alt="하트" src="images/Minah/Main/heart-blank.png" />
-
             <button type="button" id="profile_menu" onClick={toggleSubMenu}>
               <img
                 alt="내 프로필"
@@ -59,47 +54,38 @@ export default function NavigationBar() {
                   className="submenu_icons"
                   src="images/Minah/Main/user.png"
                 />
-
                 <span>프로필</span>
               </div>
-
               <div className="account_submenu">
                 <img
                   alt="북마크"
                   className="submenu_icons"
                   src="images/Minah/Main/bookmark_default.png"
                 />
-
                 <span>저장됨</span>
               </div>
-
               <div className="account_submenu">
                 <img
                   alt="설정"
                   className="submenu_icons"
                   src="images/Minah/Main/preference.png"
                 />
-
                 <span>설정</span>
               </div>
-
               <div className="account_submenu">
                 <img
                   alt="계정 전환"
                   className="submenu_icons"
                   src="images/Minah/Main/refresh-arrow.png"
                 />
-
                 <span>계정 전환</span>
               </div>
             </div>
-
             <div className="logout">
               <p>로그아웃</p>
             </div>
           </div>
         </div>
-
         <div
           onClick={toggleSubMenu}
           className={isOpen ? 'overlay show' : 'overlay hide'}

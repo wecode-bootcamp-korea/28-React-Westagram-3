@@ -64,7 +64,6 @@ export default function Feed(props) {
                 lee_heung_yong_cake
               </a>
             </div>
-
             <button className="post_info">
               <img
                 src="images/Minah/Main/option.png"
@@ -73,7 +72,6 @@ export default function Feed(props) {
               />
             </button>
           </div>
-
           <div className="post_body">
             <div className="post_photo_wrap">
               <div className="post_photo_container">
@@ -88,7 +86,6 @@ export default function Feed(props) {
                   alt="사진2"
                 />
               </div>
-
               <img
                 src="images/Minah/Main/left-chevron.png"
                 className="post_prev btn_size"
@@ -100,7 +97,6 @@ export default function Feed(props) {
                 alt="다음"
               />
             </div>
-
             <div className="post_footer">
               <div className="post_icons_wrap">
                 <div className="post_icons_box1">
@@ -126,7 +122,6 @@ export default function Feed(props) {
                     />
                   </button>
                 </div>
-
                 <div className="post_icons_box2">
                   <button className="post_icons_btn">
                     <img
@@ -137,23 +132,19 @@ export default function Feed(props) {
                   </button>
                 </div>
               </div>
-
               <div className="post_content_wrap">
                 <div className="post_likes">
                   <p>좋아요 28개</p>
                 </div>
-
                 <div className="post_content">
                   <a href="https://www.instagram.com/lee_heung_yong_cake/">
                     lee_heung_yong_cake
                   </a>
-
                   <p>
                     달콤한 크리스마스 쿠키들이 준비되었습니다. 베이커리 각 지점
                     방문 시 구매할 수 있습니다.
                   </p>
                 </div>
-
                 <CommentList
                   commentList={props.commentList}
                   deleteComment={props.deleteComment}
@@ -162,7 +153,6 @@ export default function Feed(props) {
                   <p>4시간 전</p>
                 </div>
               </div>
-
               <form className="post_reply_wrap">
                 <button className="emoticon_btn">
                   <img
@@ -171,7 +161,6 @@ export default function Feed(props) {
                     className="emoticon"
                   />
                 </button>
-
                 <textarea
                   placeholder="댓글 달기..."
                   className="write_reply"

@@ -141,15 +141,12 @@
         li {
           font-size: 0.7rem;
           display: inline;
+          color: v.$asideFooter-text-color;
 
           &:not(:first-child)::before {
             content: '\00B7';
             margin-left: 3px;
             padding-right: 3px;
-            color: v.$asideFooter-text-color;
-          }
-
-          a {
             color: v.$asideFooter-text-color;
           }
         }

@@ -56,39 +56,17 @@ export default function Aside() {
         </div>
         <div className="aside_recommend_footer">
           <ul className="aside_tags">
-            <li>
-              <a>소개</a>
-            </li>
-            <li>
-              <a>도움말</a>
-            </li>
-            <li>
-              <a>홍보 센터</a>
-            </li>
-            <li>
-              <a>API</a>
-            </li>
-            <li>
-              <a>채용 정보</a>
-            </li>
-            <li>
-              <a>개인정보처리방침</a>
-            </li>
-            <li>
-              <a>약관</a>
-            </li>
-            <li>
-              <a>위치</a>
-            </li>
-            <li>
-              <a>인기 계정</a>
-            </li>
-            <li>
-              <a>해시태그</a>
-            </li>
-            <li>
-              <a>언어</a>
-            </li>
+            <li>소개</li>
+            <li>도움말</li>
+            <li>홍보 센터</li>
+            <li>API</li>
+            <li>채용 정보</li>
+            <li>개인정보처리방침</li>
+            <li>약관</li>
+            <li>위치</li>
+            <li>인기 계정</li>
+            <li>해시태그</li>
+            <li>언어</li>
           </ul>
           <p>&copy; 2021 WESTAGRAM FROM WECODE 28TH</p>
         </div>
