@@ -13,9 +13,9 @@ export default function MainMinah() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:3000/data/Minah/commentData.json');
+      const response = await fetch('http://localhost:3000/data/Minah/feedData.json');
       const data = await response.json();
-      setCommentList(data);
+      setCommentList(data[0]["commentList"]);
     }
     fetchData();
   }, []);
@@ -30,7 +30,7 @@ export default function MainMinah() {
   }
 
   return (
-    commentList.length > 0 && (
+    commentList.length >= 0 && (
       <div className="main_minah">
         <NavigationBar />
         <main>

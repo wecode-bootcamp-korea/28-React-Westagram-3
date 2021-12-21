@@ -43,7 +43,7 @@
         }
 
         &:last-child {
-          color: v.$sub-text-colo;
+          color: v.$sub-text-color;
         }
       }
     }
@@ -72,7 +72,7 @@
       span {
         &:first-child {
           font-size: 0.85rem;
-          color: v.$sub-text-colo;
+          color: v.$sub-text-color;
         }
 
         &:last-child {
@@ -117,7 +117,7 @@
           }
 
           p {
-            color: v.$sub-text-colo;
+            color: v.$sub-text-color;
           }
         }
 

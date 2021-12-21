@@ -1,0 +1,86 @@
+[
+  {
+    "userId": "lee_heung_yong_cake",
+    "profileImg": "profile1.jpg",
+    "postImg": [
+      "christmas_cookies1.jpg"
+    ],
+    "likes": 29,
+    "commentList": [
+      {
+        "id": 1,
+        "userId": "my1nsta",
+        "comment": "우왕",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "userId": "x0x0_x0x0",
+        "comment": "이렇게 댓글 달기",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userId": "s2_lo_s2",
+        "comment": "댓글도 길게 달면 이렇게 길어지겠지.",
+        "isLiked": false
+      },
+      {
+        "id": 4,
+        "userId": "my1nsta",
+        "comment": "댓글 내용 지어내서 적는 것도 힘들다.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "userId": "lee_heung_yong_cake",
+    "profileImg": "profile1.jpg",
+    "postImg": [
+      "christmas_cookies2.jpg"
+    ],
+    "likes": 40,
+    "commentList": [
+      {
+        "id": 1,
+        "userId": "my1nsta",
+        "comment": "우왕",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "userId": "x0x0_x0x0",
+        "comment": "이렇게 댓글 달기",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "userId": "starbucks_korea",
+    "profileImg": "profile1.jpg",
+    "postImg": [
+      "starbucks.jpg"
+    ],
+    "likes": 201,
+    "commentList": [
+      {
+        "id": 1,
+        "userId": "my1nsta",
+        "comment": "우왕",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "userId": "x0x0_x0x0",
+        "comment": "이렇게 댓글 달기",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userId": "s2_lo_s2",
+        "comment": "댓글도 길게 달면 이렇게 길어지겠지.",
+        "isLiked": false
+      }
+    ]
+  }
+]
