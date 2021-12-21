@@ -6,7 +6,6 @@ const AddCommentJongho = props => {
   const inputElement = document.getElementsByClassName('inputComment')[0];
 
   function confirmEnter(event) {
-    console.log(event.key);
     if (event.key === 'Enter') {
       inputElement.value = null;
       return props.addUserInfo(newInfo);

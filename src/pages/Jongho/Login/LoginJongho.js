@@ -37,7 +37,7 @@ function LoginJongho() {
             <div class="outerBox">
               <div class="innerBox">
                 <span class="logo">Westagram</span>
-                <form onChange={() => valid()}>
+                <form>
                   <IdJongho userId={getUserId} />
                   <PwJongho userPw={getUserPw} />
                   <Link to="/mainjongho">
@@ -45,8 +45,6 @@ function LoginJongho() {
                       로그인
                     </button>
                   </Link>
-                  <div>{id}</div>
-                  <div>{pw}</div>
                 </form>
               </div>
             </div>

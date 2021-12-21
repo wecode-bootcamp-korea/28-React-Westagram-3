@@ -3,25 +3,21 @@ import '../Comment/CommentJongho.scss';
 import AddCommentJongho from './AddComment/AddCommentJongho';
 import CommentLiJongho from './CommentLi/CommentLiJongho';
 import '../Comment/AddComment/AddCommentJongho.scss';
+import { useEffect } from 'react/cjs/react.development';
 
 const CommentJongho = () => {
-  const [comments, setComment] = useState([
-    {
-      id: 1,
-      user: '28기 정민아',
-      comment: '28기 정민아입니다.',
-    },
-    {
-      id: 2,
-      user: '28기 이가윤',
-      comment: '28기 김가윤입니다.',
-    },
-    {
-      id: 3,
-      user: '28기 유호진',
-      comment: '28기 유호진입니다',
-    },
-  ]);
+  const [comments, setComment] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/Jongho/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(userData => {
+        // console.log;
+        setComment(userData);
+      });
+  }, []);
 
   const addUserInfo = newUserComment => {
     newUserComment.id = comments.length + 1;
