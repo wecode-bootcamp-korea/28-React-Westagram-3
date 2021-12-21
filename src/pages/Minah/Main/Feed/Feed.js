@@ -4,6 +4,25 @@ import './Feed.scss';
 
 export default function Feed(props) {
 
+    const [commentContent, setCommentContent] = useState({
+        "id": '',
+        "userId": '',
+        "comment": '',
+        "isLiked": false
+    });
+
+    const writeComment = (e) => {
+        const content = e.target.value;
+        const id = props.commentList.length + 1;
+        const comment = {
+            "id": id,
+            "userId": sessionStorage.getItem("userId"),
+            "comment": content,
+            "isLiked": false
+        }
+        setCommentContent(comment);
+    }
+
     const textAreaHeight = useRef(null);
     const [taHeight, setTaHeight] = useState(0);
 
@@ -13,9 +32,9 @@ export default function Feed(props) {
         setTaHeight(e.target.scrollHeight);
         if (e.key === 'Enter') {
             if (!e.shiftKey) {
-                e.preventDefault();
-                e.target.value.replaceAll('\t', '<br />');
+                writeComment(e);
                 postNewComment(commentContent);
+                e.preventDefault();
             }
             if (e.shiftKey) {
                 e.target.value = `${e.target.value + '\t'}`;
@@ -23,27 +42,9 @@ export default function Feed(props) {
         }
     }
 
-    const [commentContent, setCommentContent] = useState('');
-
-    const writeComment = (e) => {
-        const content = e.target.value;
-        const comment = {
-            "id": props.commentList.length + 1,
-            "userId": sessionStorage.getItem("userId"),
-            "comment": content,
-            "isLiked": false
-        }
-        setCommentContent(comment);
-    }
-
     const postNewComment = (commentContent) => {
         props.postComment(commentContent);
-        setCommentContent({
-            "id": props.commentList.length + 1,
-            "userId": sessionStorage.getItem("userId"),
-            "comment": content,
-            "isLiked": false
-        });
+        textAreaHeight.current.value = '';
     }
 
     return (
@@ -102,13 +103,13 @@ export default function Feed(props) {
                                     <p>4시간 전</p>
                                 </div>
                             </div>
-                            <div className="post_reply_wrap">
+                            <form className="post_reply_wrap">
                                 <button className="emoticon_btn">
                                     <img alt="이모티콘" src="images/Minah/Main/smile.png" className="emoticon" />
                                 </button>
-                                <textarea placeholder="댓글 달기..." className="write_reply" onChange={writeComment} ref={textAreaHeight} onKeyDown={resizeTextarea} onKeyUp={resizeTextarea}></textarea>
-                                <button className="submit_reply" onClick={() => postNewComment(commentContent)} disabled={commentContent["comment"] ? false : true}>게시</button>
-                            </div>
+                                <textarea placeholder="댓글 달기..." className="write_reply" onChange={writeComment} ref={textAreaHeight} onKeyDown={resizeTextarea}></textarea>
+                                <button type="button" className="submit_reply" onClick={() => postNewComment(commentContent)} disabled={commentContent["comment"] ? false : true}>게시</button>
+                            </form>
                         </div>
                     </div>
                 </div>
