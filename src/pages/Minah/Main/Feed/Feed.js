@@ -98,7 +98,7 @@ export default function Feed(props) {
                                         href="https://www.instagram.com/lee_heung_yong_cake/">lee_heung_yong_cake</a>
                                     <p>달콤한 크리스마스 쿠키들이 준비되었습니다. 베이커리 각 지점 방문 시 구매할 수 있습니다.</p>
                                 </div>
-                                <CommentList commentList={props.commentList} />
+                                <CommentList commentList={props.commentList} deleteComment={props.deleteComment} />
                                 <div className="post_created_at">
                                     <p>4시간 전</p>
                                 </div>

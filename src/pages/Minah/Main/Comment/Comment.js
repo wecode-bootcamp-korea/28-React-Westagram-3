@@ -6,7 +6,7 @@ export default function Comment(props) {
 
   const [isLiked, setIsLiked] = useState(false);
 
-  const clickToLike = () => {
+  const toggleLikeComment = () => {
     if (isLiked === false) {
       setIsLiked(true);
     } else {
@@ -21,9 +21,9 @@ export default function Comment(props) {
         return <div>{line}</div>
       })}</span>
       <button type="button" className="like_reply">
-        <img src={`images/Minah/Main/${isLiked === false ? 'heart-blank.png' : 'heart-red.png'}`} onClick={clickToLike} />
+        <img src={`images/Minah/Main/${isLiked === false ? 'heart-blank.png' : 'heart-red.png'}`} onClick={toggleLikeComment} />
       </button>
-      <button type="button" className="delete_reply">
+      <button type="button" className="delete_reply" onClick={(delComment) => props.deleteComment(props.id)}>
         <FontAwesomeIcon icon={faTimes} />
       </button>
     </li>

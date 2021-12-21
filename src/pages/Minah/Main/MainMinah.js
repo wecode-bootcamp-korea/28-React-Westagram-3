@@ -25,6 +25,11 @@ export default function MainMinah() {
     console.log(commentList.length);
   }, [commentList]);
 
+  const deleteComment = (delComment) => {
+    const tempComments = commentList.filter(comment => comment.id !== delComment);
+    setCommentList(tempComments);
+  }
+
   return (
     commentList.length > 0 && (
       <div className="main_minah">
@@ -32,7 +37,7 @@ export default function MainMinah() {
         <main>
           <section>
             <Story />
-            <Feed commentList={commentList} postComment={(commentContent) => postComment(commentContent)} />
+            <Feed commentList={commentList} postComment={(commentContent) => postComment(commentContent)} deleteComment={(delComment) => deleteComment(delComment)} />
           </section>
           <aside>
             <Aside />
