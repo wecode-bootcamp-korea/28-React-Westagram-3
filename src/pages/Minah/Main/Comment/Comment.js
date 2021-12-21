@@ -23,6 +23,7 @@ export default function Comment(props) {
       </span>
       <button type="button" className="like_reply">
         <img
+          alt="댓글 좋아요"
           src={`images/Minah/Main/${
             isLiked === false ? 'heart-blank.png' : 'heart-red.png'
           }`}

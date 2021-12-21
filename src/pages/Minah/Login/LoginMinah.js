@@ -15,8 +15,6 @@ export default function LoginMinah() {
     sessionStorage.setItem('userId', userId.split('@')[0]);
   };
 
-  console.log(sessionStorage.getItem('userId'));
-
   const handlePwInput = e => {
     setUserPw(e.target.value);
   };
