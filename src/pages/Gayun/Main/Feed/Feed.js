@@ -50,7 +50,7 @@ function Feed({ feed }) {
   }
 
   return (
-    <article className="feed">
+    <article className="feed-gayun">
       <section className="header">
         <span className="uploader">
           <span className="img-container profile-container">

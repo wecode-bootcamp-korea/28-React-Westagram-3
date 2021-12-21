@@ -5,7 +5,7 @@ import './Nav.scss';
 
 function Nav() {
   return (
-    <nav>
+    <nav className="nav-gayun">
       <span className="logo">
         <span className="icon">
           <BsInstagram />

@@ -7,8 +7,8 @@ function Comment({ comment, deleteComment }) {
   };
 
   return (
-    <li className="comment-container">
-      <span className="comment">
+    <li className="comment-gayun">
+      <span className="comment-container">
         <p className="id">{comment.commentId}</p>
         <span>{comment.commentText}</span>
       </span>

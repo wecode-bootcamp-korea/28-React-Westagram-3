@@ -72,7 +72,7 @@ function Feeds() {
     observer.observe(feedEndRef.current);
   }
   return (
-    <div className="feeds">
+    <div className="feeds-gayun">
       <div className="feed-container">
         {isLoaded
           ? feeds.map((feed, idx) => <Feed key={idx} feed={feed} />)

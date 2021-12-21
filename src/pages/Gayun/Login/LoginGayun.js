@@ -42,7 +42,7 @@ function LoginGayun() {
   }
 
   return (
-    <div className="login">
+    <div className="login-gayun">
       <div className="container">
         <h1 className="logo">Gestagram</h1>
         <div

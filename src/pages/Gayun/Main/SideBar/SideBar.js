@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 
 function SideBar() {
   return (
-    <aside key={uuid()} className="side-bar">
+    <aside key={uuid()} className="side-bar-gayun">
       <div className="account">
         <div className="img-container">
           <img src="images/Gayun/profile-img.jpg" alt="" />

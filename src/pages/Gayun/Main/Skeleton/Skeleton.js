@@ -4,7 +4,7 @@ import { BsThreeDots } from 'react-icons/bs';
 
 function Skeleton() {
   return (
-    <div className="skeleton">
+    <div className="skeleton-gayun">
       <header className="header">
         <span className="uploader">
           <div className="img" />

@@ -6,7 +6,7 @@ import SideBar from './SideBar/SideBar';
 
 function MainGayun() {
   return (
-    <div className="main">
+    <div className="main-gayun">
       <Nav />
       <Story />
       <div className="main-content">

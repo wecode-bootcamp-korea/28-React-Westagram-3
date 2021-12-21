@@ -1,9 +1,7 @@
-@import '../../../../styles/common.scss';
-@import '../../../../styles/reset.scss';
 @import '../../../../styles/variables.scss';
 @import '../MainGayun.scss';
 
-.skeleton {
+.skeleton-gayun {
   @include feed;
   margin-top: $doubleSpace;
   background-color: $border-color;

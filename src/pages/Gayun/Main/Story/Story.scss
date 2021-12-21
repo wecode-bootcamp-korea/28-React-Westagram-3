@@ -1,9 +1,7 @@
-@import '../../../../styles/common.scss';
-@import '../../../../styles/reset.scss';
 @import '../../../../styles/variables.scss';
 @import '../MainGayun.scss';
 
-.story-top {
+.story-top-gayun {
   display: flex;
   padding: $doubleSpace $doubleSpace $space $doubleSpace;
   width: 50rem;

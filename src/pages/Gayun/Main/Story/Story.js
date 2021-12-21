@@ -5,7 +5,7 @@ import './Story.scss';
 
 function Story() {
   return (
-    <div className="story-top">
+    <div className="story-top-gayun">
       {storiesData.map(story => (
         <span key={uuid()} className="container">
           <div className="img-container">

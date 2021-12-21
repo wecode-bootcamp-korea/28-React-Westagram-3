@@ -1,9 +1,7 @@
-@import '../../../../styles/common.scss';
-@import '../../../../styles/reset.scss';
 @import '../../../../styles/variables.scss';
 @import '../MainGayun.scss';
 
-.feed {
+.feed-gayun {
   @include feed;
   border: 1px solid $border-color;
   background-color: white;
