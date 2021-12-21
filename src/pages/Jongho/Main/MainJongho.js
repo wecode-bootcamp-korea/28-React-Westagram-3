@@ -14,12 +14,14 @@ function Main() {
       <main>
         <section>
           <article class="feedContainer">
+            {/* Feed 맨 위에 계정이름과 사진 칸 */}
             <ProfileBlock />
             <img
               class="myFeedImage"
               src="https://user-images.githubusercontent.com/93215875/144997737-23918ede-3150-428b-a491-b8f816d7652b.jpg"
               alt="Mandalorian"
             />
+            {/* Feed 사진 밑 여러가지 기능 버튼 모음 */}
             <ToolBox />
             <div class="likeMessageBlock">
               <img
@@ -29,11 +31,12 @@ function Main() {
               />
               <span>10명이 좋아합니다</span>
             </div>
+            {/* 댓글목록 및 댓글 추가 입력 */}
             <CommentJongho />
-            {/* <AddCommentJongho /> */}
           </article>
         </section>
         <section>
+          {/*여기는 사이드 메뉴들 모음*/}
           <div class="myAccount">
             <img
               class="accountRecomm"

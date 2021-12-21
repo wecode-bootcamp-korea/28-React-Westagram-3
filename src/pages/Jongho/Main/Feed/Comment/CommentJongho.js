@@ -6,9 +6,10 @@ import '../Comment/AddComment/AddCommentJongho.scss';
 import { useEffect } from 'react/cjs/react.development';
 
 const CommentJongho = () => {
-  const [comments, setComment] = useState([]);
+  const [comments, setComment] = useState([]); //초기값 []을 넣어준 이유는 초기 렌더링 시 유저정보 가져오는 기능을 useEffect에 넣어줬기 때문에 첫 렌더링 할때 초기값이 없으면 밑에 map() 메서드에서 오류가 발생한다
 
   useEffect(() => {
+    //첫 렌더링 시 유저정보 가져오기
     fetch('http://localhost:3000/data/Jongho/commentData.json', {
       method: 'GET',
     })

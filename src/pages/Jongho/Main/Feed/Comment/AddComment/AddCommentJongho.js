@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Function from '../../../../Main/Function';
 
 const AddCommentJongho = props => {
   const [newInfo, setInfo] = useState({});
@@ -16,13 +15,15 @@ const AddCommentJongho = props => {
     <div class="postComment">
       <input
         onKeyPress={event => confirmEnter(event)}
-        onChange={event =>
+        onChange={event => {
+          console.log(event);
+          console.log(event.target);
           setInfo({
             id: null,
             user: '28기 윤종호',
             comment: event.target.value,
-          })
-        }
+          });
+        }}
         className="inputComment"
         type="text"
         placeholder="댓글 달기..."
