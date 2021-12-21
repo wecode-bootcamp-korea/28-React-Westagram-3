@@ -1,4 +1,5 @@
 @use '../MainMinah.scss';
+@use '../../../../styles/variables.scss' as v;
 
 /* 포스트 */
 .post_box {
@@ -6,7 +7,7 @@
     margin-bottom: 24px;
     width: 100%;
     height: 100%;
-    border: 1px solid #dbdbdb;
+    border: 1px solid v.$border-color;
     background-color: #fff;
 
     .post_header {
@@ -29,7 +30,7 @@
           vertical-align: middle;
           font-size: 0.8rem;
           font-weight: 600;
-          color: #262626;
+          color: v.$main-text-color;
 
           &:hover {
             text-decoration: underline;
@@ -200,7 +201,7 @@
 
             p {
               font-size: 0.6rem;
-              color: #8e8e8e;
+              color: v.$sub-text-color;
             }
           }
         }
@@ -225,7 +226,7 @@
 
             &.submit_reply {
               min-width: 40px;
-              color: rgba(0, 149, 246, 0.3);
+              color: v.$button-deactive;
               font-weight: 600;
               font-size: 0.85rem;
 
@@ -234,7 +235,7 @@
               }
 
               &:not([disabled]) {
-                color: rgba(0, 149, 246, 1);
+                color: v.$button-active;
               }
 
               &:not([disabled]):hover {
@@ -258,7 +259,7 @@
             font-size: 0.88rem;
 
             &::placeholder {
-              color: #8e8e8e;
+              color: v.$sub-text-color;
             }
           }
         }

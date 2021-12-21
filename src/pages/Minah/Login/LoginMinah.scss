@@ -11,12 +11,11 @@
   main {
     width: 100%;
     height: 800px;
-    display: flex;
+    
+    @include v.flex-center;
     flex-direction: column;
     text-align: center;
     vertical-align: middle;
-    align-items: center;
-    justify-content: center;
   }
 }
 
@@ -26,7 +25,7 @@
   height: 382px;
   margin: 0 auto;
   margin-bottom: 10px;
-  border: 1px solid #dbdbdb;
+  border: 1px solid v.$border-color;
   border-radius: 1px;
   background-color: #fff;
 
@@ -51,7 +50,7 @@
       input {
         width: 100%;
         height: 100%;
-        border: 1px solid #dbdbdb;
+        border: 1px solid v.$border-color;
         border-radius: 3px;
         vertical-align: bottom;
         padding: 5px 8px;
@@ -66,7 +65,7 @@
 
         &:placeholder-shown + label {
           font-size: 0.75rem;
-          color: #8e8e8e;
+          color: v.$sub-text-color;
           top: 10px;
           left: 8px;
         }
@@ -74,7 +73,7 @@
 
       &:not(:empty) + label,
       label {
-        color: #8e8e8e;
+        color: v.$sub-text-color;
         font-size: 0.47rem;
         pointer-events: none;
         position: absolute;
@@ -93,7 +92,7 @@
       margin: 15px auto;
       border: 0;
       border-radius: 3px;
-      background-color: rgba(0, 149, 246, 0.3);
+      background-color: v.$button-deactive;
       color: #fff;
       font-weight: 600;
       font-size: 0.875rem;
@@ -103,7 +102,7 @@
       }
 
       &:not([disabled]) {
-        background-color: rgba(0, 149, 246, 1);
+        background-color: v.$button-active;
         &:hover {
           cursor: pointer;
         }
@@ -136,7 +135,7 @@
     }
 
     span {
-      color: #8e8e8e;
+      color: v.$sub-text-color;
     }
   }
 
@@ -156,14 +155,14 @@
       span {
         font-size: 0.875rem;
         font-weight: 600;
-        color: #385185;
+        color: v.$facebook-link-color;
       }
     }
   }
 
   .find_pw {
     a {
-      color: #00376b;
+      color: v.$find-password-color;
       font-size: 0.78rem;
     }
   }

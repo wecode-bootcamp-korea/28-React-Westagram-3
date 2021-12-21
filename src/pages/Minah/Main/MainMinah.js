@@ -22,7 +22,6 @@ export default function MainMinah() {
 
   const postComment = useCallback((commentContent) => {
     setCommentList([...commentList, commentContent]);
-    console.log(commentList.length);
   }, [commentList]);
 
   const deleteComment = (delComment) => {

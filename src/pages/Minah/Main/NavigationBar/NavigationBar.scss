@@ -1,4 +1,5 @@
 @use '../MainMinah.scss';
+@use '../../../../styles/variables.scss' as v;
 
 /* navigation */
 header {
@@ -6,7 +7,7 @@ header {
 
   nav {
     background-color: #fff;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid v.$border-color;
     position: fixed;
     top: 0;
     left: 0;
@@ -63,18 +64,18 @@ header {
         input {
           width: 100%;
           height: 100%;
-          border: 1px solid #dbdbdb;
+          border: 1px solid v.$border-color;
           border-radius: 3px;
           padding: 0 10px;
-          background-color: #fafafa;
+          background-color: v.$plain-bgColor;
 
           &::placeholder {
-            color: #8e8e8e;
+            color: v.$sub-text-color;
             background-image: url('../../../../assets/images/magnifier.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: 0;
-            filter: opacity(0.5) drop-shadow(0 0 0 #8e8e8e);
+            filter: opacity(0.5) drop-shadow(0 0 0 v.$sub-text-color);
           }
 
           &:focus {
@@ -138,7 +139,7 @@ header {
         border-radius: 5px;
         background-color: #fff;
         font-size: 0.875rem;
-        box-shadow: 0 0 5px #dbdbdb;
+        box-shadow: 0 0 5px v.$border-color;
         z-index: 6;
 
         &::before {
@@ -154,7 +155,7 @@ header {
           -o-transform: rotate(45deg);
           transform: rotate(45deg);
           background-color: #fff;
-          box-shadow: -3px -3px 7px 0 #dbdbdb;
+          box-shadow: -3px -3px 7px 0 v.$border-color;
         }
 
         .account_menu_wrap {
@@ -183,7 +184,7 @@ header {
 
         .logout {
           padding: 10px 16px 15px 16px;
-          border-top: 1px solid #dbdbdb;
+          border-top: 1px solid v.$border-color;
         }
 
         .account_submenu:hover,
