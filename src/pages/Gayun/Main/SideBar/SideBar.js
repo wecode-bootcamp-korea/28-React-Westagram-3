@@ -1,6 +1,6 @@
 import React from 'react';
 import './SideBar.scss';
-import storyData from '../../data/story.json';
+import storyData from 'data/Gayun/story.json';
 import { v4 as uuid } from 'uuid';
 
 function SideBar() {
@@ -19,48 +19,47 @@ function SideBar() {
           </div>
         </div>
       </div>
-      <article class="story">
-        <div class="header">
+      <article className="story">
+        <div className="header">
           <h4>스토리</h4>
-          <button class="spread">모두 보기</button>
+          <button className="spread">모두 보기</button>
         </div>
-        <ul class="list collapse">
+        <ul className="list collapse">
           {storyData.map(story => (
-            <li key={uuid()} class="item">
-              <span class="img-container">
+            <li key={uuid()} className="item">
+              <span className="img-container">
                 <img
                   src={`images/Gayun/${story.profileImg}`}
                   alt="story-profile-img"
-                  class="img"
+                  className="img"
                 />
               </span>
-              <span class="text">
+              <span className="text">
                 <p>{story.profileId}</p>
-                {/* <p class="time">{calculateDateGap(i.uploadDate)}일 전</p> */}
               </span>
             </li>
           ))}
         </ul>
       </article>
 
-      <article class="recommend">
-        <div class="header">
+      <article className="recommend">
+        <div className="header">
           <h4>회원님을 위한 추천</h4>
-          <button class="spread">모두 보기</button>
+          <button className="spread">모두 보기</button>
         </div>
-        <li class="list">
-          <ul class="item">
-            <span class="profile">
+        <li className="list">
+          <ul className="item">
+            <span className="profile">
               <img
                 src="images/Gayun/profile-img2.jpg"
                 alt="recommend-profile-img"
               />
               <span>
-                <p class="id">bysle_990</p>
-                <p class="follower">this_this외 2명이 팔로우</p>
+                <p className="id">bysle_990</p>
+                <p className="follower">this_this외 2명이 팔로우</p>
               </span>
             </span>
-            <button class="follow">팔로우</button>
+            <button className="follow">팔로우</button>
           </ul>
         </li>
       </article>

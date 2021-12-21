@@ -7,12 +7,12 @@ function Comment({ comment, deleteComment }) {
   };
 
   return (
-    <li class="comment-container">
-      <span class="comment">
-        <p class="id">{comment.commentId}</p>
+    <li className="comment-container">
+      <span className="comment">
+        <p className="id">{comment.commentId}</p>
         <span>{comment.commentText}</span>
       </span>
-      <button class="delete" onClick={onDelete}>
+      <button className="delete" onClick={onDelete}>
         <TiDelete size="15" />
       </button>
     </li>

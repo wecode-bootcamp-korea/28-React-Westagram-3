@@ -2,7 +2,7 @@
   {
     "profileImg": "profile-img.jpg",
     "feedId": "Connor Underwood",
-    "imgContent": "profile-img.jpg",
+    "imgContent": "img1.jpg",
     "likesCount": ["Larissa Dominguez", "Tallulah Todd", "Dexter Coleman"],
     "textContent": "Nullam enim. Sed nulla ante, iaculis nec, eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc",
     "comment": [
@@ -40,7 +40,7 @@
   {
     "profileImg": "profile-img2.jpg",
     "feedId": "Hollee Callahan",
-    "imgContent": "profile-img2.jpg",
+    "imgContent": "img2.jpg",
     "likesCount": [
       "Jonah Moore",
       "Hyacinth Petersen",
@@ -67,7 +67,7 @@
   {
     "profileImg": "profile-img3.jpg",
     "feedId": "Stella Banks",
-    "imgContent": "profile-img3.jpg",
+    "imgContent": "img3.jpg",
     "likesCount": [
       "Dexter Coleman",
       "Jonah Moore",
@@ -88,7 +88,7 @@
   {
     "profileImg": "profile-img4.jpg",
     "feedId": "Alden Garza",
-    "imgContent": "profile-img4.jpg",
+    "imgContent": "img4.jpg",
     "likesCount": [
       "Remedios Sloan",
       "Hyacinth Petersen",
@@ -136,7 +136,7 @@
   {
     "profileImg": "profile-img5.jpg",
     "feedId": "Fulton Luna",
-    "imgContent": "profile-img5.jpg",
+    "imgContent": "img5.jpg",
     "likesCount": [
       "Russell Sandoval",
       "Dexter Coleman",

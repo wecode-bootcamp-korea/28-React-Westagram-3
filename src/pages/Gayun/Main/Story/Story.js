@@ -1,5 +1,5 @@
 import React from 'react';
-import storiesData from '../../data/story.json';
+import storiesData from '../../../../../public/data/Gayun/feed1.json';
 import { v4 as uuid } from 'uuid';
 import './Story.scss';
 
@@ -7,15 +7,15 @@ function Story() {
   return (
     <div className="story-top">
       {storiesData.map(story => (
-        <span key={uuid()} class="container">
-          <div class="img-container">
+        <span key={uuid()} className="container">
+          <div className="img-container">
             <img
-              class="profile-img"
+              className="profile-img"
               src={`images/Gayun/${story.profileImg}`}
               alt="story-img"
             />
           </div>
-          <div class="top-story__id">{story.profileId}</div>
+          <div className="top-story__id">{story.profileId}</div>
         </span>
       ))}
     </div>

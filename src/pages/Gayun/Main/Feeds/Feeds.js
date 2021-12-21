@@ -11,6 +11,7 @@ function Feeds() {
   const [isLoadedMore, setIsLoadedMore] = useState(true);
   const feedEndRef = useRef();
   const SKELETON_FEED_COUNT = 5;
+  let loadFeedNum = 0;
 
   function createSkeletonFeed(count) {
     let skeletonFeedCount = Array.from({ length: count }, (v, i) => i);
@@ -20,18 +21,18 @@ function Feeds() {
   }
 
   async function loadFeedData(num) {
-    const data = await (await fetch(`data/feed${num}.json`)).json();
+    const data = await (await fetch(`data/Gayun/feed${num}.json`)).json();
     await setTimeout(() => {
       setFeeds(data);
       setIsLoaded(() => {
         return true;
       });
-    }, 3000);
+    }, 2000);
     await startObserve();
   }
 
   async function loadMoreFeed(num) {
-    const data = await (await fetch(`data/feed${num}.json`)).json();
+    const data = await (await fetch(`data/Gayun/feed${num}.json`)).json();
     await setTimeout(() => {
       setFeeds(feeds => {
         return feeds.concat(data);
@@ -51,9 +52,10 @@ function Feeds() {
       setIsLoadedMore(() => {
         return false;
       });
+      loadFeedNum++;
       setTimeout(() => {
-        loadMoreFeed(1);
-      }, 5000);
+        loadMoreFeed(loadFeedNum);
+      }, 2000);
     } else {
     }
   };
