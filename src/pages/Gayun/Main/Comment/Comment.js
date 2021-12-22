@@ -10,7 +10,7 @@ function Comment({ comment, deleteComment }) {
   return (
     <li className="comment-gayun">
       <span className="comment-container">
-        <p className="id">{comment.commentId}</p>
+        <span className="id">{comment.commentId}</span>
         <span>{comment.commentText}</span>
       </span>
       <button className="delete" onClick={onDelete}>

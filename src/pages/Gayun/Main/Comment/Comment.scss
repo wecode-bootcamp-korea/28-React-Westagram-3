@@ -4,6 +4,11 @@
   display: flex;
   justify-content: space-between;
 
+  .id {
+    margin-right: 1rem;
+    font-weight: 700;
+  }
+
   .delete-icon {
     width: 1.2rem;
     height:1.2rem;
