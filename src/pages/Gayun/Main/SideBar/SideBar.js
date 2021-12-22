@@ -1,9 +1,8 @@
 import React from 'react';
 import './SideBar.scss';
-import storyData from 'data/Gayun/story.json';
 import { v4 as uuid } from 'uuid';
 
-function SideBar() {
+function SideBar({ stories }) {
   return (
     <aside key={uuid()} className="side-bar-gayun">
       <div className="account">
@@ -25,7 +24,7 @@ function SideBar() {
           <button className="spread">모두 보기</button>
         </div>
         <ul className="list collapse">
-          {storyData.map(story => (
+          {stories.map(story => (
             <li key={uuid()} className="item">
               <span className="img-container">
                 <img
