@@ -1,1 +1,12 @@
+@import '../../../../styles/variables.scss';
 
+.comment-gayun {
+  display: flex;
+  justify-content: space-between;
+
+  .delete-icon {
+    width: 1.2rem;
+    height:1.2rem;
+    color: $border-color;
+  }
+}

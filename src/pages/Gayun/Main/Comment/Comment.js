@@ -1,5 +1,6 @@
 import React from 'react';
 import { TiDelete } from 'react-icons/ti';
+import './Comment.scss';
 
 function Comment({ comment, deleteComment }) {
   const onDelete = () => {
@@ -13,7 +14,7 @@ function Comment({ comment, deleteComment }) {
         <span>{comment.commentText}</span>
       </span>
       <button className="delete" onClick={onDelete}>
-        <TiDelete size="15" />
+        <TiDelete className="delete-icon" />
       </button>
     </li>
   );
