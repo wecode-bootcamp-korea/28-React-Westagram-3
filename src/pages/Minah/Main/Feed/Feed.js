@@ -1,8 +1,10 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import CommentList from '../Comment/CommentList';
 import './Feed.scss';
 
-export default function Feed(props) {
+export default function Feed({ feedData }) {
+  const [comments, setComments] = useState([...feedData.commentList]);
+
   const [commentContent, setCommentContent] = useState({
     id: '',
     userId: '',
@@ -12,7 +14,15 @@ export default function Feed(props) {
 
   const writeComment = e => {
     const content = e.target.value;
-    const id = props.commentList.length + 1;
+    const commentsLength = comments.length;
+    const maxId = comments[commentsLength - 1].id;
+    let tempId;
+    if (commentsLength < maxId) {
+      tempId = maxId + 1;
+    } else {
+      tempId = commentsLength + 1;
+    }
+    const id = tempId;
     const comment = {
       id: id,
       userId: sessionStorage.getItem('userId'),
@@ -44,9 +54,21 @@ export default function Feed(props) {
     }
   };
 
+  const postComment = useCallback(
+    commentContent => {
+      setComments([...comments, commentContent]);
+    },
+    [comments]
+  );
+
   const postNewComment = commentContent => {
-    props.postComment(commentContent);
+    postComment(commentContent);
     textAreaHeight.current.value = '';
+  };
+
+  const deleteComment = delComment => {
+    const tempComments = comments.filter(comment => comment.id !== delComment);
+    setComments(tempComments);
   };
 
   return (
@@ -56,12 +78,12 @@ export default function Feed(props) {
           <div className="post_header">
             <div className="post_account">
               <img
-                src="images/Minah/Main/profile1.jpg"
+                src={`images/Minah/Main/${feedData.profileImg}`}
                 className="post_profile"
                 alt="프사"
               />
-              <a href="https://www.instagram.com/lee_heung_yong_cake/">
-                lee_heung_yong_cake
+              <a href={`https://www.instagram.com/${feedData.userId}`}>
+                {feedData.userId}
               </a>
             </div>
             <button className="post_info">
@@ -75,18 +97,19 @@ export default function Feed(props) {
           <div className="post_body">
             <div className="post_photo_wrap">
               <div className="post_photo_container">
-                <img
-                  src="images/Minah/Main/christmas_cookies1.jpg"
-                  className="post_photos"
-                  alt="사진1"
-                />
-                <img
-                  src="images/Minah/Main/christmas_cookies2.jpg"
-                  className="post_photos"
-                  alt="사진2"
-                />
+                {feedData.postImg &&
+                  feedData.postImg.map((img, idx) => {
+                    return (
+                      <img
+                        key={idx}
+                        alt={`사진${idx + 1}`}
+                        src={`images/Minah/Main/${img}`}
+                        className="post_photos"
+                      />
+                    );
+                  })}
               </div>
-              <img
+              {/* <img
                 src="images/Minah/Main/left-chevron.png"
                 className="post_prev btn_size"
                 alt="이전"
@@ -95,7 +118,7 @@ export default function Feed(props) {
                 src="images/Minah/Main/right-chevron.png"
                 className="post_next btn_size"
                 alt="다음"
-              />
+              /> */}
             </div>
             <div className="post_footer">
               <div className="post_icons_wrap">
@@ -134,23 +157,24 @@ export default function Feed(props) {
               </div>
               <div className="post_content_wrap">
                 <div className="post_likes">
-                  <p>좋아요 28개</p>
+                  <p>좋아요 {feedData.likes}개</p>
                 </div>
                 <div className="post_content">
-                  <a href="https://www.instagram.com/lee_heung_yong_cake/">
-                    lee_heung_yong_cake
+                  <a href={`https://www.instagram.com/${feedData.userId}`}>
+                    {feedData.userId}
                   </a>
-                  <p>
-                    달콤한 크리스마스 쿠키들이 준비되었습니다. 베이커리 각 지점
-                    방문 시 구매할 수 있습니다.
-                  </p>
+                  <p>{feedData.content}</p>
                 </div>
                 <CommentList
+                  commentList={comments}
+                  deleteComment={delComment => deleteComment(delComment)}
+                />
+                {/* <CommentList
                   commentList={props.commentList}
                   deleteComment={props.deleteComment}
-                />
+                /> */}
                 <div className="post_created_at">
-                  <p>4시간 전</p>
+                  <p>{feedData.createdAt}</p>
                 </div>
               </div>
               <form className="post_reply_wrap">
@@ -172,7 +196,7 @@ export default function Feed(props) {
                   type="button"
                   className="submit_reply"
                   onClick={() => postNewComment(commentContent)}
-                  disabled={commentContent.comment ? false : true}
+                  disabled={commentContent.comment.length > 0 ? false : true}
                 >
                   게시
                 </button>

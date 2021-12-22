@@ -5,10 +5,10 @@ import Story from './Story/Story';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 import './MainMinah.scss';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MainMinah() {
-  const [commentList, setCommentList] = useState([]);
+  const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,43 +16,31 @@ export default function MainMinah() {
         'http://localhost:3000/data/Minah/feedData.json'
       );
       const data = await response.json();
-      setCommentList(data[0].commentList);
+      setFeeds(data);
     };
     fetchData();
   }, []);
 
-  const postComment = useCallback(
-    commentContent => {
-      setCommentList([...commentList, commentContent]);
-    },
-    [commentList]
-  );
-
-  const deleteComment = delComment => {
-    const tempComments = commentList.filter(
-      comment => comment.id !== delComment
-    );
-    setCommentList(tempComments);
-  };
-
   return (
-    commentList.length >= 0 && (
-      <div className="main_minah">
-        <NavigationBar />
-        <main>
-          <section>
-            <Story />
-            <Feed
+    <div className="main_minah">
+      <NavigationBar />
+      <main>
+        <section>
+          <Story />
+          {feeds &&
+            feeds.map(feed => {
+              return <Feed key={feed.id} feedData={feed} />;
+            })}
+          {/* <Feed
               commentList={commentList}
               postComment={commentContent => postComment(commentContent)}
               deleteComment={delComment => deleteComment(delComment)}
-            />
-          </section>
-          <aside>
-            <Aside />
-          </aside>
-        </main>
-      </div>
-    )
+            /> */}
+        </section>
+        <aside>
+          <Aside />
+        </aside>
+      </main>
+    </div>
   );
 }

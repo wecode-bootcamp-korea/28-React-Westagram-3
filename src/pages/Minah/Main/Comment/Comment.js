@@ -17,6 +17,7 @@ export default function Comment(props) {
     <li id={`"${props.id}"`}>
       <a href={`https://www.instagram.com/${props.userId}`}>{props.userId}</a>
       <span>
+        {/* {props.comment} */}
         {props.comment.split('\n').map(line => {
           return <div>{line}</div>;
         })}
