@@ -3,7 +3,7 @@
     "id": 1,
     "userId": "lee_heung_yong_cake",
     "profileImg": "profile1.jpg",
-    "postImg": ["christmas_cookies1.jpg"],
+    "postImg": ["christmas_cookies1.jpg", "christmas_cookies2.jpg"],
     "likes": 29,
     "createdAt": "3시간 전",
     "content": "달콤한 크리스마스 쿠키들이 준비되었습니다. 베이커리 각 지점 방문 시 구매할 수 있습니다.",

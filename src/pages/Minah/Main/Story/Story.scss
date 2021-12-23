@@ -13,7 +13,18 @@
   .story_wrap {
     overflow: hidden;
 
-    img {
+    button {
+      position: absolute;
+      top: 46px;
+      z-index: 1;
+      width: 23px;
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(163deg)
+        brightness(103%) contrast(96%) drop-shadow(0px 0px 3px #808080);
+
+      &:hover {
+        cursor: pointer;
+      }
+
       &.story_prev {
         left: 10px;
       }
@@ -22,17 +33,8 @@
         right: 40px;
       }
 
-      &.btn_style {
-        position: absolute;
-        top: 46px;
-        z-index: 1;
-        width: 23px;
-        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(163deg)
-          brightness(103%) contrast(96%) drop-shadow(0px 0px 3px #808080);
-
-        &:hover {
-          cursor: pointer;
-        }
+      img {
+        width: 100%;
       }
     }
 

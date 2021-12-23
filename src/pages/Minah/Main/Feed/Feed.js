@@ -109,16 +109,20 @@ export default function Feed({ feedData }) {
                     );
                   })}
               </div>
-              {/* <img
-                src="images/Minah/Main/left-chevron.png"
-                className="post_prev btn_size"
-                alt="이전"
-              />
-              <img
-                src="images/Minah/Main/right-chevron.png"
-                className="post_next btn_size"
-                alt="다음"
-              /> */}
+              {feedData.postImg.length > 1 && (
+                <>
+                  <img
+                    src="images/Minah/Main/left-chevron.png"
+                    className="post_prev btn_size"
+                    alt="이전"
+                  />
+                  <img
+                    src="images/Minah/Main/right-chevron.png"
+                    className="post_next btn_size"
+                    alt="다음"
+                  />
+                </>
+              )}
             </div>
             <div className="post_footer">
               <div className="post_icons_wrap">
