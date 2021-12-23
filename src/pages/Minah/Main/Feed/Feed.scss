@@ -164,6 +164,7 @@
               li {
                 display: flex;
                 justify-content: space-between;
+                margin-bottom: 2px;
                 font-size: 0.8rem;
 
                 a {
@@ -183,12 +184,15 @@
                 }
 
                 button {
-                  margin-left: 8px;
+                  width: 0.8rem;
+                  height: 0.8rem;
+                  margin-left: 4px;
                   padding: 0;
 
-                  img {
+                  img,
+                  svg {
                     width: 0.8rem;
-                    vertical-align: text-top;
+                    vertical-align: middle;
                   }
                 }
               }
