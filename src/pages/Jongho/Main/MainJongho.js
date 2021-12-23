@@ -9,23 +9,23 @@ import CommentJongho from './Feed/Comment/CommentJongho';
 
 function Main() {
   return (
-    <div class="mainJongho">
+    <div className="mainJongho">
       <NavJongho />
       <main>
         <section>
-          <article class="feedContainer">
+          <article className="feedContainer">
             {/* Feed 맨 위에 계정이름과 사진 칸 */}
             <ProfileBlock />
             <img
-              class="myFeedImage"
+              className="myFeedImage"
               src="https://user-images.githubusercontent.com/93215875/144997737-23918ede-3150-428b-a491-b8f816d7652b.jpg"
               alt="Mandalorian"
             />
             {/* Feed 사진 밑 여러가지 기능 버튼 모음 */}
             <ToolBox />
-            <div class="likeMessageBlock">
+            <div className="likeMessageBlock">
               <img
-                class="profileImageLikeMessage"
+                className="profileImageLikeMessage"
                 src="https://user-images.githubusercontent.com/93215875/145150249-bc2e2a6e-bdd0-4c02-9005-1b748cc1a428.jpg"
                 alt="profile"
               />
@@ -37,125 +37,125 @@ function Main() {
         </section>
         <section>
           {/*여기는 사이드 메뉴들 모음*/}
-          <div class="myAccount">
+          <div className="myAccount">
             <img
-              class="accountRecomm"
+              className="accountRecomm"
               src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
               alt="wecode mark"
             />
-            <div class="recommName">
-              <p class="accId">account name1</p>
-              <p class="subAccId">account name2</p>
+            <div className="recommName">
+              <p className="accId">account name1</p>
+              <p className="subAccId">account name2</p>
             </div>
           </div>
-          <article class="recommStory">
-            <div class="storyHead">
+          <article className="recommStory">
+            <div className="storyHead">
               <span>스토리</span>
-              <button class="seeAllBtn">모두 보기</button>
+              <button className="seeAllBtn">모두 보기</button>
             </div>
             <ul>
-              <li class="storyList">
+              <li className="storyList">
                 <img
-                  class="accountRecomm"
+                  className="accountRecomm"
                   src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
                   alt="wecode mark"
                 />
-                <div class="accountBlock">
-                  <span class="accId">ID</span>
-                  <span class="subAccId">before Time</span>
+                <div className="accountBlock">
+                  <span className="accId">ID</span>
+                  <span className="subAccId">before Time</span>
                 </div>
               </li>
-              <li class="storyList">
+              <li className="storyList">
                 <img
-                  class="accountRecomm"
+                  className="accountRecomm"
                   src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
                   alt="wecode mark"
                 />
-                <div class="accountBlock">
-                  <span class="accId">ID</span>
-                  <span class="subAccId">before Time</span>
+                <div className="accountBlock">
+                  <span className="accId">ID</span>
+                  <span className="subAccId">before Time</span>
                 </div>
               </li>
-              <li class="storyList">
+              <li className="storyList">
                 <img
-                  class="accountRecomm"
+                  className="accountRecomm"
                   src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
                   alt="wecode mark"
                 />
-                <div class="accountBlock">
-                  <span class="accId">ID</span>
-                  <span class="subAccId">before Time</span>
+                <div className="accountBlock">
+                  <span className="accId">ID</span>
+                  <span className="subAccId">before Time</span>
                 </div>
               </li>
-              <li class="storyList">
+              <li className="storyList">
                 <img
-                  class="accountRecomm"
+                  className="accountRecomm"
                   src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
                   alt="wecode mark"
                 />
-                <div class="accountBlock">
-                  <span class="accId">ID</span>
-                  <span class="subAccId">before Time</span>
+                <div className="accountBlock">
+                  <span className="accId">ID</span>
+                  <span className="subAccId">before Time</span>
                 </div>
               </li>
             </ul>
           </article>
-          <article class="recommWraper">
-            <div class="recommHeader">
+          <article className="recommWraper">
+            <div className="recommHeader">
               <span>회원님을 위한 추천</span>
-              <button class="seeAllBtn">모두 보기</button>
+              <button className="seeAllBtn">모두 보기</button>
             </div>
             <ul>
-              <li class="recommList">
-                <div class="recommCont">
+              <li className="recommList">
+                <div className="recommCont">
                   <img
-                    class="accountRecomm"
+                    className="accountRecomm"
                     src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
                     alt="wecode mark"
                   />
-                  <div class="accountBlock">
-                    <span class="accId">ID</span>
-                    <span class="subAccId">before Time</span>
+                  <div className="accountBlock">
+                    <span className="accId">ID</span>
+                    <span className="subAccId">before Time</span>
                   </div>
                 </div>
                 <div>
-                  <button class="followBtn" type="button">
+                  <button className="followBtn" type="button">
                     팔로우
                   </button>
                 </div>
               </li>
-              <li class="recommList">
-                <div class="recommCont">
+              <li className="recommList">
+                <div className="recommCont">
                   <img
-                    class="accountRecomm"
+                    className="accountRecomm"
                     src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
                     alt="wecode mark"
                   />
-                  <div class="accountBlock">
-                    <span class="accId">ID</span>
-                    <span class="subAccId">before Time</span>
+                  <div className="accountBlock">
+                    <span className="accId">ID</span>
+                    <span className="subAccId">before Time</span>
                   </div>
                 </div>
                 <div>
-                  <button class="followBtn" type="button">
+                  <button className="followBtn" type="button">
                     팔로우
                   </button>
                 </div>
               </li>
-              <li class="recommList">
-                <div class="recommCont">
+              <li className="recommList">
+                <div className="recommCont">
                   <img
-                    class="accountRecomm"
+                    className="accountRecomm"
                     src="https://user-images.githubusercontent.com/93215875/145207780-59e8db6a-25f0-470e-ab3d-12422ddf20ec.jpg"
                     alt="wecode mark"
                   />
-                  <div class="accountBlock">
-                    <span class="accId">ID</span>
-                    <span class="subAccId">before Time</span>
+                  <div className="accountBlock">
+                    <span className="accId">ID</span>
+                    <span className="subAccId">before Time</span>
                   </div>
                 </div>
                 <div>
-                  <button class="followBtn" type="button">
+                  <button className="followBtn" type="button">
                     팔로우
                   </button>
                 </div>

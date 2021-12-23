@@ -22,19 +22,22 @@ const CommentJongho = () => {
 
   const addUserInfo = newUserComment => {
     newUserComment.id = comments.length + 1;
-    console.log(newUserComment);
+    // console.log(newUserComment);
     comments.push(newUserComment);
 
     setComment(state => [...state]);
   };
-
+  const deleteComment = e => {
+    console.log(e.target);
+  };
   return (
     <>
-      <div class="commentsAndButton">
-        <ul class="commentList">
+      <div className="commentsAndButton">
+        <ul className="commentList">
           {comments.map(comt => (
             <CommentLiJongho
               key={comt.id}
+              id={comt.id}
               user={comt.user}
               comment={comt.comment}
             />

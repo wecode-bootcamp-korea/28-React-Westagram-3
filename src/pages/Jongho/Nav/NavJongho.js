@@ -8,23 +8,23 @@ const NavJongho = () => {
         <nav>
           <div id="symbolBlock">
             <img
-              class="instaImg"
+              className="instaImg"
               src="/images/Jongho/Main/instagram-logo.png"
               alt="instagram logo"
             />
-            <span class="instagramLogo">Instagram</span>
+            <span className="instagramLogo">Instagram</span>
           </div>
           <div id="searchBlock">
             <img
-              class="magnifier"
+              className="magnifier"
               src="/images/Jongho/Main/magnifier.png"
               alt="돋보기"
             />
-            <input class="searchInput" type="text" placeholder="검색" />
+            <input className="searchInput" type="text" placeholder="검색" />
           </div>
           <div id="otherContents">
             <img
-              class="explore"
+              className="explore"
               src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
               alt="Explore Button"
             />
@@ -34,7 +34,7 @@ const NavJongho = () => {
               alt="Heart symbol"
             />
             <img
-              class="user"
+              className="user"
               src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
               alt="Person symbol"
             />

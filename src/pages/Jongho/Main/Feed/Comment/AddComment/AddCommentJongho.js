@@ -12,7 +12,7 @@ const AddCommentJongho = props => {
   }
 
   return (
-    <div class="postComment">
+    <div className="postComment">
       <input
         onKeyPress={event => confirmEnter(event)}
         onChange={event => {
