@@ -5,8 +5,15 @@
   justify-content: center;
   align-items: center;
 }
+// 기본 너비와 높이
+@mixin width-height {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
 
 // variables
+$plain-white: #fff; // 기본 흰색
 $plain-bgColor: #fafafa; // 페이지 배경색
 $border-color: #dbdbdb; // border 색
 $main-text-color: #262626; // 기본 텍스트 검정색

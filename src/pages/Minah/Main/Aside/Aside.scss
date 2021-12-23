@@ -16,7 +16,7 @@
       width: 62px;
       height: 62px;
       line-height: 56px;
-      background-color: 1px solid #fff;
+      background-color: 1px solid v.$plain-white;
       border-radius: 50%;
       text-align: center;
 
@@ -52,7 +52,7 @@
       margin: 0 auto;
       padding: 0;
       padding-left: 8px;
-      background-color: #fff;
+      background-color: v.$plain-white;
       border: 0;
       color: v.$button-link;
       font-size: 0.77rem;
@@ -125,7 +125,7 @@
           margin: 0 auto;
           padding: 0;
           padding-left: 4px;
-          background-color: #fff;
+          background-color: v.$plain-white;
           border: 0;
           color: v.$button-link;
           font-size: 0.77rem;

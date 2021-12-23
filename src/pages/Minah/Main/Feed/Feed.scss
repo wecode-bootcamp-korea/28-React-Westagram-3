@@ -8,7 +8,7 @@
     width: 100%;
     height: 100%;
     border: 1px solid v.$border-color;
-    background-color: #fff;
+    background-color: v.$plain-white;
 
     .post_header {
       height: 60px;
@@ -43,7 +43,7 @@
         justify-content: center;
         align-items: center;
         border: 0;
-        background-color: #fff;
+        background-color: v.$plain-white;
 
         img {
           width: 17px;
@@ -114,7 +114,7 @@
               width: 40px;
               height: 40px;
               border: 0;
-              background-color: #fff;
+              background-color: v.$plain-white;
               vertical-align: middle;
 
               img {

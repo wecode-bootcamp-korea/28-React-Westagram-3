@@ -6,7 +6,7 @@ header {
   height: 60px;
 
   nav {
-    background-color: #fff;
+    background-color: v.$plain-white;
     border-bottom: 1px solid v.$border-color;
     position: fixed;
     top: 0;
@@ -135,7 +135,7 @@ header {
         top: 60px;
         right: 0px;
         border-radius: 5px;
-        background-color: #fff;
+        background-color: v.$plain-white;
         font-size: 0.875rem;
         box-shadow: 0 0 5px v.$border-color;
         z-index: 6;
@@ -152,7 +152,7 @@ header {
           -ms-transform: rotate(45deg);
           -o-transform: rotate(45deg);
           transform: rotate(45deg);
-          background-color: #fff;
+          background-color: v.$plain-white;
           box-shadow: -3px -3px 7px 0 v.$border-color;
         }
 

@@ -1,9 +1,8 @@
 @use '../../../styles/variables.scss' as v;
 
 .main_minah {
-  width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  @include v.width-height;
+
   background-color: v.$plain-bgColor;
 
   a {
