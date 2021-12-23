@@ -6,21 +6,18 @@ import '../../../styles/common.scss';
 import './LoginMinah.scss';
 
 export default function LoginMinah() {
-  const [userId, setUserId] = useState('');
-  const [userPw, setUserPw] = useState('');
+  // useRef로도 관리 가능하며, useRef는 값이 바뀌어도 렌더링되지 않음
+  const [userInputs, setUserInputs] = useState({ userId: '', userPw: '' });
 
-  const handleIdInput = e => {
-    const uId = e.target.value;
-    setUserId(uId);
-    sessionStorage.setItem('userId', userId.split('@')[0]);
-  };
-
-  const handlePwInput = e => {
-    setUserPw(e.target.value);
+  const handleInputs = e => {
+    const { name, value } = e.target;
+    setUserInputs({ ...userInputs, [name]: value });
+    sessionStorage.setItem('userId', userInputs.userId.split('@')[0]);
   };
 
   const navigate = useNavigate();
   const goToMain = () => {
+    // 로직 구분하기
     // fetch('http://10.58.4.57:8000/user/login', {
     //   method: 'POST',
     //   body: JSON.stringify({
@@ -34,30 +31,34 @@ export default function LoginMinah() {
   };
 
   const onReset = () => {
-    setUserId('');
-    setUserPw('');
+    setUserInputs({ userId: '', userPw: '' });
     goToMain();
   };
 
-  const enterKeyEvent = e => {
+  const handleLoginEvent = e => {
     if (e.key === 'Enter') {
       onReset();
     }
   };
+
+  const isInputsValid =
+    userInputs.userId.includes('@') && userInputs.userPw.length > 5
+      ? false
+      : true;
 
   return (
     <div className="login_minah">
       <main>
         <div className="login_box">
           <h1>Westagram</h1>
-          <form onKeyPress={e => enterKeyEvent(e)}>
+          <form onKeyPress={handleLoginEvent}>
             <div className="login_input">
               <input
                 type="text"
                 id="user_id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={handleIdInput}
-                value={userId}
+                onChange={e => handleInputs(e)}
+                name="userId"
               />
               <label htmlFor="user_id">전화번호, 사용자 이름 또는 이메일</label>
             </div>
@@ -66,19 +67,13 @@ export default function LoginMinah() {
                 type="password"
                 id="user_pw"
                 placeholder="비밀번호"
-                onChange={handlePwInput}
-                value={userPw}
+                onChange={e => handleInputs(e)}
+                name="userPw"
                 autoComplete="on"
               />
               <label htmlFor="user_pw">비밀번호</label>
             </div>
-            <button
-              type="button"
-              onClick={onReset}
-              disabled={
-                userId.includes('@') && userPw.length > 5 ? false : true
-              }
-            >
+            <button type="button" onClick={onReset} disabled={isInputsValid}>
               로그인
             </button>
           </form>

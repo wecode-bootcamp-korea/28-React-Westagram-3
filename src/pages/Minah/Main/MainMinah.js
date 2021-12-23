@@ -27,10 +27,9 @@ export default function MainMinah() {
       <main>
         <section>
           <Story />
-          {feeds &&
-            feeds.map(feed => {
-              return <Feed key={feed.id} feedData={feed} />;
-            })}
+          {feeds.map(feed => {
+            return <Feed key={feed.id} feed={feed} />;
+          })}
         </section>
         <aside>
           <Aside />

@@ -1,9 +1,9 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import CommentList from '../Comment/CommentList';
 import './Feed.scss';
 
-export default function Feed({ feedData }) {
-  const [comments, setComments] = useState([...feedData.commentList]);
+export default function Feed({ feed }) {
+  const [comments, setComments] = useState([...feed.commentList]);
 
   const [commentContent, setCommentContent] = useState({
     id: '',
@@ -73,33 +73,24 @@ export default function Feed({ feedData }) {
 
   const totalPhotoWidth = useRef(null);
   const [currentIdx, setCurrentIdx] = useState(0);
-  const totalPhotoNum = feedData.postImg.length;
+  const totalPhotoNum = feed.postImg.length;
+
+  useEffect(() => {
+    const photoWidth = totalPhotoWidth.current.clientWidth;
+    totalPhotoWidth.current.style.transform = `translateX(${
+      -photoWidth * currentIdx
+    }px)`;
+  }, [currentIdx]);
 
   const showNextPhoto = () => {
-    const photoWidth = totalPhotoWidth.current.clientWidth;
     if (currentIdx < totalPhotoNum - 1) {
-      const plusIdx = currentIdx + 1;
-      setCurrentIdx(plusIdx);
-      totalPhotoWidth.current.style.transform = `translateX(${
-        -photoWidth * plusIdx
-      }px)`;
-      totalPhotoWidth.current.style.transition = 'transform 0.3s ease-in-out';
-    } else {
-      return;
+      setCurrentIdx(currentIdx + 1);
     }
   };
 
   const showPrevPhoto = () => {
-    const photoWidth = totalPhotoWidth.current.clientWidth;
     if (currentIdx > 0) {
-      const minusIdx = currentIdx - 1;
-      setCurrentIdx(minusIdx);
-      totalPhotoWidth.current.style.transform = `translateX(${
-        -photoWidth * minusIdx
-      }px)`;
-      totalPhotoWidth.current.style.transition = 'transform 0.3s ease-in-out';
-    } else {
-      return;
+      setCurrentIdx(currentIdx - 1);
     }
   };
 
@@ -111,11 +102,11 @@ export default function Feed({ feedData }) {
             <div className="post_account">
               <img
                 alt="프사"
-                src={`images/Minah/Main/${feedData.profileImg}`}
+                src={`images/Minah/Main/${feed.profileImg}`}
                 className="post_profile"
               />
-              <a href={`https://www.instagram.com/${feedData.userId}`}>
-                {feedData.userId}
+              <a href={`https://www.instagram.com/${feed.userId}`}>
+                {feed.userId}
               </a>
             </div>
             <button className="post_info">
@@ -129,8 +120,8 @@ export default function Feed({ feedData }) {
           <div className="post_body">
             <div className="post_photo_wrap">
               <div className="post_photo_container" ref={totalPhotoWidth}>
-                {feedData.postImg &&
-                  feedData.postImg.map((img, idx) => {
+                {feed.postImg &&
+                  feed.postImg.map((img, idx) => {
                     return (
                       <img
                         key={idx}
@@ -141,7 +132,7 @@ export default function Feed({ feedData }) {
                     );
                   })}
               </div>
-              {feedData.postImg.length > 1 && (
+              {feed.postImg.length > 1 && (
                 <>
                   <img
                     src="images/Minah/Main/left-chevron.png"
@@ -195,20 +186,20 @@ export default function Feed({ feedData }) {
               </div>
               <div className="post_content_wrap">
                 <div className="post_likes">
-                  <p>좋아요 {feedData.likes}개</p>
+                  <p>좋아요 {feed.likes}개</p>
                 </div>
                 <div className="post_content">
-                  <a href={`https://www.instagram.com/${feedData.userId}`}>
-                    {feedData.userId}
+                  <a href={`https://www.instagram.com/${feed.userId}`}>
+                    {feed.userId}
                   </a>
-                  <p>{feedData.content}</p>
+                  <p>{feed.content}</p>
                 </div>
                 <CommentList
                   commentList={comments}
                   deleteComment={delComment => deleteComment(delComment)}
                 />
                 <div className="post_created_at">
-                  <p>{feedData.createdAt}</p>
+                  <p>{feed.createdAt}</p>
                 </div>
               </div>
               <form className="post_reply_wrap">
