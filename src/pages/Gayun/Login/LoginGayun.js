@@ -6,8 +6,6 @@ import '../../../components/Footer/Footer.scss';
 import '../../../styles/variables.scss';
 import Footer from '../../../components/Footer/Footer';
 import { useNavigate } from 'react-router';
-import { COMPARISON_BINARY_OPERATORS } from '@babel/types';
-import { useEffect } from 'react/cjs/react.development';
 
 function LoginGayun() {
   const emailRef = useRef();
@@ -48,18 +46,13 @@ function LoginGayun() {
     } else {
       setValidState(false);
     }
-    console.log(loginInfo);
   }
+
   function goToMain() {
     navigate('/maingayun');
   }
 
-  const testemail = 'why_not@kbs.co.kr';
-  const testpw = 'b@#un()ei$fj%3$*';
-
   async function signUp() {
-    console.log(loginInfo.id, loginInfo.pw);
-
     const response = await fetch('http://10.58.0.88:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
@@ -70,13 +63,7 @@ function LoginGayun() {
         user_id: loginInfo.id,
       }),
     });
-    const responseJson = await response.json();
-    console.log(responseJson);
-    console.log(loginInfo);
-  }
-
-  function test() {
-    console.log('dsdf');
+    goToMain();
   }
 
   return (
@@ -113,7 +100,6 @@ function LoginGayun() {
               ref={idRef}
               className="login-input"
               type="text"
-              className="login-input"
               placeholder="  아이디"
             />
           </div>

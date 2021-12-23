@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Feed from '../Feed/Feed';
-import { v4 as uuid } from 'uuid';
 import './Feeds.scss';
 import Skeleton from '../Skeleton/Skeleton';
-import { FaJoint } from 'react-icons/fa';
+import UseIntersected from './UseIntersected';
 
 function Feeds() {
   const [feeds, setFeeds] = useState([]);
@@ -22,23 +21,23 @@ function Feeds() {
 
   async function loadFeedData(num) {
     const data = await (await fetch(`data/Gayun/feed${num}.json`)).json();
-    await setTimeout(() => {
+    setTimeout(() => {
       setFeeds(data);
       setIsLoaded(() => {
         return true;
       });
     }, 2000);
-    await startObserve();
+    startObserve();
   }
 
   async function loadMoreFeed(num) {
     const data = await (await fetch(`data/Gayun/feed${num}.json`)).json();
-    await setTimeout(() => {
+    setTimeout(() => {
       setFeeds(feeds => {
         return feeds.concat(data);
       });
     });
-    await setIsLoadedMore(() => {
+    setIsLoadedMore(() => {
       return true;
     });
   }
@@ -46,6 +45,8 @@ function Feeds() {
   useEffect(() => {
     loadFeedData(0);
   }, []);
+
+  UseIntersected(feedEndRef);
 
   const callback = (entry, observer) => {
     if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
@@ -66,11 +67,12 @@ function Feeds() {
     threshold: 0.5,
   };
 
-  const observer = new IntersectionObserver(callback, options);
-
   function startObserve() {
     observer.observe(feedEndRef.current);
   }
+
+  const observer = new IntersectionObserver(callback, options);
+
   return (
     <div className="feeds-gayun">
       <div className="feed-container">
