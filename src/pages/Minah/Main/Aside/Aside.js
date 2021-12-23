@@ -6,9 +6,9 @@ export default function Aside() {
       <div className="aside_account">
         <div className="aside_profile story_old_border">
           <img
+            alt="내 프로필"
             src="images/Minah/Main/profile.jpg"
             className="account_photo"
-            alt="내 프로필"
           />
         </div>
         <div className="aside_id">
@@ -26,9 +26,9 @@ export default function Aside() {
           <div className="aside_recommend_account">
             <div className="recommend_profile">
               <img
+                alt="추천 계정 프로필"
                 src="images/Minah/Main/nike.jpg"
                 className="recommend_photo"
-                alt="내 프로필"
               />
             </div>
             <div className="recommend_id">
@@ -40,9 +40,9 @@ export default function Aside() {
           <div className="aside_recommend_account">
             <div className="recommend_profile">
               <img
+                alt="추천 계정 프로필"
                 src="https://images.unsplash.com/photo-1585159183446-0fc0eaf9e57c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
                 className="recommend_photo"
-                alt="내 프로필"
               />
             </div>
             <div className="recommend_id">

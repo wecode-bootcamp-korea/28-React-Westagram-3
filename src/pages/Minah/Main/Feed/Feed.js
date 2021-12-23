@@ -78,9 +78,9 @@ export default function Feed({ feedData }) {
           <div className="post_header">
             <div className="post_account">
               <img
+                alt="프사"
                 src={`images/Minah/Main/${feedData.profileImg}`}
                 className="post_profile"
-                alt="프사"
               />
               <a href={`https://www.instagram.com/${feedData.userId}`}>
                 {feedData.userId}
@@ -88,9 +88,9 @@ export default function Feed({ feedData }) {
             </div>
             <button className="post_info">
               <img
+                alt="더보기"
                 src="images/Minah/Main/option.png"
                 className="post_option"
-                alt="더보기"
               />
             </button>
           </div>
@@ -125,32 +125,32 @@ export default function Feed({ feedData }) {
                 <div className="post_icons_box1">
                   <button className="post_icons_btn">
                     <img
+                      alt="하트"
                       src="images/Minah/Main/heart-blank.png"
                       className="post_icons"
-                      alt="하트"
                     />
                   </button>
                   <button className="post_icons_btn">
                     <img
+                      alt="댓글"
                       src="images/Minah/Main/chat.png"
                       className="post_icons"
-                      alt="댓글"
                     />
                   </button>
                   <button className="post_icons_btn">
                     <img
+                      alt="다이렉트 메시지"
                       src="images/Minah/Main/dm.png"
                       className="post_icons"
-                      alt="다이렉트 메시지"
                     />
                   </button>
                 </div>
                 <div className="post_icons_box2">
                   <button className="post_icons_btn">
                     <img
+                      alt="북마크"
                       src="images/Minah/Main/bookmark_default.png"
                       className="post_icons"
-                      alt="북마크"
                     />
                   </button>
                 </div>

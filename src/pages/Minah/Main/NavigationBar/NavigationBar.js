@@ -14,9 +14,7 @@ export default function NavigationBar() {
       <nav>
         <div className="nav_wrap">
           <div className="logo_box">
-            <a href="#">
-              <h1>Westagram</h1>
-            </a>
+            <h1>Westagram</h1>
           </div>
 
           <div className="search_box">
