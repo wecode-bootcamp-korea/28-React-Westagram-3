@@ -72,7 +72,7 @@
             border-radius: 50%;
             vertical-align: middle;
           }
-          .heartBtn span {
+          .heartBtn {
             margin-left: 4px;
           }
         }
@@ -86,15 +86,17 @@
         }
         border: 1px solid #dbdbdb;
         margin: 50px 10px 20px 10px;
-        .heartBtn ul li {
-          font-size: 25px;
-          img {
-            width: 50px;
-            height: 50px;
+        .heartBtn ul {
+          li {
+            font-size: 25px;
+            img {
+              width: 50px;
+              height: 50px;
+            }
+            margin: 10px 20px 10px 20px;
+            display: inline-block;
+            margin: 0 10px;
           }
-          margin: 10px 20px 10px 20px;
-          display: inline-block;
-          margin: 0 10px;
         }
         #commentBox {
           width: 97%;

@@ -1,14 +1,13 @@
-// export default function LoginHojin() {
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginHojin.scss';
 
 function LoginHojin() {
-  const [email, setEmail] = useState('');
+  const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
   function handleIdInput(event) {
-    setEmail(event.target.value);
+    setId(event.target.value);
   }
 
   function handlePwInput(event) {
@@ -18,9 +17,22 @@ function LoginHojin() {
   const [isActive, setIsActive] = useState(false);
 
   const isPassedLogin = e => {
-    return email.includes('@') && password.length > 4
+    return id.includes('@') && password.length > 4
       ? setIsActive(true)
       : setIsActive(false);
+  };
+
+  const user = () => {
+    console.log('user 함수');
+    fetch('https://westagram-signup.herokuapp.com/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
   };
 
   return (
@@ -43,7 +55,11 @@ function LoginHojin() {
             onKeyUp={isPassedLogin}
           />
           <Link to="/MainHojin">
-            <button type="button" className={isActive ? 'btnOn' : 'btnOff'}>
+            <button
+              type="button"
+              className={isActive ? 'btnOn' : 'btnOff'}
+              onClick={user}
+            >
               로그인
             </button>
           </Link>
@@ -99,6 +115,6 @@ function LoginHojin() {
       </footer>
     </div>
   );
-} // style={{ background: color }}
+}
 
 export default LoginHojin;

@@ -1,7 +1,5 @@
-// export default function MainHojin() {
+import React, { useState } from 'react';
 
-// }
-import React from 'react';
 // import CommentInput from './CommentInput';
 import './MainHojin.scss';
 // import Feedimg from './images/Hojin/feedimg.jpeg';
@@ -11,7 +9,7 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 // import CommentInput from './CommentInput';
-// import CommentList from './CommentList';
+import CommentList from './CommentList';
 
 function MainHojin() {
   return (
@@ -65,14 +63,16 @@ function MainHojin() {
 
             <div className="comment">
               <ul>
-                <li>gsfgsfgsf</li>
+                <li>
+                  <b>User1 : good👍👍👍👍👍👍👍 </b>
+                </li>
+                <li>
+                  <b>User2 : good👍👍👍👍👍👍👍 </b>
+                </li>
               </ul>
             </div>
             <div className="commentBox">
-              <input type="text" id="commentBox" placeholder="댓글달기..." />
-              <button>
-                <FontAwesomeIcon icon={faPaperPlane} />
-              </button>
+              <CommentList />
             </div>
           </article>
         </div>
