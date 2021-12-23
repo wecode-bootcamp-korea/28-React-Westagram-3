@@ -95,7 +95,7 @@ export default function Feed({ feedData }) {
       const minusIdx = currentIdx - 1;
       setCurrentIdx(minusIdx);
       totalPhotoWidth.current.style.transform = `translateX(${
-        photoWidth * minusIdx
+        -photoWidth * minusIdx
       }px)`;
       totalPhotoWidth.current.style.transition = 'transform 0.3s ease-in-out';
     } else {
