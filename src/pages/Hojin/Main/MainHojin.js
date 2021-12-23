@@ -82,23 +82,23 @@ function MainHojin() {
           <div>
             <ul>
               <li>
-                <img src="/images/Hojin/feedimg.jpeg" />
+                <img src="/images/Hojin/feedimg.jpeg" alt="스토리프사" />
                 roses_are_rosie
               </li>
               <li>
-                <img src="/images/Hojin/feedimg.jpeg" />
+                <img src="/images/Hojin/feedimg.jpeg" alt="스토리프사" />
                 dlwlrma
               </li>
               <li>
-                <img src="/images/Hojin/feedimg.jpeg" />
+                <img src="/images/Hojin/feedimg.jpeg" alt="스토리프사" />
                 nenierubyjane
               </li>
               <li>
-                <img src="/images/Hojin/feedimg.jpeg" />
+                <img src="/images/Hojin/feedimg.jpeg" alt="스토리프사" />
                 imyour-joy
               </li>
               <li>
-                <img src="/images/Hojin/feedimg.jpeg" />
+                <img src="/images/Hojin/feedimg.jpeg" alt="스토리프사" />
                 fdafafadfad
               </li>
             </ul>
