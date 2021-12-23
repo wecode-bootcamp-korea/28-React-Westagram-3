@@ -75,37 +75,37 @@ function LoginHojin() {
               <a href="https://wecode.co.kr/">Wecode</a>
             </li>
             <li>
-              <a>소개</a>
+              <span>소개</span>
             </li>
             <li>
-              <a>블로그</a>
+              <span>블로그</span>
             </li>
             <li>
-              <a>채용 정보</a>
+              <span>채용 정보</span>
             </li>
             <li>
-              <a>도움말</a>
+              <span>도움말</span>
             </li>
             <li>
-              <a>API</a>
+              <span>API</span>
             </li>
             <li>
-              <a>개인정보처리방침</a>
+              <span>개인정보처리방침</span>
             </li>
             <li>
-              <a>약관</a>
+              <span>약관</span>
             </li>
             <li>
-              <a>인기 계정</a>
+              <span>인기 계정</span>
             </li>
             <li>
-              <a>해시태그</a>
+              <span>해시태그</span>
             </li>
             <li>
-              <a>위치</a>
+              <span>위치</span>
             </li>
             <li>
-              <a>Westagram Lite</a>
+              <span>Westagram Lite</span>
             </li>
           </ul>
         </div>
