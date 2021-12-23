@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Feed from '../Feed/Feed';
 import './Feeds.scss';
 import Skeleton from '../Skeleton/Skeleton';
-import UseIntersected from './UseIntersected';
+import UseIntersected from './UseInfiniteScroll';
+import UseInfiniteScroll from './UseInfiniteScroll';
 
 function Feeds() {
   const [feeds, setFeeds] = useState([]);
@@ -27,8 +28,13 @@ function Feeds() {
         return true;
       });
     }, 2000);
-    startObserve();
+
+    // startObserve();
   }
+
+  UseInfiniteScroll(feedEndRef, () => {
+    console.log('dd');
+  });
 
   async function loadMoreFeed(num) {
     const data = await (await fetch(`data/Gayun/feed${num}.json`)).json();
@@ -45,33 +51,30 @@ function Feeds() {
   useEffect(() => {
     loadFeedData(0);
   }, []);
+  // const callback = (entry, observer) => {
+  //   if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
+  //     setIsLoadedMore(() => {
+  //       return false;
+  //     });
+  //     loadFeedNum++;
+  //     setTimeout(() => {
+  //       loadMoreFeed(loadFeedNum);
+  //     }, 2000);
+  //   } else {
+  //   }
+  // };
 
-  UseIntersected(feedEndRef);
+  // let options = {
+  //   root: null,
+  //   rootMargin: '0px',
+  //   threshold: 0.5,
+  // };
 
-  const callback = (entry, observer) => {
-    if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
-      setIsLoadedMore(() => {
-        return false;
-      });
-      loadFeedNum++;
-      setTimeout(() => {
-        loadMoreFeed(loadFeedNum);
-      }, 2000);
-    } else {
-    }
-  };
+  // function startObserve() {
+  //   observer.observe(feedEndRef.current);
+  // }
 
-  let options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5,
-  };
-
-  function startObserve() {
-    observer.observe(feedEndRef.current);
-  }
-
-  const observer = new IntersectionObserver(callback, options);
+  // const observer = new IntersectionObserver(callback, options);
 
   return (
     <div className="feeds-gayun">
