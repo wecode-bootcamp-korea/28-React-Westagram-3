@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import CommentList from '../Comment/CommentList';
 import './Feed.scss';
 
@@ -71,6 +71,38 @@ export default function Feed({ feedData }) {
     setComments(tempComments);
   };
 
+  const totalPhotoWidth = useRef(null);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const totalPhotoNum = feedData.postImg.length;
+
+  const showNextPhoto = () => {
+    const photoWidth = totalPhotoWidth.current.clientWidth;
+    if (currentIdx < totalPhotoNum - 1) {
+      const plusIdx = currentIdx + 1;
+      setCurrentIdx(plusIdx);
+      totalPhotoWidth.current.style.transform = `translateX(${
+        -photoWidth * plusIdx
+      }px)`;
+      totalPhotoWidth.current.style.transition = 'transform 0.3s ease-in-out';
+    } else {
+      return;
+    }
+  };
+
+  const showPrevPhoto = () => {
+    const photoWidth = totalPhotoWidth.current.clientWidth;
+    if (currentIdx > 0) {
+      const minusIdx = currentIdx - 1;
+      setCurrentIdx(minusIdx);
+      totalPhotoWidth.current.style.transform = `translateX(${
+        photoWidth * minusIdx
+      }px)`;
+      totalPhotoWidth.current.style.transition = 'transform 0.3s ease-in-out';
+    } else {
+      return;
+    }
+  };
+
   return (
     <div className="post_box">
       <article>
@@ -96,7 +128,7 @@ export default function Feed({ feedData }) {
           </div>
           <div className="post_body">
             <div className="post_photo_wrap">
-              <div className="post_photo_container">
+              <div className="post_photo_container" ref={totalPhotoWidth}>
                 {feedData.postImg &&
                   feedData.postImg.map((img, idx) => {
                     return (
@@ -115,11 +147,13 @@ export default function Feed({ feedData }) {
                     src="images/Minah/Main/left-chevron.png"
                     className="post_prev btn_size"
                     alt="이전"
+                    onClick={() => showPrevPhoto()}
                   />
                   <img
                     src="images/Minah/Main/right-chevron.png"
                     className="post_next btn_size"
                     alt="다음"
+                    onClick={() => showNextPhoto()}
                   />
                 </>
               )}
