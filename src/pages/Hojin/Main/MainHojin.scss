@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'westa';
+  src: url('https://fonts.googleapis.com/css2?family=Lobster&family=Rochester&display=swap')
+    format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.mainPage {
+  .container {
+    width: 100%;
+    height: 100vh;
+    .header {
+      input {
+        text-align: center;
+        border: 1px solid #dbdbdb;
+        padding: 5px 20px 5px 20px;
+        border-radius: 5%;
+      }
+      h1 {
+        img {
+          width: 50px;
+          height: 50px;
+          vertical-align: middle;
+        }
+      }
+      font-family: cursive;
+      text-align: center;
+      width: 100%;
+      height: 80px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid #dbdbdb;
+
+      .navBar {
+        ul {
+          li {
+            display: inline-block;
+            margin: 0 10px;
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+    .main {
+      margin: 30px;
+      margin-left: 150px;
+      width: 50%;
+      float: left;
+
+      article {
+        h2 {
+          padding: 5px 10px 5px 10px;
+          span {
+            margin-left: 10px;
+            font-size: 25px;
+          }
+          img {
+            margin-left: 7px;
+            width: 7%;
+            height: 7%;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          .heartBtn {
+            margin-left: 4px;
+          }
+        }
+        .coments {
+          ul {
+            list-style: none;
+          }
+        }
+        img {
+          width: 100%;
+        }
+        border: 1px solid #dbdbdb;
+        margin: 50px 10px 20px 10px;
+        .heartBtn ul {
+          li {
+            font-size: 25px;
+            img {
+              width: 50px;
+              height: 50px;
+            }
+            margin: 10px 20px 10px 20px;
+            display: inline-block;
+            margin: 0 10px;
+          }
+        }
+        #commentBox {
+          width: 97%;
+          padding: 10px 0 10px 10px;
+          border: 1px solid #dbdbdb;
+        }
+        button {
+          font-size: 20px;
+          border: 0;
+          background-color: white;
+        }
+      }
+    }
+
+    .main-side {
+      margin-top: 30px;
+      margin-right: 110px;
+      // margin-left: 10px;
+      padding: 20px;
+      width: 28vw;
+      height: 60%;
+      float: right;
+
+      h2 {
+        color: #dbdbdb;
+      }
+
+      ul {
+        border: 1px solid #dbdbdb;
+        width: 100%;
+        list-style: none;
+        li {
+          font-size: 17px;
+
+          img {
+            margin-top: 15px;
+            margin-right: 20px;
+            width: 14%;
+            height: 14%;
+            vertical-align: middle;
+            margin-left: 10px;
+            margin-bottom: 30px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

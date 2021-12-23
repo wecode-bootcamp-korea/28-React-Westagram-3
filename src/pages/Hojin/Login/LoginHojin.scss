@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Rochester';
+  src: url('https://fonts.googleapis.com/css2?family=Lobster&family=Rochester&display=swap')
+    format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    h1 {
+      margin: 30px;
+      text-align: center;
+      font-family: 'Rochester', cursive;
+      font-size: 40px;
+    }
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    border: 1px solid #dbdbdb;
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin: 80px 0 50px 0;
+      font-size: 16px;
+      input {
+        width: 260px;
+        margin-bottom: 10px;
+        padding: 10px 0 10px 10px;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+      }
+      .btnOff {
+        width: 260px;
+        padding: 7px 0 7px 10px;
+        border-radius: 4px;
+        color: white;
+        background: rgba(0, 149, 246, 0.3);
+      }
+      .btnOn {
+        width: 260px;
+        padding: 7px 0 7px 10px;
+        border-radius: 4px;
+        color: white;
+        background: rgba(0, 149, 246, 1);
+      }
+    }
+    .pwSearch {
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  footer {
+    font-size: 0.75rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-top: 18px;
+    height: 134px;
+
+    .footer_tags_wrap {
+      max-width: 750px;
+      margin: 0 auto;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        line-height: 30px;
+        list-style: none;
+
+        li {
+          max-width: 120px;
+          vertical-align: middle;
+
+          &:not(:first-child)::before {
+            content: ' ';
+            padding: 0 8px;
+            color: #8e8e8e;
+          }
+
+          a {
+            color: #8e8e8e;
+          }
+        }
+      }
+    }
+
+    .copyright p {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      color: #8e8e8e;
+    }
+  }
+}
