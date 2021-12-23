@@ -21,13 +21,11 @@ export default function LoginMinah() {
 
   const navigate = useNavigate();
   const goToMain = () => {
-    // fetch('http://10.58.4.57:8000/user/signup', {
+    // fetch('http://10.58.4.57:8000/user/login', {
     //   method: 'POST',
     //   body: JSON.stringify({
-    //     name: '정민아',
     //     email: userId,
     //     password: userPw,
-    //     phone_number: '010-7899-5455',
     //   }),
     // })
     //   .then(res => res.json())

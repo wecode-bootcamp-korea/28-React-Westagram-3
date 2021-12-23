@@ -2,7 +2,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
-export default function Comment(props) {
+export default function Comment({ comment, deleteComment }) {
   const [isLiked, setIsLiked] = useState(false);
 
   const toggleLikeComment = () => {
@@ -14,12 +14,13 @@ export default function Comment(props) {
   };
 
   return (
-    <li id={`"${props.id}"`}>
-      <a href={`https://www.instagram.com/${props.userId}`}>{props.userId}</a>
+    <li id={`"${comment.id}"`}>
+      <a href={`https://www.instagram.com/${comment.userId}`}>
+        {comment.userId}
+      </a>
       <span>
-        {/* {props.comment} */}
-        {props.comment.split('\n').map(line => {
-          return <div>{line}</div>;
+        {comment.comment.split('\n').map((line, idx) => {
+          return <div key={idx}>{line}</div>;
         })}
       </span>
       <button type="button" className="like_reply">
@@ -34,7 +35,7 @@ export default function Comment(props) {
       <button
         type="button"
         className="delete_reply"
-        onClick={delComment => props.deleteComment(props.id)}
+        onClick={delComment => deleteComment(comment.id)}
       >
         <FontAwesomeIcon icon={faTimes} />
       </button>

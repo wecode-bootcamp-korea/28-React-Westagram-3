@@ -169,10 +169,6 @@ export default function Feed({ feedData }) {
                   commentList={comments}
                   deleteComment={delComment => deleteComment(delComment)}
                 />
-                {/* <CommentList
-                  commentList={props.commentList}
-                  deleteComment={props.deleteComment}
-                /> */}
                 <div className="post_created_at">
                   <p>{feedData.createdAt}</p>
                 </div>

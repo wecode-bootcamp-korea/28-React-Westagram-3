@@ -6,7 +6,6 @@ export default function CommentList({ commentList, deleteComment }) {
       <ul className="reply_wrap">
         {commentList &&
           commentList.map(comment => {
-            // return console.log(comment);
             return (
               <Comment
                 key={comment.id}

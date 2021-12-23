@@ -31,11 +31,6 @@ export default function MainMinah() {
             feeds.map(feed => {
               return <Feed key={feed.id} feedData={feed} />;
             })}
-          {/* <Feed
-              commentList={commentList}
-              postComment={commentContent => postComment(commentContent)}
-              deleteComment={delComment => deleteComment(delComment)}
-            /> */}
         </section>
         <aside>
           <Aside />
