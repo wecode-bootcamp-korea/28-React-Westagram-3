@@ -4,8 +4,13 @@ import './Feeds.scss';
 import Skeleton from '../Skeleton/Skeleton';
 import UseIntersected from './UseInfiniteScroll';
 import UseInfiniteScroll from './UseInfiniteScroll';
+import LoadMoreFeed from '../LoadMoreFeed/LoadMoreFeed';
 
 function Feeds() {
+  const [page, setPage] = useState(0);
+  const [feedList, setFeedList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   const [feeds, setFeeds] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoadedMore, setIsLoadedMore] = useState(true);
@@ -20,6 +25,13 @@ function Feeds() {
     });
   }
 
+  useEffect(async () => {
+    setIsLoading(true);
+    const list = await (await fetch(`data/Gayun/feed0.json`)).json();
+    setFeedList(prev => [...prev, ...list]);
+    setIsLoading(false);
+  }, [page]);
+
   async function loadFeedData(num) {
     const data = await (await fetch(`data/Gayun/feed${num}.json`)).json();
     setTimeout(() => {
@@ -28,13 +40,7 @@ function Feeds() {
         return true;
       });
     }, 2000);
-
-    // startObserve();
   }
-
-  UseInfiniteScroll(feedEndRef, () => {
-    console.log('dd');
-  });
 
   async function loadMoreFeed(num) {
     const data = await (await fetch(`data/Gayun/feed${num}.json`)).json();
@@ -51,30 +57,6 @@ function Feeds() {
   useEffect(() => {
     loadFeedData(0);
   }, []);
-  // const callback = (entry, observer) => {
-  //   if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
-  //     setIsLoadedMore(() => {
-  //       return false;
-  //     });
-  //     loadFeedNum++;
-  //     setTimeout(() => {
-  //       loadMoreFeed(loadFeedNum);
-  //     }, 2000);
-  //   } else {
-  //   }
-  // };
-
-  // let options = {
-  //   root: null,
-  //   rootMargin: '0px',
-  //   threshold: 0.5,
-  // };
-
-  // function startObserve() {
-  //   observer.observe(feedEndRef.current);
-  // }
-
-  // const observer = new IntersectionObserver(callback, options);
 
   return (
     <div className="feeds-gayun">
@@ -83,9 +65,7 @@ function Feeds() {
           ? feeds.map((feed, idx) => <Feed key={idx} feed={feed} />)
           : createSkeletonFeed(SKELETON_FEED_COUNT)}
       </div>
-      <div className="feed-end" ref={feedEndRef}>
-        {isLoadedMore ? '' : <div className="loading" />}
-      </div>
+      <LoadMoreFeed isLoading={page !== 0 && isLoading} setPage={setPage} />
     </div>
   );
 }
