@@ -2,32 +2,32 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
-export default function Comment({ comment, deleteComment }) {
-  const [isLiked, setIsLiked] = useState(false);
+export default function Comment({ id, userId, comment, deleteComment }) {
+  const [isLike, setIsLike] = useState(false);
 
   const toggleLikeComment = () => {
-    if (isLiked === false) {
-      setIsLiked(true);
+    if (isLike === false) {
+      setIsLike(true);
     } else {
-      setIsLiked(false);
+      setIsLike(false);
     }
   };
 
   return (
-    <li id={`"${comment.id}"`}>
-      <a href={`https://www.instagram.com/${comment.userId}`}>
-        {comment.userId}
-      </a>
+    <li id={`"${id}"`}>
+      <a href={`https://www.instagram.com/${userId}`}>{userId}</a>
       <span>
-        {comment.comment.split('\n').map((line, idx) => {
-          return <div key={idx}>{line}</div>;
-        })}
+        {comment.includes('\n')
+          ? comment.split('\n').map((line, idx) => {
+              return <div key={idx}>{line}</div>;
+            })
+          : comment}
       </span>
       <button type="button" className="like_reply">
         <img
           alt="댓글 좋아요"
           src={`images/Minah/Main/${
-            isLiked === false ? 'heart-blank.png' : 'heart-red.png'
+            isLike === false ? 'heart-blank.png' : 'heart-red.png'
           }`}
           onClick={toggleLikeComment}
         />
@@ -35,7 +35,7 @@ export default function Comment({ comment, deleteComment }) {
       <button
         type="button"
         className="delete_reply"
-        onClick={delComment => deleteComment(comment.id)}
+        onClick={delComment => deleteComment(id)}
       >
         <FontAwesomeIcon icon={faTimes} />
       </button>
