@@ -4,7 +4,6 @@ import './Feed.scss';
 
 export default function Feed({ feed }) {
   const [comments, setComments] = useState([...feed.commentList]);
-
   const [commentContent, setCommentContent] = useState('');
 
   const writeComment = e => {
@@ -133,13 +132,13 @@ export default function Feed({ feed }) {
                     src="images/Minah/Main/left-chevron.png"
                     className="post_prev btn_size"
                     alt="이전"
-                    onClick={() => showPrevPhoto()}
+                    onClick={showPrevPhoto}
                   />
                   <img
                     src="images/Minah/Main/right-chevron.png"
                     className="post_next btn_size"
                     alt="다음"
-                    onClick={() => showNextPhoto()}
+                    onClick={showNextPhoto}
                   />
                 </>
               )}
@@ -216,7 +215,7 @@ export default function Feed({ feed }) {
                   type="button"
                   className="submit_reply"
                   onClick={() => postNewComment(commentContent)}
-                  disabled={commentContent.comment ? false : true}
+                  disabled={!commentContent.comment}
                 >
                   게시
                 </button>

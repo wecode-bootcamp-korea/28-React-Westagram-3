@@ -16,21 +16,19 @@ export default function Story() {
     totalStoryWidth.current.style.transform = `translateX(-${
       getMoveDistance() + 20
     }px)`;
-    totalStoryWidth.current.style.transition = 'transform 0.3s ease-in-out';
   };
 
   const slidePrevStory = () => {
     totalStoryWidth.current.style.transform = `translateX(${0}px)`;
-    totalStoryWidth.current.style.transition = 'transform 0.3s ease-in-out';
   };
 
   return (
     <div className="story_box">
       <div className="story_wrap">
-        <button className="story_prev" onClick={() => slidePrevStory()}>
+        <button className="story_prev" onClick={slidePrevStory}>
           <img alt="이전" src="images/Minah/Main/left-chevron.png" />
         </button>
-        <button className="story_next" onClick={() => slideNextStory()}>
+        <button className="story_next" onClick={slideNextStory}>
           <img alt="다음" src="images/Minah/Main/right-chevron.png" />
         </button>
         <ul className="story" ref={totalStoryWidth}>
