@@ -46,9 +46,7 @@ export default function LoginMinah() {
   };
 
   const isInputsValid =
-    userInputs.userId.includes('@') && userInputs.userPw.length > 5
-      ? false
-      : true;
+    userInputs.userId.includes('@') && userInputs.userPw.length > 5;
 
   return (
     <div className="login_minah">
@@ -80,7 +78,7 @@ export default function LoginMinah() {
             <button
               type="button"
               onClick={submitLoginInfo}
-              disabled={isInputsValid}
+              disabled={!isInputsValid}
             >
               로그인
             </button>
