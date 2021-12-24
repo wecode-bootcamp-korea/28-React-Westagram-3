@@ -1,0 +1,30 @@
+@use 'src/styles/common';
+@use 'src/styles/reset';
+@use 'src/styles/variables';
+
+.toolBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  background-color: white;
+
+  i {
+    font-size: 32px;
+  }
+  .fa-bookmark {
+    margin-right: 20px;
+  }
+  .toolBoxThree {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 150px;
+    padding-left: 20px;
+
+    img {
+      height: 100%;
+    }
+  }
+}

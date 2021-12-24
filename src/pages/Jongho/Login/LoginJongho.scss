@@ -1,0 +1,75 @@
+@use 'src/styles/common';
+@use 'src/styles/reset';
+@use 'src/styles/variables';
+
+html,
+body {
+  height: 100%;
+}
+
+footer {
+  position: relative;
+  height: 10vh;
+}
+
+.loginJongho {
+  .mainContainer {
+    @include variables.flex-center;
+    height: 90vh;
+
+    .outerBox {
+      @include variables.flex-center;
+      width: 480px;
+      height: 500px;
+      background-color: #fafafa;
+    }
+
+    .innerBox {
+      width: 95%;
+      height: 95%;
+      text-align: center;
+      background-color: #ffffff;
+      border: 2px solid #e6e6e6;
+
+      * {
+        display: block;
+        margin: 0 auto;
+      }
+      input {
+        width: 65%;
+        height: 40px;
+        border: 2px solid #efefef;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        padding-left: 10px;
+
+        &:placeholder {
+          color: #999999;
+        }
+      }
+    }
+
+    .loginButton {
+      width: 65%;
+      height: 35px;
+      border: 0;
+      border-radius: 5px;
+      background-color: rgba(0, 149, 246, 0.3);
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      &.active {
+        // .loginButton.active
+        background-color: rgba(0, 149, 246, 1);
+      }
+    }
+
+    .logo {
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+      margin-bottom: 70px;
+      margin-top: 50px;
+    }
+  }
+}

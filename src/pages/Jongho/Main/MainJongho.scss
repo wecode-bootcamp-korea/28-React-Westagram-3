@@ -1,0 +1,241 @@
+@use 'src/styles/common';
+@use 'src/styles/reset';
+@use 'src/styles/variables';
+
+html,
+body {
+  height: 100%;
+}
+
+// Main
+// $navbar-height: 35px;
+
+@mixin side-wraper-layout {
+  width: 20vw;
+  margin-left: 2vw;
+  margin-bottom: 10px;
+}
+
+footer {
+  position: relative;
+}
+
+.mainJongho {
+  background-color: #fafafa;
+
+  main {
+    display: flex;
+    justify-content: center;
+    margin-top: 75.5px;
+    // margin-bottom: 20vh;
+    // background-color: #fafafa;
+
+    section:nth-child(1) {
+      background-color: #fafafa;
+    }
+    section:nth-child(2) {
+      background-color: #fafafa;
+    }
+  }
+  span {
+    vertical-align: middle;
+  }
+  input {
+    border: 0;
+  }
+  li {
+    list-style: none;
+  }
+  .accId {
+    font-weight: bold;
+  }
+  .subAccId {
+    color: variables.$sub-text-color;
+  }
+
+  .feedContainer {
+    max-width: 700px;
+    display: inline-block;
+    margin-top: 5vh;
+    // margin-bottom: 5vh;
+    border: 1px solid variables.$border-color;
+    border-radius: 4px;
+    background-color: white;
+
+    .myFeedImage {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .likeMessageBlock {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-left: 20px;
+    margin: 15px 0;
+    background-color: white;
+    text-align: left;
+
+    img {
+      height: 75%;
+      border: 0.5px solid variables.$border-color;
+      border-radius: 50%;
+    }
+    span {
+      padding-left: 5px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  // .commentsAndButton {
+  //   display: flex;
+  //   padding-left: 20px;
+
+  //   .commentList {
+  //     line-height: 1.5;
+
+  //     .comments {
+  //       display: flex;
+  //       justify-content: flex-start;
+
+  //       span:nth-child(2) {
+  //         padding-left: 10px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // .postComment {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   border-top: 1px solid variables.$border-color;
+  //   margin-top: 10px;
+  //   padding-left: 20px;
+  //   padding-right: 20px;
+
+  //   button {
+  //     border: 0;
+  //     color: variables.$button-deactive;
+  //     font-size: 20px;
+  //     background-color: white;
+  //   }
+  //   input {
+  //     height: 50px;
+  //     font-size: 20px;
+
+  //     &:placeholder {
+  //       color: variables.$sub-text-color;
+  //     }
+  //   }
+  // }
+
+  .myAccount {
+    @include side-wraper-layout;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 450px;
+    margin-top: 5vh;
+    padding: 5px;
+    background-color: none;
+
+    .recommName {
+      padding-left: 10px;
+    }
+  }
+  .accountRecomm {
+    height: 50px;
+    border-radius: 50%;
+  }
+  .recommStory {
+    @include side-wraper-layout;
+    max-width: 450px;
+    padding: 20px;
+    border: 1px solid variables.$border-color;
+    border-radius: 4px;
+    background-color: white;
+
+    .storyList {
+      display: flex;
+      padding-bottom: 10px;
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+    .storyHead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .seeAllBtn {
+        border: 0;
+        font-size: 1rem;
+        font-weight: bold;
+        background-color: white;
+        cursor: pointer;
+      }
+      span {
+        font-size: 1rem;
+        font-weight: bold;
+        color: variables.$sub-text-color;
+      }
+    }
+  }
+  .recommWraper {
+    @include side-wraper-layout;
+    max-width: 450px;
+    padding: 20px;
+    border: 1px solid variables.$border-color;
+    border-radius: 4px;
+    background-color: white;
+
+    .recommList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+
+      &:last-child {
+        padding: 0;
+      }
+      .recommCont {
+        display: flex;
+      }
+      .followBtn {
+        font-size: 1rem;
+        color: variables.$button-active;
+        border: 0;
+        background-color: white;
+      }
+    }
+  }
+
+  .recommHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+      color: variables.$sub-text-color;
+    }
+    .seeAllBtn {
+      border: 0;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+  .accountBlock span {
+    display: block;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+}
