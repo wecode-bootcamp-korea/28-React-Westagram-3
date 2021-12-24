@@ -19,9 +19,13 @@ function Feeds() {
 
   useEffect(async () => {
     setIsLoading(true);
+    await fetchTimeDelay(1000);
     await fetchFeedData(page);
     setIsLoading(false);
   }, [page]);
+
+  const fetchTimeDelay = time =>
+    new Promise(resolve => setTimeout(resolve, time));
 
   async function fetchFeedData(page) {
     const newFeeds = await (await fetch(`data/Gayun/feed${page}.json`)).json();
@@ -31,7 +35,7 @@ function Feeds() {
   return (
     <div className="feeds-gayun">
       <div className="feed-container">
-        {isLoading
+        {page === 0 && isLoading
           ? createSkeletonFeed(SKELETON_FEED_COUNT)
           : feedList.map((feed, idx) => <Feed key={idx} feed={feed} />)}
       </div>

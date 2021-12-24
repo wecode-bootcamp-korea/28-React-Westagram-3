@@ -3,11 +3,10 @@ import { useEffect } from 'react/cjs/react.development';
 import './LoadMoreFeed.scss';
 
 function LoadMoreFeed({ isLoading, setPage }) {
-  const feedEndRef = useRef(null);
+  const feedEndRef = useRef();
   const observer = new IntersectionObserver(entry => {
-    if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
+    if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.1) {
       setPage(page => page + 1);
-      console.log(entry[0]);
     }
   });
 
