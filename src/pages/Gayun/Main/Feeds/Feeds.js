@@ -19,7 +19,7 @@ function Feeds() {
 
   useEffect(async () => {
     setIsLoading(true);
-    fetchFeedData(page);
+    await fetchFeedData(page);
     setIsLoading(false);
   }, [page]);
 

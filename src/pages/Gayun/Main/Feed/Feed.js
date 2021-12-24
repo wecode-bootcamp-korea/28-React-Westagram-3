@@ -56,7 +56,7 @@ function Feed({ feed }) {
           <span className="img-container profile-container">
             <img
               className="img profile-img"
-              src="images/gayun/default_profile-img.png"
+              src={`images/Gayun/${feed.profileImg}`}
               alt=""
             />
           </span>
@@ -67,7 +67,7 @@ function Feed({ feed }) {
         </button>
       </section>
       <section className="img-content">
-        <img src={`images/Gayun/${feed.profileImg}`} alt="" />
+        <img src={`images/Gayun/${feed.imgContent}`} alt="" />
       </section>
       <section className="contents-wrap">
         <div className="button-container">
