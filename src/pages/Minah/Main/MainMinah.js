@@ -11,15 +11,12 @@ export default function MainMinah() {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        'http://localhost:3000/data/Minah/feedData.json'
-      );
-      const data = await response.json();
-      setFeeds(data);
-    };
-    fetchData();
-  }, []);
+    fetch('http://localhost:3000/data/Minah/feedData.json')
+      .then(res => res.json())
+      .then(result => {
+        setFeeds(result);
+      });
+  });
 
   return (
     <div className="main_minah">
