@@ -5,12 +5,7 @@ import './Feed.scss';
 export default function Feed({ feed }) {
   const [comments, setComments] = useState([...feed.commentList]);
 
-  const [commentContent, setCommentContent] = useState({
-    id: '',
-    userId: '',
-    comment: '',
-    isLiked: false,
-  });
+  const [commentContent, setCommentContent] = useState('');
 
   const writeComment = e => {
     const content = e.target.value;
@@ -29,7 +24,6 @@ export default function Feed({ feed }) {
       comment: content,
       isLiked: false,
     };
-
     setCommentContent(comment);
   };
 
@@ -37,7 +31,7 @@ export default function Feed({ feed }) {
   const [taHeight, setTaHeight] = useState(0);
 
   const resizeTextarea = e => {
-    e.target.style.height = '1px';
+    e.target.style.height = '1px'; // 댓글입력창 초기화
     e.target.style.height = `${e.target.scrollHeight}px`;
     setTaHeight(e.target.scrollHeight);
 
@@ -45,11 +39,11 @@ export default function Feed({ feed }) {
       if (!e.shiftKey) {
         writeComment(e);
         postNewComment(commentContent);
+        e.target.style.height = '1px';
         e.preventDefault();
       }
 
       if (e.shiftKey) {
-        e.target.value = `${e.target.value + '\t'}`;
       }
     }
   };
@@ -63,7 +57,8 @@ export default function Feed({ feed }) {
 
   const postNewComment = commentContent => {
     postComment(commentContent);
-    textAreaHeight.current.value = '';
+    textAreaHeight.current.value = null;
+    setCommentContent('');
   };
 
   const deleteComment = delComment => {
@@ -221,7 +216,7 @@ export default function Feed({ feed }) {
                   type="button"
                   className="submit_reply"
                   onClick={() => postNewComment(commentContent)}
-                  disabled={commentContent.comment.length > 0 ? false : true}
+                  disabled={commentContent.comment ? false : true}
                 >
                   게시
                 </button>
