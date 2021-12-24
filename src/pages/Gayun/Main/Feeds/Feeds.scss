@@ -1,0 +1,26 @@
+@import '../../../../styles/variables.scss';
+@import '../MainGayun.scss';
+
+.feeds-gayun {
+  display: flex;
+  flex-direction: column;
+
+  .feed-container {
+    margin: $doubleSpace;
+  }
+
+  .feed-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    width: 100%;
+    height: 10rem;
+  }
+
+  .loading {
+    @include loading;
+  }
+}
+
+

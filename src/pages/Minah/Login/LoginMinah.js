@@ -1,3 +1,1 @@
-export default function LoginMinah() {
-  
-}
+export default function LoginMinah() {}

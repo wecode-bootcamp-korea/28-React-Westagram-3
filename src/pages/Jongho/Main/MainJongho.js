@@ -1,3 +1,1 @@
-export default function MainJongho() {
-  
-}
+export default function MainJongho() {}

@@ -1,0 +1,69 @@
+@import '../../../../styles/variables.scss';
+@import '../MainGayun.scss';
+
+.skeleton-gayun {
+  @include feed;
+  margin-top: $doubleSpace;
+  background-color: $border-color;
+  .header {
+    @include feedHeader;
+    .uploader {
+      display: flex;
+      align-items: center;
+
+      .img {
+        width: $imgContainerL;
+        height: $imgContainerL;
+        border-radius: 3rem;
+        background-color: $plain-bgColor;
+      }
+
+      p {
+        margin-left: 1rem;
+        width: 7rem;
+        height: 1.3rem;
+        background-color: $plain-bgColor;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  .img-content {
+    @include feedImgContent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $plain-bgColor;
+    border: 1px solid $border-color;
+
+    .loading {
+      @include loading;
+    }
+
+
+  }
+
+  .comments {
+    @include feedContentsWrap;
+    margin-top: 3rem;
+    .comment {
+      display: flex;
+      align-items: center;
+      margin-bottom: $space;
+      .profile {
+        width: $imgContainerM;
+        height: $imgContainerM;
+        background-color: $plain-bgColor;
+        border-radius: 1rem;
+      }
+
+      .commentText {
+        margin-left: 1rem;
+        width: 20rem;
+        height: 1rem;
+        background-color: $plain-bgColor;
+        border-radius: 1rem;
+      }
+    }
+  }
+}

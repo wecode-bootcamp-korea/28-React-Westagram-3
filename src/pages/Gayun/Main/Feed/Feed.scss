@@ -1,0 +1,106 @@
+@import '../../../../styles/variables.scss';
+@import '../MainGayun.scss';
+
+.feed-gayun {
+  @include feed;
+  border: 1px solid $border-color;
+  background-color: white;
+
+  .header {
+    @include feedHeader;
+    border-bottom: 1px solid $border-color;
+
+    .uploader {
+      display: flex;
+      align-items: center;
+    }
+
+    .img-container {
+      width: $imgContainerL;
+      height: $imgContainerL;
+      @include profileContainer;
+      img {
+        @include profileImg;
+      }
+    }
+
+    .id {
+      margin-left: 1rem;
+    }
+  }
+
+  .img-content {
+    @include feedImgContent;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .contents-wrap {
+    @include feedContentsWrap;
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin: $space 0 $space 0;
+
+      .button {
+        margin-right: $space;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+    .textContent {
+      display: flex;
+      margin: $doubleSpace 0 $doubleSpace 0;
+    }
+  }
+
+  .people-who-like {
+    display: flex;
+    align-items: center;
+    margin: $space 0 $space 0;
+
+    img {
+      width: $imgContainerS;
+      height: $imgContainerS;
+      border-radius: $imgBorderRadius;
+    }
+
+    .text {
+      margin-left: $space;
+      font-size: 0.9rem;
+    }
+  }
+
+  .more-text {
+    color: var(--border-grey-darker);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .comment-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    padding: 0 $doubleSpace 0 $doubleSpace;
+    border-top: 1px solid $border-color;
+
+    .text {
+      flex-basis: 80%;
+      height: 100%;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      font-weight: 700;
+      color: $button-deactive;
+    }
+
+    button:hover {
+      color: $button-active;
+    }
+  }
+}

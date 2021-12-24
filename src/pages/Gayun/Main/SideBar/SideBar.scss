@@ -1,0 +1,168 @@
+@import '../../../../styles/variables.scss';
+@import '../MainGayun.scss';
+
+.side-bar-gayun {
+  width: 15rem;
+  margin-right: $doubleSpace;
+
+  .account {
+    display: flex;
+    align-items: center;
+    margin-top: $doubleSpace;
+    padding: $space;
+
+    .img-container {
+      margin-right: $space;
+
+      img {
+        width: $imgContainerL;
+        height: $imgContainerL;
+        border-radius: $imgBorderRadius;
+      }
+    }
+
+    .id {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .main {
+        font-weight: 700;
+      }
+
+      .sub {
+        display: flex;
+
+        .divider {
+          margin: 0 $space 0 $space;
+        }
+
+        .kor {
+          color: grey;
+        }
+      }
+    }
+  }
+
+  .story {
+    display: flex;
+    flex-direction: column;
+    padding: $doubleSpace;
+    background-color: white;
+    border: 1px solid $border-color;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $doubleSpace;
+      color: $sub-text-color;
+      font-weight: 600;
+    }
+
+    .spread {
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .collapse {
+      height: 12rem;
+      overflow: hidden;
+    }
+
+    .list {
+      list-style: none;
+
+      .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: $space;
+
+        .img-container {
+          width: $imgContainerM;
+          height: $imgContainerM;
+          @include profileContainer;
+
+          img {
+            @include profileImg;
+          }
+        }
+
+        .text {
+          display: flex;
+          flex-direction: column;
+          margin-left: 1rem;
+        }
+
+        .time {
+          font-size: 0.8rem;
+          color: gray;
+        }
+      }
+    }
+  }
+
+  .recommend {
+    margin-top: 1em;
+    padding: $doubleSpace;
+    width: 100%;
+    border: 1px solid $border-color;
+    background-color: white;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      color: $sub-text-color;
+      font-weight: 600;
+    }
+
+    .spread {
+      color: $main-text-color;
+      font-weight: 700;
+    }
+
+    .list {
+      padding-top: 0.5rem;
+      list-style: none;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .profile {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: $imgContainerM;
+            height: $imgContainerM;
+            border-radius: $imgBorderRadius;
+          }
+
+          .id,
+          .follower {
+            margin-left: $doubleSpace;
+          }
+
+          .follower {
+            color: var(--border-grey-darker);
+            font-size: 0.8rem;
+          }
+        }
+
+        .follow {
+          font-weight: 700;
+          color: $button-active;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .side-bar {
+    display: none;
+  }
+}

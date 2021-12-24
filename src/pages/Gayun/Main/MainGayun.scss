@@ -1,0 +1,88 @@
+@import '../../../styles/variables.scss';
+
+$doubleSpace: 1rem;
+$space: 0.5rem;
+
+$shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.23);
+
+$imgContainerXL: 4rem;
+$imgContainerL: 3rem;
+$imgContainerM: 2rem;
+$imgContainerS: 1rem;
+$imgBorderRadius: 3rem;
+
+$loadingColor: rgba(219,219,219,1);
+
+@mixin profileImg {
+  width: 90%;
+  height: 90%;
+
+  border: 0.2rem solid $plain-bgColor;
+  border-radius: 3rem;
+}
+
+@mixin profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: $space;
+  background: linear-gradient(
+    39deg,
+    rgba(254, 218, 117, 1) 0%,
+    rgba(250, 126, 30, 1) 22%,
+    rgba(214, 41, 118, 1) 44%,
+    rgba(150, 47, 191, 1) 72%,
+    rgba(79, 91, 213, 1) 100%
+  );
+  border-radius: 3rem;
+}
+
+@mixin feed {
+  width: 30rem;
+  margin-bottom: 3rem;
+}
+
+@mixin feedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space 0.8rem $space 0.8rem;
+}
+
+@mixin feedImgContent {
+  height: 20rem;
+  overflow: hidden;
+}
+
+@mixin feedContentsWrap {
+  padding: $space $doubleSpace $space $doubleSpace;
+}
+
+@mixin loading {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba($color: $loadingColor, $alpha: 0.4);
+    border-radius: 50%;
+    border-top-color: $loadingColor;
+    animation: spin 1s ease-in-out infinite;
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+}
+
+body {
+  background-color: $plain-bgColor;
+}
+
+.main-gayun {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .main-content {
+    display: flex;
+  }
+}
+
+

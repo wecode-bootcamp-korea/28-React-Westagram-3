@@ -1,0 +1,33 @@
+@import '../../../../styles/variables.scss';
+@import '../MainGayun.scss';
+
+.story-top-gayun {
+  display: flex;
+  padding: $doubleSpace $doubleSpace $space $doubleSpace;
+  width: 50rem;
+  overflow-x: scroll;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: $space;
+    font-size: 0.8rem;
+
+    .img-container {
+      @include profileContainer;
+      margin-left: $space;
+      width: $imgContainerL;
+      height: $imgContainerL;
+      margin-bottom: $space;
+
+      img {
+        @include profileImg;
+      }
+    }
+  }
+}
+
+.story-top-gayun::-webkit-scrollbar {
+  display: none;
+}

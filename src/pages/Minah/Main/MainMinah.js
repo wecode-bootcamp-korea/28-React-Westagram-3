@@ -1,3 +1,1 @@
-export default function MainMinah() {
-  
-}
+export default function MainMinah() {}
