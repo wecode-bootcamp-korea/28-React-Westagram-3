@@ -50,6 +50,10 @@
         cursor: pointer;
       }
     }
+    .textContent {
+      display: flex;
+      margin: $doubleSpace 0 $doubleSpace 0;
+    }
   }
 
   .people-who-like {

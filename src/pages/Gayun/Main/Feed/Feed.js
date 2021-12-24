@@ -94,9 +94,7 @@ function Feed({ feed }) {
             {feed.likesCount[0]}님 외 {feed.likesCount.length}명이 좋아합니다.
           </p>
         </div>
-        <div className={styles.textContent}>
-          {handleTextContent(feed.textContent)}
-        </div>
+        <div className="textContent">{handleTextContent(feed.textContent)}</div>
         <Comments comments={comments} deleteComment={deleteComment} />
       </section>
       <form className="comment-input">
