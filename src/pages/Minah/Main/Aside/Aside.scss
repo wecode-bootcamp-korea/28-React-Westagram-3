@@ -1,0 +1,161 @@
+@use '../MainMinah.scss';
+@use '../../../../styles/variables.scss' as v;
+
+/* 사이드메뉴 */
+.aside_wrap_minah {
+  position: fixed;
+  width: inherit;
+
+  .aside_account {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+
+    .aside_profile {
+      width: 62px;
+      height: 62px;
+      line-height: 56px;
+      background-color: 1px solid v.$plain-white;
+      border-radius: 50%;
+      text-align: center;
+
+      img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+
+    .aside_id {
+      width: 195px;
+
+      p {
+        font-size: 0.8rem;
+        width: 100%;
+        padding-left: 12px;
+        line-height: 1.2rem;
+
+        &:first-child {
+          color: v.$main-text-color;
+          font-weight: 600;
+        }
+
+        &:last-child {
+          color: v.$sub-text-color;
+        }
+      }
+    }
+
+    button {
+      margin: 0 auto;
+      padding: 0;
+      padding-left: 8px;
+      background-color: v.$plain-white;
+      border: 0;
+      color: v.$button-link;
+      font-size: 0.77rem;
+      font-weight: 800;
+    }
+  }
+
+  .aside_recommend {
+    .aside_recommend_header {
+      height: 35px;
+      display: flex;
+      justify-content: space-between;
+      vertical-align: middle;
+      line-height: 52px;
+      font-weight: 700;
+
+      span {
+        &:first-child {
+          font-size: 0.85rem;
+          color: v.$sub-text-color;
+        }
+
+        &:last-child {
+          font-size: 0.77rem;
+          color: v.$main-text-color;
+        }
+      }
+    }
+
+    .aside_recommend_body {
+      padding: 12px 0 12px 6px;
+
+      .aside_recommend_account {
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+
+        .recommend_profile {
+          width: 44px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+          }
+        }
+
+        .recommend_id {
+          width: 200px;
+          font-size: 0.74rem;
+
+          a {
+            font-weight: 600;
+            margin-bottom: 4px;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          p {
+            color: v.$sub-text-color;
+          }
+        }
+
+        button {
+          margin: 0 auto;
+          padding: 0;
+          padding-left: 4px;
+          background-color: v.$plain-white;
+          border: 0;
+          color: v.$button-link;
+          font-size: 0.77rem;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .aside_recommend_footer {
+      ul {
+        margin-bottom: 20px;
+
+        li {
+          font-size: 0.7rem;
+          display: inline;
+          color: v.$asideFooter-text-color;
+
+          &:not(:first-child)::before {
+            content: '\00B7';
+            margin-left: 3px;
+            padding-right: 3px;
+            color: v.$asideFooter-text-color;
+          }
+        }
+      }
+
+      p {
+        font-size: 0.7rem;
+        color: v.$asideFooter-text-color;
+      }
+    }
+  }
+}

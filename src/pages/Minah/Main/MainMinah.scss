@@ -1,0 +1,47 @@
+@use '../../../styles/variables.scss' as v;
+
+.main_minah {
+  @include v.width-height;
+
+  background-color: v.$plain-bgColor;
+
+  a {
+    color: v.$main-text-color;
+  }
+
+  /* main */
+  main {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    justify-content: center;
+
+    section {
+      width: 642px;
+      padding-right: 28px;
+      position: relative;
+    }
+
+    aside {
+      width: 293px;
+      height: 400px;
+    }
+  }
+}
+
+/* mediaquery */
+@media screen and (max-width: 1000px) {
+  .main_minah {
+    aside {
+      display: none;
+    }
+
+    main {
+      section {
+        padding: 0;
+      }
+    }
+  }
+}
