@@ -1,25 +1,28 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Story.scss';
 
 export default function Story() {
-  const totalStoryWidth = useRef(null);
+  const totalStory = useRef(null);
+  const [currentStoryIdx, setCurrentStoryIdx] = useState(0);
 
-  function getMoveDistance() {
-    const storyWidth = totalStoryWidth.current.firstChild.clientWidth;
-    const storyNum = totalStoryWidth.current.childNodes.length;
-    const distance =
-      storyWidth * storyNum - totalStoryWidth.current.clientWidth;
-    return distance;
-  }
+  useEffect(() => {
+    const storyWidth = totalStory.current.firstChild.clientWidth;
+    totalStory.current.style.transform = `translateX(${
+      -storyWidth * currentStoryIdx
+    }px)`;
+  }, [currentStoryIdx]);
 
   const slideNextStory = () => {
-    totalStoryWidth.current.style.transform = `translateX(-${
-      getMoveDistance() + 20
-    }px)`;
+    const storyNum = totalStory.current.children.length;
+    if (currentStoryIdx < storyNum - 1) {
+      setCurrentStoryIdx(currentStoryIdx + 1);
+    }
   };
 
   const slidePrevStory = () => {
-    totalStoryWidth.current.style.transform = `translateX(${0}px)`;
+    if (currentStoryIdx > 0) {
+      setCurrentStoryIdx(currentStoryIdx - 1);
+    }
   };
 
   return (
@@ -31,7 +34,7 @@ export default function Story() {
         <button className="story_next" onClick={slideNextStory}>
           <img alt="다음" src="images/Minah/Main/right-chevron.png" />
         </button>
-        <ul className="story" ref={totalStoryWidth}>
+        <ul className="story" ref={totalStory}>
           <li className="story_list">
             <div className="story_border story_old_border">
               <img
