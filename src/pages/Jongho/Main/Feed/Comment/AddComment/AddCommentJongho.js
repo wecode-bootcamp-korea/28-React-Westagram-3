@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const AddCommentJongho = props => {
   const [newInfo, setInfo] = useState({});
-  const inputElement = document.getElementsByClassName('inputComment')[0];
+  const [commentInput, setInput] = useState('');
 
-  function confirmEnter(event) {
+  function submitComment(event) {
     if (event.key === 'Enter') {
-      inputElement.value = null;
+      setInput('');
       return props.addUserInfo(newInfo);
     }
   }
@@ -14,14 +14,14 @@ const AddCommentJongho = props => {
   return (
     <div className="postComment">
       <input
-        onKeyPress={event => confirmEnter(event)}
+        onKeyPress={event => submitComment(event)}
         onChange={event => {
-          console.log(event);
-          console.log(event.target);
+          const { value } = event.target;
+          setInput(value);
           setInfo({
             id: null,
             user: '28기 윤종호',
-            comment: event.target.value,
+            comment: value,
           });
         }}
         className="inputComment"
@@ -30,8 +30,8 @@ const AddCommentJongho = props => {
       />
       <button
         onClick={() => {
-          inputElement.value = null;
-          return props.addUserInfo(newInfo);
+          setInput('');
+          props.addUserInfo(newInfo);
         }}
         className="pushComment-Btn"
       >

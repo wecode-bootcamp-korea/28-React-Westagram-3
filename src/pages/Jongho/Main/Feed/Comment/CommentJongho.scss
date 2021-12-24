@@ -1,18 +1,14 @@
 .commentsAndButton {
-  // display: flex;
   padding-left: 20px;
   padding-right: 20px;
 
   .commentList {
     line-height: 1.5;
-
+    // font-size: 3rem;
     .comments {
       display: flex;
       justify-content: space-between;
-
-      #delIcon {
-        height: 18px;
-      }
+      // align-items: center;
       span:nth-child(1) {
         padding-right: 10px;
       }

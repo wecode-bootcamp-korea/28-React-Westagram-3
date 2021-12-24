@@ -1,20 +1,25 @@
 import React from 'react';
 
-const CommentLiJongho = props => {
+const CommentLiJongho = ({ comment, deleteComment }) => {
+  const onDelete = () => {
+    deleteComment(comment);
+  };
+
   return (
-    <div>
-      <li id={props.id} className="comments">
-        <div>
-          <span className="commentId accId">{props.user}</span>
-          <span className="commentSentence contText">{props.comment}</span>
-        </div>
-        <img
-          // onClick={}
-          class="delIcon"
-          src="/images/Jongho/Main/bin.png"
-        />
-      </li>
-    </div>
+    <li className="comments">
+      <div>
+        <span className="commentId accId">{comment.user}</span>
+        <span className="commentSentence contText">{comment.comment}</span>
+      </div>
+      {/* <button name={props.id} onClick={props.delComment}> */}
+      <img
+        onClick={onDelete}
+        className="delIcon"
+        src="/images/Jongho/Main/bin.png"
+      />
+      {/* <p>login</p> */}
+      {/* </button> */}
+    </li>
   );
 };
 

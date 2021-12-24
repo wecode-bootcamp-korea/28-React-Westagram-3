@@ -6,7 +6,19 @@ import '../Comment/AddComment/AddCommentJongho.scss';
 import { useEffect } from 'react/cjs/react.development';
 
 const CommentJongho = () => {
-  const [comments, setComment] = useState([]); //초기값 []을 넣어준 이유는 초기 렌더링 시 유저정보 가져오는 기능을 useEffect에 넣어줬기 때문에 첫 렌더링 할때 초기값이 없으면 밑에 map() 메서드에서 오류가 발생한다
+  const [comments, setComment] = useState([]);
+
+  const deleteComment = comment => {
+    setComment(comments.filter(x => x.id !== comment.id));
+  };
+  //   setComment(prev => {
+  //     return [...prev].filter(x => {
+  //       if (x.id !== idNum) {
+  //         return x;
+  //       }
+  //     });
+  //   });
+  // };
 
   useEffect(() => {
     //첫 렌더링 시 유저정보 가져오기
@@ -22,24 +34,18 @@ const CommentJongho = () => {
 
   const addUserInfo = newUserComment => {
     newUserComment.id = comments.length + 1;
-    // console.log(newUserComment);
-    comments.push(newUserComment);
+    setComment([...comments, newUserComment]);
+  };
 
-    setComment(state => [...state]);
-  };
-  const deleteComment = e => {
-    console.log(e.target);
-  };
   return (
     <>
       <div className="commentsAndButton">
         <ul className="commentList">
-          {comments.map(comt => (
+          {comments.map(comment => (
             <CommentLiJongho
-              key={comt.id}
-              id={comt.id}
-              user={comt.user}
-              comment={comt.comment}
+              key={comment.id}
+              comment={comment}
+              deleteComment={deleteComment}
             />
           ))}
         </ul>
@@ -48,5 +54,4 @@ const CommentJongho = () => {
     </>
   );
 };
-
 export default CommentJongho;
