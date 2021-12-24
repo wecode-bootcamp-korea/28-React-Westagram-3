@@ -17,27 +17,31 @@ export default function LoginMinah() {
 
   const navigate = useNavigate();
   const goToMain = () => {
-    // 로직 구분하기
-    // fetch('http://10.58.4.57:8000/user/login', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     email: userId,
-    //     password: userPw,
-    //   }),
-    // })
-    //   .then(res => res.json())
-    //   .then(result => console.log('토큰: ', result));
     navigate('/mainminah');
   };
 
-  const onReset = () => {
-    setUserInputs({ userId: '', userPw: '' });
+  const submitLoginInfo = () => {
+    // 백엔드랑 로그인할 때
+    // fetch('http://10.58.4.57:8000/user/login', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: userInputs.userId,
+    //     password: userInputs.userPw,
+    //   }),
+    // })
+    //   .then(res => res.json())
+    //   .then(result => {
+    //     if (result.success) {
+    //       sessionStorage.setItem('token', result);
+    //       goToMain();
+    //     }
+    //   });
     goToMain();
   };
 
   const handleLoginEvent = e => {
     if (e.key === 'Enter') {
-      onReset();
+      submitLoginInfo();
     }
   };
 
@@ -57,7 +61,7 @@ export default function LoginMinah() {
                 type="text"
                 id="user_id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={e => handleInputs(e)}
+                onChange={handleInputs}
                 name="userId"
               />
               <label htmlFor="user_id">전화번호, 사용자 이름 또는 이메일</label>
@@ -67,13 +71,17 @@ export default function LoginMinah() {
                 type="password"
                 id="user_pw"
                 placeholder="비밀번호"
-                onChange={e => handleInputs(e)}
+                onChange={handleInputs}
                 name="userPw"
                 autoComplete="on"
               />
               <label htmlFor="user_pw">비밀번호</label>
             </div>
-            <button type="button" onClick={onReset} disabled={isInputsValid}>
+            <button
+              type="button"
+              onClick={submitLoginInfo}
+              disabled={isInputsValid}
+            >
               로그인
             </button>
           </form>
