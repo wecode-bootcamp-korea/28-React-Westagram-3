@@ -1,36 +1,25 @@
 import React, { useRef } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 import './LoadMoreFeed.scss';
 
-function LoadMoreFeed({ isLoading }) {
-  const feedEndRef = useRef();
-  // const callback = (entry, observer) => {
-  //   if (entry[0].isIntersecting && entry[0].intersectionRatio > 0.5) {
-  //     setIsLoadedMore(() => {
-  //       return false;
-  //     });
-  //     loadFeedNum++;
-  //     setTimeout(() => {
-  //       loadMoreFeed(loadFeedNum);
-  //     }, 2000);
-  //   } else {
-  //   }
-  // };
+function LoadMoreFeed({ isLoading, setPage }) {
+  const feedEndRef = useRef(null);
+  const observer = new IntersectionObserver(entry => {
+    if (entry[0].isIntersecting) {
+      setPage(page => page + 1);
+    }
+  });
 
-  // let options = {
-  //   root: null,
-  //   rootMargin: '0px',
-  //   threshold: 0.5,
-  // };
-
-  // function startObserve() {
-  //   observer.observe(feedEndRef.current);
-  // }
-
-  // const observer = new IntersectionObserver(callback, options);
+  useEffect(() => {
+    observer.observe(feedEndRef.current);
+    return () => {
+      observer.unobserve(feedEndRef.current);
+    };
+  }, []);
 
   return (
     <div className="feed-end" ref={feedEndRef}>
-      {isLoading ? '' : <div className="loading" />}
+      {isLoading ? <div className="loading" /> : ''}
     </div>
   );
 }

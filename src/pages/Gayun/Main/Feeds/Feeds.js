@@ -2,10 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Feed from '../Feed/Feed';
 import './Feeds.scss';
 import Skeleton from '../Skeleton/Skeleton';
-import UseIntersected from './UseInfiniteScroll';
-import UseInfiniteScroll from './UseInfiniteScroll';
 import LoadMoreFeed from '../LoadMoreFeed/LoadMoreFeed';
-import { COMPARISON_BINARY_OPERATORS } from '@babel/types';
 
 function Feeds() {
   const [page, setPage] = useState(0);
